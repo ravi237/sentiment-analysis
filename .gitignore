@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.DS_Store
+.venv/
+venv/
+
+# Keep data files — GitHub Actions commits fresh reports here
+# and Streamlit Cloud reads from them
+.claude/

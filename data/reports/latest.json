@@ -1,0 +1,1312 @@
+{
+  "generated_at": "2026-06-25T06:15:41.672427+00:00",
+  "generated_display": "25 Jun 2026, 06:15 AM UTC",
+  "period_hours": 24,
+  "minister": {
+    "name": "Piyush Goyal",
+    "title": "Union Cabinet Minister, Commerce & Industry",
+    "sentiment": {
+      "score": 0.1487,
+      "label": "positive",
+      "positive": 21,
+      "negative": 4,
+      "neutral": 29,
+      "total": 54,
+      "pct_positive": 38.9,
+      "pct_negative": 7.4,
+      "pct_neutral": 53.7
+    },
+    "news": [
+      {
+        "id": "66421d3c6231",
+        "title": "India-US Trade Deal Nears Breakthrough as Piyush Goyal, Jamieson Greer Complete Crucial Talks",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbVRPZUk5SUdNXzhYZUJqVEdwZndOcFRmVmNwanNFelBxVHdlRFlDQ1NVcmxqQnVHdFhBa3NITUh1ak8tS1FDY3M2aXFKdmR4SWFyLUtoMG1iV2Q5UlpXYTVfanc5bXJ2S2xVZkVOZ1lhZ3pRYkdVN09jR1E1NlZUYjNYNTYwR0s4OV9aWlptLTZVTkZQaDdxaWJQS3Zjb0Y4TlZXWnl1NVltcF92T1Rad2JPY3djRmtF?oc=5\" target=\"_blank\">India-US Trade Deal Nears Breakthrough as Piyush Goyal, Jamieson Greer Complete",
+        "source": "pragativadi.com",
+        "source_url": "https://pragativadi.com",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbVRPZUk5SUdNXzhYZUJqVEdwZndOcFRmVmNwanNFelBxVHdlRFlDQ1NVcmxqQnVHdFhBa3NITUh1ak8tS1FDY3M2aXFKdmR4SWFyLUtoMG1iV2Q5UlpXYTVfanc5bXJ2S2xVZkVOZ1lhZ3pRYkdVN09jR1E1NlZUYjNYNTYwR0s4OV9aWlptLTZVTkZQaDdxaWJQS3Zjb0Y4TlZXWnl1NVltcF92T1Rad2JPY3djRmtF?oc=5",
+        "published": "2026-06-25T04:13:25+00:00",
+        "published_display": "25 Jun 2026, 04:13 AM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "f8965dc2b01f",
+        "title": "Piyush Goyal to visit UK from 25\u201327 June ahead of India-UK CETA and DCC implementation",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQZUlHMUpPOEZucUw0aW82SWxDVmVMdWVtdjVuLWt0djJrTlJWWDBlaU1hWnRxbDhEOUJmcXUtYTl6ZzhnbkMzS0lyeW9kejFrV043b3pHcWNHalV0ZFFTaHBmT1hTdU1tMDZNSVJ6cmhzS2JOQWw0WWJ5THo2VmpCRXBDeHQ5VTlSUjRaOGI3SjJCLXJDQjNSS2ZZNm1rU3hZeDRqZjUtaTg4M25TUHJqdS04aHA4aHJv?oc=5\" target=\"_blank\">Piyush Goyal to visit UK from 25\u201327 June ahead of India-UK CETA and DCC impleme",
+        "source": "India Shipping News",
+        "source_url": "https://indiashippingnews.com",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQZUlHMUpPOEZucUw0aW82SWxDVmVMdWVtdjVuLWt0djJrTlJWWDBlaU1hWnRxbDhEOUJmcXUtYTl6ZzhnbkMzS0lyeW9kejFrV043b3pHcWNHalV0ZFFTaHBmT1hTdU1tMDZNSVJ6cmhzS2JOQWw0WWJ5THo2VmpCRXBDeHQ5VTlSUjRaOGI3SjJCLXJDQjNSS2ZZNm1rU3hZeDRqZjUtaTg4M25TUHJqdS04aHA4aHJv?oc=5",
+        "published": "2026-06-25T03:38:03+00:00",
+        "published_display": "25 Jun 2026, 03:38 AM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "fe8885c5a4b4",
+        "title": "India-US trade deal near, but key issues still unresolved: Asia Society Policy Institute experts",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMHVIZVR3UHdwZGttMEk5bU1mengxT2xFWURzZGNnRVdITlRKblFmeDdVY1I4eDhVZXJCSm1SZlBqUE9vakh3X2dBcmMxcUhMWHJ2cW9lMzRYS1F5X1pUQVRmME9GdEVzZkwwaU0zdnJLSE9Gc29EY0w0SlY1Q1o2dFFGcS1ZZmFPT3RwY3J6VEtMajZyVDNzMFhJcEM1bGpFSDRrRGNyQ2pDRzRPNndaelExNXNYWC1udDVsZWdVMVI3cU00QmZmY0htaHRuODJNaGVueE8xTWwzNTE1T1E?oc=5\" target=\"_blank\">India-US trade deal near, bu",
+        "source": "ANI News",
+        "source_url": "https://www.aninews.in",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMHVIZVR3UHdwZGttMEk5bU1mengxT2xFWURzZGNnRVdITlRKblFmeDdVY1I4eDhVZXJCSm1SZlBqUE9vakh3X2dBcmMxcUhMWHJ2cW9lMzRYS1F5X1pUQVRmME9GdEVzZkwwaU0zdnJLSE9Gc29EY0w0SlY1Q1o2dFFGcS1ZZmFPT3RwY3J6VEtMajZyVDNzMFhJcEM1bGpFSDRrRGNyQ2pDRzRPNndaelExNXNYWC1udDVsZWdVMVI3cU00QmZmY0htaHRuODJNaGVueE8xTWwzNTE1T1E?oc=5",
+        "published": "2026-06-25T03:18:00+00:00",
+        "published_display": "25 Jun 2026, 03:18 AM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "c4c26b93d9bc",
+        "title": "Piyush Goyal Meets Exporters to Boost FTAs, MSMEs and India\u2019s Export Competitiveness",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxOekM0ZE51V2ZrT1J5WWhqa1lQX3NpRmQ3SDYyX2F4UFA2eEJnb2ZIQnZ4aXMtc1VlRk9uaEpCM3JpdEFCcUpOOWd0N1JxX19TTHhzVHdtMjN3ZHBteU9SQ2xzNkh3dFdkYVpwNURsZkl3THAyaGhpX1B5aWdRWWI4aHpFOUJIdDQ?oc=5\" target=\"_blank\">Piyush Goyal Meets Exporters to Boost FTAs, MSMEs and India\u2019s Export Competitiveness</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Daily Pioneer</font>",
+        "source": "Daily Pioneer",
+        "source_url": "https://dailypioneer.com",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOekM0ZE51V2ZrT1J5WWhqa1lQX3NpRmQ3SDYyX2F4UFA2eEJnb2ZIQnZ4aXMtc1VlRk9uaEpCM3JpdEFCcUpOOWd0N1JxX19TTHhzVHdtMjN3ZHBteU9SQ2xzNkh3dFdkYVpwNURsZkl3THAyaGhpX1B5aWdRWWI4aHpFOUJIdDQ?oc=5",
+        "published": "2026-06-25T03:12:19+00:00",
+        "published_display": "25 Jun 2026, 03:12 AM",
+        "category": "minister",
+        "sentiment_score": 0.6124,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.208,
+          "neu": 0.792,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "8e606bd144b5",
+        "title": "Commerce and Industry Minister Piyush Goyal to visit UK ahead of India-UK CETA implementation",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZDZ4bVUtYlFaMzFBWXliNmFXdXpnMUl1SXlpSHQ1aFJXT0lVTlZoQzNlMUJKWE5uekhnVWJvWWNTVVQtUjU4cGJDcXB3WTlGQW4zSlNfbVEwcVUzY0RuRHFfbTBGX0hfQzdiR1VaaTRSeU92bzlERnh3bVQwcUN0UXVDanhvRUpsakNxSXhSWUhLYWUzZ2J1QzJ4SEJYb1NNcVlrSUxfSE9tQi0xaXNrb2c5eEd4dmhJWldR?oc=5\" target=\"_blank\">Commerce and Industry Minister Piyush Goyal to visit UK ahead of India-UK C",
+        "source": "News On AIR",
+        "source_url": "https://newsonair.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZDZ4bVUtYlFaMzFBWXliNmFXdXpnMUl1SXlpSHQ1aFJXT0lVTlZoQzNlMUJKWE5uekhnVWJvWWNTVVQtUjU4cGJDcXB3WTlGQW4zSlNfbVEwcVUzY0RuRHFfbTBGX0hfQzdiR1VaaTRSeU92bzlERnh3bVQwcUN0UXVDanhvRUpsakNxSXhSWUhLYWUzZ2J1QzJ4SEJYb1NNcVlrSUxfSE9tQi0xaXNrb2c5eEd4dmhJWldR?oc=5",
+        "published": "2026-06-25T02:17:00+00:00",
+        "published_display": "25 Jun 2026, 02:17 AM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "ab571aaf65cd",
+        "title": "Union Minister Piyush Goyal says education as service has significant potential to contribute to India\u2019s export earnings",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3gFBVV95cUxNUFRNcEZBWnMyb3NScUdMSjlVTUFndndFS2xtaGR6RzFVcm5mQ3Yxb1hhUG9YbnJRQmJQNDdPX2xJc2d0b2hIMkJ1T0dhNm1hLUljTnVhY0s2NnYwV3E2bjk0Q0xJVVM5TTM1WUk5ZDZzR1hzTHRSRm9nYmh4eDlJcUVUamFTdXpVWlYtTG05MlZuNW5kMmJQdlNhQjEyX082b09BcWo5aEN1ZEtXZmFCX3c5Q3BtTDdINURYMUNUNVBWb0tBTTYtSlZveU4wQTFmOHNad0NrWEJ3WmtLMFE?oc=5\" target=\"_blank\">Union Minister Piyush Goyal ",
+        "source": "News On AIR",
+        "source_url": "https://newsonair.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNUFRNcEZBWnMyb3NScUdMSjlVTUFndndFS2xtaGR6RzFVcm5mQ3Yxb1hhUG9YbnJRQmJQNDdPX2xJc2d0b2hIMkJ1T0dhNm1hLUljTnVhY0s2NnYwV3E2bjk0Q0xJVVM5TTM1WUk5ZDZzR1hzTHRSRm9nYmh4eDlJcUVUamFTdXpVWlYtTG05MlZuNW5kMmJQdlNhQjEyX082b09BcWo5aEN1ZEtXZmFCX3c5Q3BtTDdINURYMUNUNVBWb0tBTTYtSlZveU4wQTFmOHNad0NrWEJ3WmtLMFE?oc=5",
+        "published": "2026-06-24T23:43:13+00:00",
+        "published_display": "24 Jun 2026, 11:43 PM",
+        "category": "minister",
+        "sentiment_score": 0.2023,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.091,
+          "neu": 0.909,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "e1e59a7e86e2",
+        "title": "US' Jamieson Greer wraps up India visit, no clarity yet on interim deal",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxObWwyOGY3aWhVUlI5TVgtNzg4ckRMallZcGlaMjNTY0dOTmtjZGFQb0NaeEtPMEd4UjZUdHI0UllRU1hMTm5rdUxaNG52dXk2cG9SV2JJU19NcTRyRUEwNXFHb3VHcHBlSnZ4aVBHUDR2bVdadk1zQWo0Ulo1VkN5bTFqeW5Xby1WdVZReHlDTTRZb2d2cmp0VlI3eXR5QUE5YmtNY0o4RUJwNmhvY1BWenJ3?oc=5\" target=\"_blank\">US' Jamieson Greer wraps up India visit, no clarity yet on interim deal</a>&nbsp;&nbsp;",
+        "source": "Deccan Herald",
+        "source_url": "https://www.deccanherald.com",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxObWwyOGY3aWhVUlI5TVgtNzg4ckRMallZcGlaMjNTY0dOTmtjZGFQb0NaeEtPMEd4UjZUdHI0UllRU1hMTm5rdUxaNG52dXk2cG9SV2JJU19NcTRyRUEwNXFHb3VHcHBlSnZ4aVBHUDR2bVdadk1zQWo0Ulo1VkN5bTFqeW5Xby1WdVZReHlDTTRZb2d2cmp0VlI3eXR5QUE5YmtNY0o4RUJwNmhvY1BWenJ3?oc=5",
+        "published": "2026-06-24T23:16:15+00:00",
+        "published_display": "24 Jun 2026, 11:16 PM",
+        "category": "minister",
+        "sentiment_score": -0.3089,
+        "sentiment_label": "negative",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 0.869,
+          "neg": 0.131
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "f120843e87a2",
+        "title": "Commerce Minister Goyal to travel to U.K. to review preparedness for rollout of trade deal",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi5AFBVV95cUxNSGhmSDFzaE85WUU2QS01YnVuSzNzd2RkZ25hd2RTaThNRmpzNnctazZ4emhESlJwY01iUVFfS2RUaHhad2E4TGI0M0VDV2FfdG85WldZQklBWnFYQmJ1VFpUcVdIdWc2Z2VYT2xFS1hNRWItVzg2RXFySXp2bDBjWkF3ZVhmc2hONnEyUDNqYXUxNFRGUmtmRjAtd3lUanExR1l4a2NYcV9na3RrUk45OHR5TEwxbEdpWWM3SDgwWEt3bFFic05yeHRpUDVGRmpFbmJKRk0tbkdzTGpKbC0xR1p2TkLSAesBQVVfeXFMTjBtWWRfeVFOamJiVTludUdZT21fWT",
+        "source": "The Hindu",
+        "source_url": "https://www.thehindu.com",
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNSGhmSDFzaE85WUU2QS01YnVuSzNzd2RkZ25hd2RTaThNRmpzNnctazZ4emhESlJwY01iUVFfS2RUaHhad2E4TGI0M0VDV2FfdG85WldZQklBWnFYQmJ1VFpUcVdIdWc2Z2VYT2xFS1hNRWItVzg2RXFySXp2bDBjWkF3ZVhmc2hONnEyUDNqYXUxNFRGUmtmRjAtd3lUanExR1l4a2NYcV9na3RrUk45OHR5TEwxbEdpWWM3SDgwWEt3bFFic05yeHRpUDVGRmpFbmJKRk0tbkdzTGpKbC0xR1p2TkLSAesBQVVfeXFMTjBtWWRfeVFOamJiVTludUdZT21fWTh1OUo4Y041REpQRldBNWFNWDhheGxLS0x2NW5wc3Y2aHJKcFpPYXhVZ2M3QTBqOGxQUnkxUEdaOGxieGNDREFmUTlZNmgzcWtNMUtDUWM3OVNhMTNrYm0tc2FhZUVSMzlnRWdQRDduTFBFS1p2YkhUYnRvS3pWYUMwS08wU3RfVFRYZ1E2R2h5MzNYNHBqclBmYjAyLUNSd1NiTE1mUUlONjVaeV9ocXNFdWNVY0htb3pQbTFVeC0zRXZya2p6SUdGSVNkeTFVaEl5Q0pKRQ?oc=5",
+        "published": "2026-06-24T21:48:13+00:00",
+        "published_display": "24 Jun 2026, 09:48 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "d1738cd70099",
+        "title": "Commerce Minister Piyush Goyal calls for taking India\u2019s exports to one trillion US Dollar this year",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxONmtDU0FyY0V2aEdnX0ZQR0ZXQ2U4VU1RcUJiMURyT2xlMWQtckVCOXpaNExIWXlWWDh3bWN5X3RoVGVab2wwN3hXZlF4YW5oRFlLbDdmMExEemdkMkxVQ1pGb0IzZG56N19naDZuYTBBOF9QVkwtNlpRNFFob3BXRXBhNHZNNE8yWllrRFN1dEtSWEtob0ZENjluNnlZRWtuUGZ5T3ViTjB0VWliYldJSllVbWVlazQza0VaeFhiOS10cUpxOXZ4N2dySU9Ub19fTTNhYk03VQ?oc=5\" target=\"_blank\">Commerce Minister Piyush Goyal calls ",
+        "source": "News On AIR",
+        "source_url": "https://newsonair.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxONmtDU0FyY0V2aEdnX0ZQR0ZXQ2U4VU1RcUJiMURyT2xlMWQtckVCOXpaNExIWXlWWDh3bWN5X3RoVGVab2wwN3hXZlF4YW5oRFlLbDdmMExEemdkMkxVQ1pGb0IzZG56N19naDZuYTBBOF9QVkwtNlpRNFFob3BXRXBhNHZNNE8yWllrRFN1dEtSWEtob0ZENjluNnlZRWtuUGZ5T3ViTjB0VWliYldJSllVbWVlazQza0VaeFhiOS10cUpxOXZ4N2dySU9Ub19fTTNhYk03VQ?oc=5",
+        "published": "2026-06-24T19:20:18+00:00",
+        "published_display": "24 Jun 2026, 07:20 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "93305958b06a",
+        "title": "Commerce Minister Goyal reviews strategies for advancing India\u2019s export ecosystem",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQbU93TXE5X1ctMmxwMjVVVUhoa0lQeS1vTE0xX3BicGdiYWlDZVpINFV4SHFCOFUwdmp6YWFnNUJmZU0wcHlrZWpBWjJkUmg2bFpmRU5wS2g5bjVlbW5hU21WTDhWNlJFeWxmSVhwUThCenNLaVFiTnpBVDlRa1BiaGRiVGQ0bmdZMUYwOV9nNzYwckhqaElyODB4VTdrdl9rX1NGZlgwYXNHbkg2?oc=5\" target=\"_blank\">Commerce Minister Goyal reviews strategies for advancing India\u2019s export ecosystem</a>&nbsp;&nbs",
+        "source": "The Indian Awaaz",
+        "source_url": "https://theindianawaaz.com",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbU93TXE5X1ctMmxwMjVVVUhoa0lQeS1vTE0xX3BicGdiYWlDZVpINFV4SHFCOFUwdmp6YWFnNUJmZU0wcHlrZWpBWjJkUmg2bFpmRU5wS2g5bjVlbW5hU21WTDhWNlJFeWxmSVhwUThCenNLaVFiTnpBVDlRa1BiaGRiVGQ0bmdZMUYwOV9nNzYwckhqaElyODB4VTdrdl9rX1NGZlgwYXNHbkg2?oc=5",
+        "published": "2026-06-24T19:12:00+00:00",
+        "published_display": "24 Jun 2026, 07:12 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "aca9085eaa69",
+        "title": "Goyal heads to UK ahead of India-UK trade pact rollout",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxNTmplY3l6WXREZHJia2YxSWJreC10amZuOWF2aEktX0dvdVVJWVY4TldxMWc1emlENDdzOFN2SjN6QUlUdnlyanNzTGN1SkZuZ280U0ZWMTlXZmFtU3lDZk9jQkNvX3NxRmVILTgyeGZIcjNjOTMyYW1vUlp0TGtYa19ycEJiY2pFY2tDR29ZekE0VU05dmlIZy1GNVZmblpHZk5FdVJUeFVmSFg4VVdscVdqOGR0N3NRX1VRWUZNSl9jYW5OdEJ3aENoZUotZ0Va0gHWAUFVX3lxTE93S0d3S2huQ0hnN1EzNi1Rcm9VUkpjMUVHNUo1djN4dGNCNWtUQzdRTm",
+        "source": "The Economic Times",
+        "source_url": "https://m.economictimes.com",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNTmplY3l6WXREZHJia2YxSWJreC10amZuOWF2aEktX0dvdVVJWVY4TldxMWc1emlENDdzOFN2SjN6QUlUdnlyanNzTGN1SkZuZ280U0ZWMTlXZmFtU3lDZk9jQkNvX3NxRmVILTgyeGZIcjNjOTMyYW1vUlp0TGtYa19ycEJiY2pFY2tDR29ZekE0VU05dmlIZy1GNVZmblpHZk5FdVJUeFVmSFg4VVdscVdqOGR0N3NRX1VRWUZNSl9jYW5OdEJ3aENoZUotZ0Va0gHWAUFVX3lxTE93S0d3S2huQ0hnN1EzNi1Rcm9VUkpjMUVHNUo1djN4dGNCNWtUQzdRTmQyR2xoSE9vQm1qalQyaVp6akNzREljb2h0NzFfeVNiV1BfSC1yYUQ0SHZMQ0loZzFiTGtPWG5hMWJBLW5UVEtvMllCV2RudnFYZ0FXVjNOYnEta1hDNXRUbFgxOVBLZ1plLVdmTVo3WU1Oc01Ib2tLRV9MUVQzcHFDNzd3UHpJQ21tQllmeGpFUFNCNHhybEFhSGdGdzRXTUoxd3V6aC1qQmVweEE?oc=5",
+        "published": "2026-06-24T18:50:11+00:00",
+        "published_display": "24 Jun 2026, 06:50 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "bc6c516f45fa",
+        "title": "Union Minister Piyush Goyal holds consultation meeting with all stakeholder Ministries | Akashvani News",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQNW1XQXlucHhKN3FHVUZZb2Nnb2NnY3o0QW05R2V1blFkNlhqb09NelRHbTU0OVRKSlppUzlqcmVpOHMzU09mNjcwWVFzVjdCd1I0Vmg2SHJ1RHU1OUUzZnBxaFVweEo1RmRILV9IR0J0dVB1cW0zbU9tYjlhdnFOZEVjVU1mMWJKTkxXZG5rTUo1cDhSU1JKUmdwQnJZWThVbzFOcTVIUlJKYnR2QXNZTzNR?oc=5\" target=\"_blank\">Union Minister Piyush Goyal holds consultation meeting with all stakeholder Ministries ",
+        "source": "News On AIR",
+        "source_url": "https://newsonair.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQNW1XQXlucHhKN3FHVUZZb2Nnb2NnY3o0QW05R2V1blFkNlhqb09NelRHbTU0OVRKSlppUzlqcmVpOHMzU09mNjcwWVFzVjdCd1I0Vmg2SHJ1RHU1OUUzZnBxaFVweEo1RmRILV9IR0J0dVB1cW0zbU9tYjlhdnFOZEVjVU1mMWJKTkxXZG5rTUo1cDhSU1JKUmdwQnJZWThVbzFOcTVIUlJKYnR2QXNZTzNR?oc=5",
+        "published": "2026-06-24T18:14:26+00:00",
+        "published_display": "24 Jun 2026, 06:14 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "70f1ebc36396",
+        "title": "India, US review trade talks but no clarity on interim agreement ahead of tariff deadline",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQZy03Si1vS0N6cDU1VXRNbE9pR3AyVGF3SVBNcjJzVVFhWE8xdWcwbGpseFRNTWY3b3cwajBDdlhLb3V6c1dOQi1xTmg4eE5nbEUxLTBQb1hEY1VrcjZPenJOWk8tX3lSbThrU1JzQ3lWcTBtLURFVGJGaXl3dnpwZFRaQUlEbjloT1dBcE0tSnkyWDU1aG90dndmUzVZNUxhYXhJN21wOXZFZ2RtSEVkMlU0QzY1Zw?oc=5\" target=\"_blank\">India, US review trade talks but no clarity on interim agreement ahead of tariff ",
+        "source": "Telangana Today",
+        "source_url": "https://telanganatoday.com",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQZy03Si1vS0N6cDU1VXRNbE9pR3AyVGF3SVBNcjJzVVFhWE8xdWcwbGpseFRNTWY3b3cwajBDdlhLb3V6c1dOQi1xTmg4eE5nbEUxLTBQb1hEY1VrcjZPenJOWk8tX3lSbThrU1JzQ3lWcTBtLURFVGJGaXl3dnpwZFRaQUlEbjloT1dBcE0tSnkyWDU1aG90dndmUzVZNUxhYXhJN21wOXZFZ2RtSEVkMlU0QzY1Zw?oc=5",
+        "published": "2026-06-24T17:49:53+00:00",
+        "published_display": "24 Jun 2026, 05:49 PM",
+        "category": "minister",
+        "sentiment_score": 0.3427,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.194,
+          "neu": 0.676,
+          "neg": 0.13
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "7911172e5e37",
+        "title": "Union Minister Piyush Goyal Calls for Stronger IP Ecosystem",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxPU05PMkxjZmhGcHQ3b01sV1h2RDFpTk1lV1k0NXVIc2dWNnBleU5qN1FyNThtZ2xrZUJTREp5N2g4WGhqX2N2bldFekhJV0p4NFlBVDFTd2M2cXl4SWEyOWY0M3ktVTg3UU41SllDOHFCNk5Mc28weC1wMVV1VUlDdDgyYU1ZZTR5U2VQSXpB?oc=5\" target=\"_blank\">Union Minister Piyush Goyal Calls for Stronger IP Ecosystem</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">News On AIR</font>",
+        "source": "News On AIR",
+        "source_url": "https://newsonair.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPU05PMkxjZmhGcHQ3b01sV1h2RDFpTk1lV1k0NXVIc2dWNnBleU5qN1FyNThtZ2xrZUJTREp5N2g4WGhqX2N2bldFekhJV0p4NFlBVDFTd2M2cXl4SWEyOWY0M3ktVTg3UU41SllDOHFCNk5Mc28weC1wMVV1VUlDdDgyYU1ZZTR5U2VQSXpB?oc=5",
+        "published": "2026-06-24T17:27:23+00:00",
+        "published_display": "24 Jun 2026, 05:27 PM",
+        "category": "minister",
+        "sentiment_score": 0.3818,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.14,
+          "neu": 0.86,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "1e3912c59ddc",
+        "title": "Union Minister Piyush Goyal holds talks with UK MPs on economic growth, innovation",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSTg1LWhlYldUazVJNmM5dGtTTDVBa3BFdnNNeEZRX2F4UHFGR3lvRG50emFyLUd6eE9lQm0xdTBGT1duSnBSM2tkam00dkdKT3JIME5IUU5WVzluQ0lSa1lHWUcyWWtpTUNCS01Zb0sxSWE0M05XbFNGRlpIOVVtWXZvb3JnS09UMm5CZFVRYzBBckNFYTNGMG5kOFZ1TGdfb1BNcnY5TDNhMlE?oc=5\" target=\"_blank\">Union Minister Piyush Goyal holds talks with UK MPs on economic growth, innovation</a>&nbsp;&nbs",
+        "source": "News On AIR",
+        "source_url": "https://newsonair.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSTg1LWhlYldUazVJNmM5dGtTTDVBa3BFdnNNeEZRX2F4UHFGR3lvRG50emFyLUd6eE9lQm0xdTBGT1duSnBSM2tkam00dkdKT3JIME5IUU5WVzluQ0lSa1lHWUcyWWtpTUNCS01Zb0sxSWE0M05XbFNGRlpIOVVtWXZvb3JnS09UMm5CZFVRYzBBckNFYTNGMG5kOFZ1TGdfb1BNcnY5TDNhMlE?oc=5",
+        "published": "2026-06-24T17:26:42+00:00",
+        "published_display": "24 Jun 2026, 05:26 PM",
+        "category": "minister",
+        "sentiment_score": 0.5574,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.247,
+          "neu": 0.753,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "021e5d52de4e",
+        "title": "News On AIR | June 23, 2026 9:11 AM",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi9wFBVV95cUxNdGhBQVRqcEtSbTdUaThQcVNkWGpfbVEwdWd4cEJ6ME1ZT0xPaGo2VUYwbUhOdFNLZEx3ZlVjRVI3MXJMZGlGZWpiVHkxeGF3a1QzQjQxODF5clUzMGFxSVFVZlNwWVBCcS0teUZJT19HYkZxejFFblZrYXF3elZDRXQwOWozT3h1VFdTSTlNTHRIWGZwWTJVQW92TElTNzgyUUNyd3ppTkxFcy1BV090blI4TlYyN0VOYjA2dWFsdGNIZlBVenE2ZnpWV2NDRHN5YWotbVBMXzRjM1pPUnlYSWNRSm4zZUdQcFEtUGgxc054SXNkcmEw?oc=5\" target=\"_bl",
+        "source": "News On AIR",
+        "source_url": "https://newsonair.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNdGhBQVRqcEtSbTdUaThQcVNkWGpfbVEwdWd4cEJ6ME1ZT0xPaGo2VUYwbUhOdFNLZEx3ZlVjRVI3MXJMZGlGZWpiVHkxeGF3a1QzQjQxODF5clUzMGFxSVFVZlNwWVBCcS0teUZJT19HYkZxejFFblZrYXF3elZDRXQwOWozT3h1VFdTSTlNTHRIWGZwWTJVQW92TElTNzgyUUNyd3ppTkxFcy1BV090blI4TlYyN0VOYjA2dWFsdGNIZlBVenE2ZnpWV2NDRHN5YWotbVBMXzRjM1pPUnlYSWNRSm4zZUdQcFEtUGgxc054SXNkcmEw?oc=5",
+        "published": "2026-06-24T17:25:19+00:00",
+        "published_display": "24 Jun 2026, 05:25 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "d38503f3ea03",
+        "title": "Union Minister Piyush Goyal says, Zero defect, zero effect & equal opportunity for all are key pillars of country\u2019s growth story | Akashvani News",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi4wFBVV95cUxPUWplVXZUYlpwWW1uRmdvQjR4T3JPalRtSm1EVHh1cnFhWlhlWEtxdm94VFhXcjkzT1VPMFpqQVNBQ2hXdTZzLWYwS3o4OFFud2lhbFB1ZmVZeVoxX0hEaGVGU1NELVNBeGtIenBSOUhKZVdlZk5mX3BtQXZqempkR0VlYVRQZ2tfajgwbGU0eGtVaTEtekVEYUdNcGxOUFlVb25lTTZJR3ZTV1RjN3RkMGZkMWRHNzVmVTNxRm1BMjVWNHBRVFRMd3gzeHhjRURIbzJEWFFhUnMyNlhMYWhvclF1SQ?oc=5\" target=\"_blank\">Union Minister Piyush",
+        "source": "News On AIR",
+        "source_url": "https://newsonair.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPUWplVXZUYlpwWW1uRmdvQjR4T3JPalRtSm1EVHh1cnFhWlhlWEtxdm94VFhXcjkzT1VPMFpqQVNBQ2hXdTZzLWYwS3o4OFFud2lhbFB1ZmVZeVoxX0hEaGVGU1NELVNBeGtIenBSOUhKZVdlZk5mX3BtQXZqempkR0VlYVRQZ2tfajgwbGU0eGtVaTEtekVEYUdNcGxOUFlVb25lTTZJR3ZTV1RjN3RkMGZkMWRHNzVmVTNxRm1BMjVWNHBRVFRMd3gzeHhjRURIbzJEWFFhUnMyNlhMYWhvclF1SQ?oc=5",
+        "published": "2026-06-24T16:44:09+00:00",
+        "published_display": "24 Jun 2026, 04:44 PM",
+        "category": "minister",
+        "sentiment_score": 0.34,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.159,
+          "neu": 0.762,
+          "neg": 0.079
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "342764b484ba",
+        "title": "Goyal meets exporters to discuss ways to boost shipments, leverage FTAs",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRjFEd1R2SXliVXV1Qy1SaTVpb3JyYkdhQzJYTEdZaXJMSGI3anlGRmZZVldrZTZ3OVhobGdUa2VQbzAzUGxYckhnSEdwMGNJQlUyUjFlQXBlMnFkLXpfdV9WQW1neW9NZXhjNUlDV0oxVjMzUWQyRFU5WUd2R2x6dFh6dkt4NnlWZjRmYUo5NVRXczJBQkkycUJ0ZktnVUoybjJUQUQ3eHo5M2RHVmE4OGVNR0VpQVVjbmprYVpBdksyOFppd1I2anRoZDVLZjBSc3lyT2RlUlB3Zk80a3NTTjExSjdad9IB6wFBVV95cUxNZ1Nvc0Q5aE5feXotbnFHQmZCTz",
+        "source": "The Economic Times",
+        "source_url": "https://m.economictimes.com",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRjFEd1R2SXliVXV1Qy1SaTVpb3JyYkdhQzJYTEdZaXJMSGI3anlGRmZZVldrZTZ3OVhobGdUa2VQbzAzUGxYckhnSEdwMGNJQlUyUjFlQXBlMnFkLXpfdV9WQW1neW9NZXhjNUlDV0oxVjMzUWQyRFU5WUd2R2x6dFh6dkt4NnlWZjRmYUo5NVRXczJBQkkycUJ0ZktnVUoybjJUQUQ3eHo5M2RHVmE4OGVNR0VpQVVjbmprYVpBdksyOFppd1I2anRoZDVLZjBSc3lyT2RlUlB3Zk80a3NTTjExSjdad9IB6wFBVV95cUxNZ1Nvc0Q5aE5feXotbnFHQmZCTzlvaUFYa3VnT0NPdElweTVENVRYc1E5MXlGVUhJQ1Y5X3MzMUFQMEdueF9nN2ZSNEhCb3NRc0hRdlljbElSZF9wSGJob1RLZENadjdTdnl3NV9TX3c4TGplMVloQy0wNkttR3dkZzl6NWFSdkNhcm1sZ205aVgya3lxY2tUNWFXVE02VmZXS2QtYVBmMDkwaVhDYnhMUzItSjdHUU8zYzVxVzRZWWJYQS1xQWItMFZsY1lRNjVKdld2QWhZQ2RBR25DaFZuTGlyR0RnTEw3bzQ4?oc=5",
+        "published": "2026-06-24T16:43:04+00:00",
+        "published_display": "24 Jun 2026, 04:43 PM",
+        "category": "minister",
+        "sentiment_score": 0.3612,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.172,
+          "neu": 0.828,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "638a2a8ea819",
+        "title": "India, US Wrap Up Two-Day Talks On Bilateral Trade Agreement",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOcmJDYnp1YlV4cmNOZUV4MVF4STh3YURhTXhmcTBiZFgwd3p5aFVrdVR5bFdJQ1BTNGgzY015bFpfUEcwSTFLYjFQSHlMbl9aT25TYVF4TXZCMFh2ano3c0NIWTdoNldfN2lEZjJ0MFpNM0VVdDN4MEt6MzVoNnBqcXZvUEJ1M24ydVlKS203MlNyZGRzYjhIRnlVbDRKR3lGdHfSAaoBQVVfeXFMTWliT09vQ0gwbUxMTGhVUWNvN2dtdjJMa3pkZUkwWE1FRkNNVjNUcWM0eUJCdkNIbnB1TTNSWEFvczhOMmp3V2ljbEplVzRzNWtEdWpkQjJtc1ZRM241ZE",
+        "source": "NDTV",
+        "source_url": "https://www.ndtv.com",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOcmJDYnp1YlV4cmNOZUV4MVF4STh3YURhTXhmcTBiZFgwd3p5aFVrdVR5bFdJQ1BTNGgzY015bFpfUEcwSTFLYjFQSHlMbl9aT25TYVF4TXZCMFh2ano3c0NIWTdoNldfN2lEZjJ0MFpNM0VVdDN4MEt6MzVoNnBqcXZvUEJ1M24ydVlKS203MlNyZGRzYjhIRnlVbDRKR3lGdHfSAaoBQVVfeXFMTWliT09vQ0gwbUxMTGhVUWNvN2dtdjJMa3pkZUkwWE1FRkNNVjNUcWM0eUJCdkNIbnB1TTNSWEFvczhOMmp3V2ljbEplVzRzNWtEdWpkQjJtc1ZRM241ZE83b245dnVZN21idVJNV1hyR2pMWDZ0OWx1U3lTLXlkOTM5dXBjdDhLT21zbUYwb1VwdnNLWnhrVmpwNkpnR2VnZHR2TDlkZ3FyN1E?oc=5",
+        "published": "2026-06-24T16:27:47+00:00",
+        "published_display": "24 Jun 2026, 04:27 PM",
+        "category": "minister",
+        "sentiment_score": 0.4939,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.225,
+          "neu": 0.775,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "fc511f766b86",
+        "title": "Union Minister Goyal reviews strategies for advancing India\u2019s export ecosystem",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxORGY4ZERqWWdtSFJ3VnlzdzdKVE56VUxQQTR0UGNSZGMtYjZSLXc3cGlkcEp0clpiNTZ6ZUpoTkZjVnJTZmVHSlVlN0FORWdJNWNqU2N3WnNmejZnTVk3UVRMMkZfM0NmeVdVR1Q3enRkYk93TzloNnhGTXBFSDVVQjlMbFdoU0FET2lXejIwMU5LcmZnLUtxYmhCakFFZnk2QnZOZExB?oc=5\" target=\"_blank\">Union Minister Goyal reviews strategies for advancing India\u2019s export ecosystem</a>&nbsp;&nbsp;<font col",
+        "source": "News On AIR",
+        "source_url": "https://newsonair.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxORGY4ZERqWWdtSFJ3VnlzdzdKVE56VUxQQTR0UGNSZGMtYjZSLXc3cGlkcEp0clpiNTZ6ZUpoTkZjVnJTZmVHSlVlN0FORWdJNWNqU2N3WnNmejZnTVk3UVRMMkZfM0NmeVdVR1Q3enRkYk93TzloNnhGTXBFSDVVQjlMbFdoU0FET2lXejIwMU5LcmZnLUtxYmhCakFFZnk2QnZOZExB?oc=5",
+        "published": "2026-06-24T16:10:00+00:00",
+        "published_display": "24 Jun 2026, 04:10 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "f68e46bbdcb2",
+        "title": "Piyush Goyal to visit UK ahead of July 15 deadline to implement trade pact | India News",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxOd21GTDZnX1hWc3owdWt3b25EUlVzc2Z1LUNxR243dXNyOHI4LVVIWGgwT18zUDJIbjBqRG1sb2RJd1pjZVpzTjJYWmFETWZGUm9vVlR6X2s1V2xLcjlQcjdtaGZscjdQT05YNmFFSEdmY3VkWW9GU05iQjVYX3p4MG5FOUlsc1JSSkh5TUhKV2twamZUTkFXOW1rWFRQVEtVZmMtR3Q0N0MtdUtrQmFISkhSYjVqQXZHeG56S1YyRWJRMkxFV0NzUG5hazRMbHJXMWt30gHYAUFVX3lxTFA3UUdqOW5JbjlaSkNaRG1RZTNTdnlaRjZUSlhjR3N5bGxMQUtnZV",
+        "source": "Hindustan Times",
+        "source_url": "https://www.hindustantimes.com",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOd21GTDZnX1hWc3owdWt3b25EUlVzc2Z1LUNxR243dXNyOHI4LVVIWGgwT18zUDJIbjBqRG1sb2RJd1pjZVpzTjJYWmFETWZGUm9vVlR6X2s1V2xLcjlQcjdtaGZscjdQT05YNmFFSEdmY3VkWW9GU05iQjVYX3p4MG5FOUlsc1JSSkh5TUhKV2twamZUTkFXOW1rWFRQVEtVZmMtR3Q0N0MtdUtrQmFISkhSYjVqQXZHeG56S1YyRWJRMkxFV0NzUG5hazRMbHJXMWt30gHYAUFVX3lxTFA3UUdqOW5JbjlaSkNaRG1RZTNTdnlaRjZUSlhjR3N5bGxMQUtnZVJLd3MxOTlCX29DQ25LNHB1SWZVbFlIWG9iRWpDblM4TEJRelhJNG5JU2liOVg4S0RYMU9IZ2lEZi1wanF1VWFYRjk5QXhiS3FUVlpHUE13RUx2bTloX0lFVDZvRzd4QWNaU29aa3hQYUMxdXlpMzVodkJ0eWVsd2hlRU5QVU1kcWg0cXFGRi1yeFVHS0MtSDJQOEVUWGZJV3hvWWUtVEpER3pnbTFTZ21TaQ?oc=5",
+        "published": "2026-06-24T16:03:32+00:00",
+        "published_display": "24 Jun 2026, 04:03 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "ed4748517862",
+        "title": "Piyush Goyal to visit UK from 25-27 June to finalize trade deal",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMk93bDc5N3RrSkQ2QVRqMzVDQm9DYTUzVGZJRWVzYUtyUzVEN1NrTUNjankzRkNXOXFBcjFCVjhTZXo1VTN3MnBJNFllcUtzNG9QYTBLMkNDOGFtTEQyRUFXOHpWcmlEYlNzOVRfMGFPVmF2TndjRmRtS2ZCZ0NVSXJYVTVFNHpjSURhdFJIejJiYWRsbWlKVlpzZi1zem1KNmszMl9oN2NPWG9IbjBYbmRnUzN5YzMtczJR0gHAAUFVX3lxTE5LOTZ4d1pZeUtQdHRnaG44VVhCaFhFbHlqeFRNbHpWaHdHUlRvMEJXNU5tNjlLNEVSaTBPOG1lZDVoTFRUM3",
+        "source": "Mint",
+        "source_url": "https://www.livemint.com",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMk93bDc5N3RrSkQ2QVRqMzVDQm9DYTUzVGZJRWVzYUtyUzVEN1NrTUNjankzRkNXOXFBcjFCVjhTZXo1VTN3MnBJNFllcUtzNG9QYTBLMkNDOGFtTEQyRUFXOHpWcmlEYlNzOVRfMGFPVmF2TndjRmRtS2ZCZ0NVSXJYVTVFNHpjSURhdFJIejJiYWRsbWlKVlpzZi1zem1KNmszMl9oN2NPWG9IbjBYbmRnUzN5YzMtczJR0gHAAUFVX3lxTE5LOTZ4d1pZeUtQdHRnaG44VVhCaFhFbHlqeFRNbHpWaHdHUlRvMEJXNU5tNjlLNEVSaTBPOG1lZDVoTFRUM3VMLVE0Z0ZsUnJJbDZROHdCbGpSMlJyNWUyRVRsb0NUUUdhbVNDbzNsc28tSWdpbmZQcmxTNURiR1ZnUm1wUTNiZDk2LVFSZEV2bGZvdnhiNU9uMnhzTThORDJoYWszRlk4QTJHMDlmcS02Sjh4ZmoyYUd0XzZMVTR0Mg?oc=5",
+        "published": "2026-06-24T15:03:45+00:00",
+        "published_display": "24 Jun 2026, 03:03 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "644098aed42a",
+        "title": "Piyush Goyal set to visit UK ahead of India-UK trade deal, DCC implementation",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNOXZZYVdLUWlwQk9oM1JDNjlDQ0l3LUZBOWkyZ3dmY09vSUhZNUZmV282YWVMWW1DMThlUTF4aXZGVS05S1NvZmh6eVo1XzVrVmV5WllXS1lBSTdLbzBpN1YwSmFZTmljRk5YT3VBYWFVcENrcjd1VjZaOTVxU3Q4Z2pHVDhkVXNBNnJnVDlOcVBid0FMb2JSVFBZMVV1YmgwazR0dHgxc08wUDhmLUVDRi1TMDNNR3VUWnl6c9IBwAFBVV95cUxQb0ZmSDdoSnFiZEdvZU9qN2xSblY2UmRfY1k5d2tnOFVia1RtaVFia3hreW1XdGJqSmVKLThiT2JhSFp0dF",
+        "source": "The Tribune",
+        "source_url": "https://www.tribuneindia.com",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNOXZZYVdLUWlwQk9oM1JDNjlDQ0l3LUZBOWkyZ3dmY09vSUhZNUZmV282YWVMWW1DMThlUTF4aXZGVS05S1NvZmh6eVo1XzVrVmV5WllXS1lBSTdLbzBpN1YwSmFZTmljRk5YT3VBYWFVcENrcjd1VjZaOTVxU3Q4Z2pHVDhkVXNBNnJnVDlOcVBid0FMb2JSVFBZMVV1YmgwazR0dHgxc08wUDhmLUVDRi1TMDNNR3VUWnl6c9IBwAFBVV95cUxQb0ZmSDdoSnFiZEdvZU9qN2xSblY2UmRfY1k5d2tnOFVia1RtaVFia3hreW1XdGJqSmVKLThiT2JhSFp0dFFrTk1MSlI2VGtUeGFkWUJtSVFMVWFoSS1UT01ObFByeGUtZVdzTW5sY1R6ZWpqOTJrOHlOa1pzUnJTdk5qT1R2RGlBZ2VhUmREa3ExcTJpNHFVY0UxRnVNNU42TFM2YWZ1MjFvckFsbjhlbXlHeDN0YzFsVE9oMGVxdkI?oc=5",
+        "published": "2026-06-24T14:56:52+00:00",
+        "published_display": "24 Jun 2026, 02:56 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "cca186b363b1",
+        "title": "Dr. Sureshkumar Madhusudhanan joins FICCI delegation to UK led by Union Minister Piyush Goyal",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxNNkx1UWRyOVBiZ2FaU2R5SVFCSXFZQURTUUxlTXVXeWk0bmJSTlM4UjhCampVOFBfQU5NclhkMS1sVS1RQVVnb3p6R3M4YjVKVHBnQ0NjekltVy1yb0JGZU5BU2o2V1BfNzBOWm90V056b0tLNzA5cU9OTXdSNEJwQ29LcDBsaHRDUW5vdjZTblVnVjNWTHRta21scE56Y0pCblJ2Ql8wdWw2OHdCUEl3dmJLckZITDBtNVM5UjdkNHlSZy1vTVpqeUtYTE9pZFhUcTJF0gHgAUFVX3lxTE5yaFpTWmtwejFBanEyYzRnaVBCOVc0dDJvbDBlVFdRbG94SGVnYW",
+        "source": "Metro Vaartha",
+        "source_url": "https://english.metrovaartha.com",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNNkx1UWRyOVBiZ2FaU2R5SVFCSXFZQURTUUxlTXVXeWk0bmJSTlM4UjhCampVOFBfQU5NclhkMS1sVS1RQVVnb3p6R3M4YjVKVHBnQ0NjekltVy1yb0JGZU5BU2o2V1BfNzBOWm90V056b0tLNzA5cU9OTXdSNEJwQ29LcDBsaHRDUW5vdjZTblVnVjNWTHRta21scE56Y0pCblJ2Ql8wdWw2OHdCUEl3dmJLckZITDBtNVM5UjdkNHlSZy1vTVpqeUtYTE9pZFhUcTJF0gHgAUFVX3lxTE5yaFpTWmtwejFBanEyYzRnaVBCOVc0dDJvbDBlVFdRbG94SGVnYWZQU1M2cHlabXdLUUZpQ2EwV3dfaFcwenp1Y3Z2aHRJVXRwRnJNaVNSRDViUDZfOHEzSzQ1T0M0YnVBdkt6bExUclFlOTMxYmNQeS1TQm5pWm1Pd0tLRkNhbHg3a0dxSjk1eTQ0Tmpldk1CbG5USU1HR2pGZTNicVVmalhCZEt3RUZyaWkyeEFoVTdTYVJ1MXFmeG53NTNqZ09jVktnODNOZjdfNFlKT0w5cUtFbVZxd3VQ?oc=5",
+        "published": "2026-06-24T14:48:45+00:00",
+        "published_display": "24 Jun 2026, 02:48 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "0c26a732d0b0",
+        "title": "Trump-Modi \u2018Amazing Relationship\u2019 Driving Stronger US-India Economic Ties: US Trade Representative",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOejJFSEVvTVNROHNnUWJPVVBJdTItbWNhV2RkZTZCV1lKOXphY0VZd05kY2JOeFA4YmNuS2x3eEVPalNzN2h6RV9lbl85UE43aklLUDE5TDItNVdoOW9MU1NyeUhwRnpVNkhaSU84WkthYXAwVmdYcnhQNmtiOUVHNWpoS2c5bjhWeHM0UFNyWXd1Ni1FN3pfNk5EODlHVG9nSk5IWTFRTUdmcFNKeGN1aGVCMlRPYnNMeHF2OU1nVm5mXzhkU0R6ag?oc=5\" target=\"_blank\">Trump-Modi \u2018Amazing Relationship\u2019 Driving Stronger US-Ind",
+        "source": "Open Magazine",
+        "source_url": "https://openthemagazine.com",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOejJFSEVvTVNROHNnUWJPVVBJdTItbWNhV2RkZTZCV1lKOXphY0VZd05kY2JOeFA4YmNuS2x3eEVPalNzN2h6RV9lbl85UE43aklLUDE5TDItNVdoOW9MU1NyeUhwRnpVNkhaSU84WkthYXAwVmdYcnhQNmtiOUVHNWpoS2c5bjhWeHM0UFNyWXd1Ni1FN3pfNk5EODlHVG9nSk5IWTFRTUdmcFNKeGN1aGVCMlRPYnNMeHF2OU1nVm5mXzhkU0R6ag?oc=5",
+        "published": "2026-06-24T14:34:09+00:00",
+        "published_display": "24 Jun 2026, 02:34 PM",
+        "category": "minister",
+        "sentiment_score": 0.3818,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.178,
+          "neu": 0.822,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "42df311e2bb4",
+        "title": "No breakthrough in India-US interim trade deal talks after Greer-Goyal meeting",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxQTS1sM21iRWdyaTdZd0hkYm4wNmZJTkpUYmJpYjVSbXFaVDVmQmYwSDhXZHlpZDFlM0c1d1RuWVYzX2xzbkZ4VTJFSldZWDh5UHMxYnk4TnRicmVGM3FLRWNlamY4SnhMTHpLV3NqdmRFbkN0RW0zUEdBcGFjdUc3bTkxaVM2VzhZMkJlZFdVM3l4eUtCSXpXTjFTMnZTVWhkYmstZFNsQzc4Uml2UEkwLWxnQ3FUREVMU0NWWlg1REFDa09FVEZMRkFjdTE4ZEFqNW1wTVJrMzM3YnPSAeIBQVVfeXFMTVRwSWpXNnN5T2RMTmNMSkhzb0V6RDZybG9IbkQ5d0",
+        "source": "BusinessLine",
+        "source_url": "https://www.thehindubusinessline.com",
+        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQTS1sM21iRWdyaTdZd0hkYm4wNmZJTkpUYmJpYjVSbXFaVDVmQmYwSDhXZHlpZDFlM0c1d1RuWVYzX2xzbkZ4VTJFSldZWDh5UHMxYnk4TnRicmVGM3FLRWNlamY4SnhMTHpLV3NqdmRFbkN0RW0zUEdBcGFjdUc3bTkxaVM2VzhZMkJlZFdVM3l4eUtCSXpXTjFTMnZTVWhkYmstZFNsQzc4Uml2UEkwLWxnQ3FUREVMU0NWWlg1REFDa09FVEZMRkFjdTE4ZEFqNW1wTVJrMzM3YnPSAeIBQVVfeXFMTVRwSWpXNnN5T2RMTmNMSkhzb0V6RDZybG9IbkQ5d0QwUE4wdGRzUmdsVU01RUxwQ2huT0NkQ2g5cHJ4QXI1VGZUUXFqbE9pY3NGc3ltLWh4YTJyUDRJc052OTVHeUltS1hIYjJPWEwyVVZYOGlhSGtCLVVyZU9Ec013NWM5dGk0dW04RmJqOTF4UWRwb1V0LTVIM2ZDS2NOc1JIcHRYM3VvRktpdUVnZEJoZEV6aFFsbm1XeE1zNGstcnFoMmM4SnZpOENHZzNqM0c4VC1BZ29VNnFoUmVCNC12QQ?oc=5",
+        "published": "2026-06-24T14:32:02+00:00",
+        "published_display": "24 Jun 2026, 02:32 PM",
+        "category": "minister",
+        "sentiment_score": -0.296,
+        "sentiment_label": "negative",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 0.845,
+          "neg": 0.155
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "65064a12be78",
+        "title": "India, US review core elements of bilateral trade agreement",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxQMXRDdjBVdjNEci1DWVItb3RJWkNDdThvQmlSNFd5Q2VEWnJVOFdkNTJmY2xoNEtqeG94ZjVIeUJ3ZDVEVUJrcHctZzY0cWFNR1BvRmVXV00zTHN0aHo4NzZLTVhnTTZoSDJQYjk0ZjhXNGRaT0tVd1phdi1uU19LV3gySWc5SVN6SVZtUWVYZnQtbmYxcHEzRTl30gGnAUFVX3lxTE1TLTVycFZjZ1dwTGlxWnhzdW13WUJRdXBmUm5pNGc0YmFUSWpUY1ExUkhvZVphdHlDcmFQQWFBRFlHZDNNTkRsclJFYWZwUHFZNVRmYmFoSmVZTzFETjdPTExqSjhWUm",
+        "source": "DT Next",
+        "source_url": "https://www.dtnext.in",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQMXRDdjBVdjNEci1DWVItb3RJWkNDdThvQmlSNFd5Q2VEWnJVOFdkNTJmY2xoNEtqeG94ZjVIeUJ3ZDVEVUJrcHctZzY0cWFNR1BvRmVXV00zTHN0aHo4NzZLTVhnTTZoSDJQYjk0ZjhXNGRaT0tVd1phdi1uU19LV3gySWc5SVN6SVZtUWVYZnQtbmYxcHEzRTl30gGnAUFVX3lxTE1TLTVycFZjZ1dwTGlxWnhzdW13WUJRdXBmUm5pNGc0YmFUSWpUY1ExUkhvZVphdHlDcmFQQWFBRFlHZDNNTkRsclJFYWZwUHFZNVRmYmFoSmVZTzFETjdPTExqSjhWUmFkeEsxMmJob0dZbXdrb2pZelNSNHpRTWVpSjFDVVVsYm5iVU1aQk96X05BRTZ6WHlfQVVpWWczcXVZTTFoclRR?oc=5",
+        "published": "2026-06-24T14:00:01+00:00",
+        "published_display": "24 Jun 2026, 02:00 PM",
+        "category": "minister",
+        "sentiment_score": 0.4939,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.242,
+          "neu": 0.758,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "c4157643743f",
+        "title": "Piyush Goyal to visit the UK from June 25 to 27, ahead of implementation of trade pact & DCC",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxOaGVyRlpDUFUwWmhBYWxCVHVEQ08xTFY4eFQ2aGhORjNUeDJuNmRSMXJ5UkhvREJFMFowVlk3OHhackRRbUd1Z1dnSkhQZldRZ0VqemxHdURZeHhjRkZpUTJsekk0WGV1Q3RFcTI4aXZESXNtUTBNUUdyck5kZ3dqR1BJYVJGVGhTR0xTeEw5QjhrZ2pIS2ZmOXFUMVN2emtkZjFtSlJFRXVZaV9IY201VTdCa2pZQzc5ZnhVTlltejUwemRtTWI2SFoybFRMT292d2xZaTBB0gHWAUFVX3lxTE5oZXJGWkNQVTBaaEFhbEJUdURDTzFMVjh4VDZoaE5GM1R4Mm",
+        "source": "CNBC TV18",
+        "source_url": "https://www.cnbctv18.com",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOaGVyRlpDUFUwWmhBYWxCVHVEQ08xTFY4eFQ2aGhORjNUeDJuNmRSMXJ5UkhvREJFMFowVlk3OHhackRRbUd1Z1dnSkhQZldRZ0VqemxHdURZeHhjRkZpUTJsekk0WGV1Q3RFcTI4aXZESXNtUTBNUUdyck5kZ3dqR1BJYVJGVGhTR0xTeEw5QjhrZ2pIS2ZmOXFUMVN2emtkZjFtSlJFRXVZaV9IY201VTdCa2pZQzc5ZnhVTlltejUwemRtTWI2SFoybFRMT292d2xZaTBB0gHWAUFVX3lxTE5oZXJGWkNQVTBaaEFhbEJUdURDTzFMVjh4VDZoaE5GM1R4Mm42ZFIxcnlSSG9EQkUwWjBWWTc4eFpyRFFtR3VnV2dKSFBmV1FnRWp6bEd1RFl4eGNGRmlRMmx6STRYZXVDdEVxMjhpdkRJc21RME1RR3JyTmRnd2pHUElhUkZUaFNHTFN4TDlCOGtnakhLZmY5cVQxU3Z6a2RmMW1KUkVFdVlpX0hjbTVVN0JrallDNzlmeFVOWW16NTB6ZG1NYjZIWjJsVExPb3Z3bFlpMEE?oc=5",
+        "published": "2026-06-24T13:55:01+00:00",
+        "published_display": "24 Jun 2026, 01:55 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "a93826606889",
+        "title": "India-UK FTA Talks: Goyal in London for CETA Implementation",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNUk5lWUlMNWhyNVBQYllMb29RaVdabU5JbU54elUzZ2IxTGtPTXZhSHYzOEJlU1BXRHdFS1hqT3VJaUNhR19fbDA2dUpOVTM4d1FwQUZXNGVubXBUSFRmMHVZMWhQNmZEd0dKSmt3UkJzQUlnVURLa2Z5b3l6ZDhKUnEtVnBoRExBcGdKanBKbnZYcC14MEpLek5oYlk5ZDRPaG56OVdWTHg1ZDdlajlz0gG0AUFVX3lxTE9WMmdZUXJ0MG9mWWh1cm9NTDQ3ejhhUWlSaHVRYXZ2OXJ0UWRfVXJxTFZfZGRHWjhOdnRlM0hFRWtVTklUeHlWaEJUTWx1SWJ3MF",
+        "source": "Rediff MoneyWiz",
+        "source_url": "https://money.rediff.com",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUk5lWUlMNWhyNVBQYllMb29RaVdabU5JbU54elUzZ2IxTGtPTXZhSHYzOEJlU1BXRHdFS1hqT3VJaUNhR19fbDA2dUpOVTM4d1FwQUZXNGVubXBUSFRmMHVZMWhQNmZEd0dKSmt3UkJzQUlnVURLa2Z5b3l6ZDhKUnEtVnBoRExBcGdKanBKbnZYcC14MEpLek5oYlk5ZDRPaG56OVdWTHg1ZDdlajlz0gG0AUFVX3lxTE9WMmdZUXJ0MG9mWWh1cm9NTDQ3ejhhUWlSaHVRYXZ2OXJ0UWRfVXJxTFZfZGRHWjhOdnRlM0hFRWtVTklUeHlWaEJUTWx1SWJ3MFVMSWlLSy1sdW90M0VKUGlsUnhvTkZhd0k5UzgzSGVrRUFROGZ6cE9hb3l5NFZqY0tRNHFncjRuMjZUXzZfenJiZWh2QklDMENRSm5zUGFnU1VvQjJ2VGN5S1pnY2tBT05KWg?oc=5",
+        "published": "2026-06-24T13:39:38+00:00",
+        "published_display": "24 Jun 2026, 01:39 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "467fc30d9368",
+        "title": "India, US end latest trade talks with no clarity on proposed interim deal",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxPMS1fLVdjSTJrdms5OXdZVGlheDFoaW9GaGw3TE1wWklSQ1VzWF93NXN2SlJfYU1ZOTZFNXhSQlJuNXBHaG5WQmJTYmJsNjRTazh6Zkc2U1M3Vmt6WnR3ZFJUb2JIMEVIY3BpZ1NWdnZvb0NaV2Q1OXEybElIaEJIUV92aXI4Nldjd25SVDVuNlRYR3Q4akc5NWhMeW16dnV1VGdsRjhpT3h4QlJTNUNjelZMWUtyeXR5aFItNkhSX1ZTU0JmeVByMTE1d19NSGJkb1HSAdcBQVVfeXFMTmlnVTdUUEtFOE9yX1ZzRmZJMWZiQmNpRVUtbzRkbmJTNEoxRjBBdW",
+        "source": "Business Standard",
+        "source_url": "https://www.business-standard.com",
+        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPMS1fLVdjSTJrdms5OXdZVGlheDFoaW9GaGw3TE1wWklSQ1VzWF93NXN2SlJfYU1ZOTZFNXhSQlJuNXBHaG5WQmJTYmJsNjRTazh6Zkc2U1M3Vmt6WnR3ZFJUb2JIMEVIY3BpZ1NWdnZvb0NaV2Q1OXEybElIaEJIUV92aXI4Nldjd25SVDVuNlRYR3Q4akc5NWhMeW16dnV1VGdsRjhpT3h4QlJTNUNjelZMWUtyeXR5aFItNkhSX1ZTU0JmeVByMTE1d19NSGJkb1HSAdcBQVVfeXFMTmlnVTdUUEtFOE9yX1ZzRmZJMWZiQmNpRVUtbzRkbmJTNEoxRjBBdWxFQ0tuRW9lV3FDckoyY0FabE5JbFozc0ItTjRRRUxMa1JYRlFKRE9kQXpnNG5HWWdtcUE0NGZWRHQtMEJvbXBwSk9aVWE4NXdMN3M2cjNrVm9xc29kbnRzbFVLNElzdExiSDFZRTFVcmNJaVNtM2hXYnprNzJXQkxLRGZmMjlaQ3VjTkhVMHc5djluVFFoQm1iMk1EaFd2aUNVY2lJOUQ0cEtiRFcwYW8?oc=5",
+        "published": "2026-06-24T13:26:29+00:00",
+        "published_display": "24 Jun 2026, 01:26 PM",
+        "category": "minister",
+        "sentiment_score": -0.3089,
+        "sentiment_label": "negative",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 0.861,
+          "neg": 0.139
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "7431164ea6b0",
+        "title": "India, U.S. note \u2018substantial progress\u2019 on trade deal talks as U.S. Trade Representative Greer ends two-day visit to Delhi",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxQMUJJdjd5Uk84QVpjWFhzcTRNS1lQZmtrTUV2aEhnQzA5SlJqMXJiRnNxcUNnNk80ek5qREJERm45WW5uS1hwa0tzVGpXc3JXNGtRRDdiUHZvdDM2UjE0djZJT2xQUFJud0YtXzQxU0xJd1RTampuZVktRTdUcGt1MWI5aDR1a19sdTV5cXhPQXlESzNUM21mYWFCTnlkWUxLQ1lMSDdtZGU1Q2tmeEw0S08tYzU0bHc4NGIzb0ZIb01pVnhySmNCQUtsYnlORDBS0gHXAUFVX3lxTE8teS1tLUNybm5nMmh6bktBRlZ2UWNFQ3AzRFpfRXdfbkN5SG5pcFJRbD",
+        "source": "The Hindu",
+        "source_url": "https://www.thehindu.com",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQMUJJdjd5Uk84QVpjWFhzcTRNS1lQZmtrTUV2aEhnQzA5SlJqMXJiRnNxcUNnNk80ek5qREJERm45WW5uS1hwa0tzVGpXc3JXNGtRRDdiUHZvdDM2UjE0djZJT2xQUFJud0YtXzQxU0xJd1RTampuZVktRTdUcGt1MWI5aDR1a19sdTV5cXhPQXlESzNUM21mYWFCTnlkWUxLQ1lMSDdtZGU1Q2tmeEw0S08tYzU0bHc4NGIzb0ZIb01pVnhySmNCQUtsYnlORDBS0gHXAUFVX3lxTE8teS1tLUNybm5nMmh6bktBRlZ2UWNFQ3AzRFpfRXdfbkN5SG5pcFJRbDBhNG9HalVHZjkwNHhUWTBpdTZMZGJzdlRVV1F2RzlYMVAwX2FlR3lPcjA1R3lPSWtOWDBxWGVPWmtXRVdBeFhuMWhyUTJyd3Q3NjJ6VTVfNkVOcFk2M3B6U3ZRNGxkMVd1WVZoRS14SEFDeDJQWEgyNjcwV25qTl9NTzIzc0VJZThlNlNjVnh4WGZQMFVDNlByRWVoYnp1S0h2TC1pNE5iM21fbUpN?oc=5",
+        "published": "2026-06-24T13:01:00+00:00",
+        "published_display": "24 Jun 2026, 01:01 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "d71173ed8fff",
+        "title": "India\u2019s Goyal to visit UK ahead of trade deal implementation",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPanFHQ2JMbkNLeGVmUG9BdUp1RVhab1RmRlBFUHo0SDhkV2hyeXkxNHhTX0p4b1RHQzBLVDU0Zmp5aDhDZ1ZvUjA0X0MxZmpmMFdaeVZJZ2ZxU2p2bGpvSHdiMlRYTGRraF96QndIcVpJa2VNN0R1akYxVmhnNzV3d0t5cExKNFhjT3hoVEhqZFJlSUJiRklXeXZBV0c3NFZPWHZz?oc=5\" target=\"_blank\">India\u2019s Goyal to visit UK ahead of trade deal implementation</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</",
+        "source": "Reuters",
+        "source_url": "https://www.reuters.com",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPanFHQ2JMbkNLeGVmUG9BdUp1RVhab1RmRlBFUHo0SDhkV2hyeXkxNHhTX0p4b1RHQzBLVDU0Zmp5aDhDZ1ZvUjA0X0MxZmpmMFdaeVZJZ2ZxU2p2bGpvSHdiMlRYTGRraF96QndIcVpJa2VNN0R1akYxVmhnNzV3d0t5cExKNFhjT3hoVEhqZFJlSUJiRklXeXZBV0c3NFZPWHZz?oc=5",
+        "published": "2026-06-24T12:59:58+00:00",
+        "published_display": "24 Jun 2026, 12:59 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "795803f3f715",
+        "title": "Piyush Goyal's UK Trade Mission: Paving the Path for Prosperity",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxORERNVF9aaVA5NmZGRXcwemphbUZhN3JxdHd3Ry1FZTUzM01qYmJTUHFIU0s0ZWFPX243cEhpVF9KRTdxV1FyUDIzNkFHUHVjNkRySkkyQ3A4MkNXTG9HLVgtUmN5SWVKWW1oT3BIZGplalpGd1V0ZHY3WkJuNk1MVFQwdW5KcmFKV1U4VDlFbmZQVE9sYjVJeTlSNWlXaWpUeUtoYmhSLXQ4SlpLVG84ai1UenQ2d9IBuwFBVV95cUxQbE5XcmZmVlpvM0FSMTBnZkNEY1F2SFZtLV9SS20yNk4xMzkwb21fTmcxQmlHUEk2anJHVG9Bb1VwTWVSYjlPdFREVD",
+        "source": "Devdiscourse",
+        "source_url": "https://www.devdiscourse.com",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxORERNVF9aaVA5NmZGRXcwemphbUZhN3JxdHd3Ry1FZTUzM01qYmJTUHFIU0s0ZWFPX243cEhpVF9KRTdxV1FyUDIzNkFHUHVjNkRySkkyQ3A4MkNXTG9HLVgtUmN5SWVKWW1oT3BIZGplalpGd1V0ZHY3WkJuNk1MVFQwdW5KcmFKV1U4VDlFbmZQVE9sYjVJeTlSNWlXaWpUeUtoYmhSLXQ4SlpLVG84ai1UenQ2d9IBuwFBVV95cUxQbE5XcmZmVlpvM0FSMTBnZkNEY1F2SFZtLV9SS20yNk4xMzkwb21fTmcxQmlHUEk2anJHVG9Bb1VwTWVSYjlPdFREVDcwS2NBWVo4Qk5VTXFqNTlCZlhmY193X09HZ0lrVWV6ZmVSOExKeFNWa2Q0cHpZVDl4bFNFcFAzenB3ZjlhdFBWQTgzUDZPYk5aT2tjTGJLakdGQmJUanNnUHh2STY1MUJEd01jMW9SMTBGTndVVmxR?oc=5",
+        "published": "2026-06-24T12:58:57+00:00",
+        "published_display": "24 Jun 2026, 12:58 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "7e2aa175475e",
+        "title": "Piyush Goyal Tweets of Meetings With US Trade Representative, Deal Details Still Undisclosed",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNVnB1N0p4SG5VbC1LdThjYm5BeUJmU1BuYU5SWEZIamVXLUxGUnZiME05TXBZaTBEOXNnMU13QjdjYmYwS3VUN05VUDhzRTR1X25Na1p2UlNTM0xfVGRpaGZONjZUOHBpRkRMVjhQRjl5MHBZSVUyQTdkWm1qczgyQVROUVlWMEliek1GeGNKOWZObldZRlFmbEM4N01TQWZCZDR1bGR6cDJRZzlHZ2tEa2dXQV95NGR1RkJITk9rbENkY2xU0gHKAUFVX3lxTE9LMm1VZ3BFVGhaNHRkSnhXeFR4MHBfNG1US3Rqb1ZHeVY4TzhOeXdmMkdhcU9FeVlqMUtGX0",
+        "source": "TheWire.in",
+        "source_url": "https://m.thewire.in",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNVnB1N0p4SG5VbC1LdThjYm5BeUJmU1BuYU5SWEZIamVXLUxGUnZiME05TXBZaTBEOXNnMU13QjdjYmYwS3VUN05VUDhzRTR1X25Na1p2UlNTM0xfVGRpaGZONjZUOHBpRkRMVjhQRjl5MHBZSVUyQTdkWm1qczgyQVROUVlWMEliek1GeGNKOWZObldZRlFmbEM4N01TQWZCZDR1bGR6cDJRZzlHZ2tEa2dXQV95NGR1RkJITk9rbENkY2xU0gHKAUFVX3lxTE9LMm1VZ3BFVGhaNHRkSnhXeFR4MHBfNG1US3Rqb1ZHeVY4TzhOeXdmMkdhcU9FeVlqMUtGX0c4ZWdDUjJ2ZjJfWGpzVTZ3NDkwaGo3VktGVXZxV0JWVzFnRzBMYXNMbUFtS3VVdjYzLWdaTEhLRXJqWEhLbkJJNkwtTF9xeVV1M0RhSUZtT2xFdzZpNDJudWlQZUpzR1ItdmtmNXloeUhoTzM0dGRZTERvNUdmbThXYkRidWhBNFJtUzk5X01nd2RHMFE?oc=5",
+        "published": "2026-06-24T12:28:49+00:00",
+        "published_display": "24 Jun 2026, 12:28 PM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "27ff89bebff6",
+        "title": "India, US conclude two-day trade talks; says it discussed pathways to conclude interim agreement",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVW8xdFp5YkNTUm9KcWpTWDJpbTI1RmlPRF9Ec1hieEQ4NVZZZVRGSWpmSW9QVmJqbW45YU56aEJXTEpQVTh2WERPU0hWTTF6SmZFUFpOd01oM0htN2EzQlI4LWhXejhqZ1FOWGNMbkdKQkJKM2F0QlQzd2RXc2M1cEQ2dXFncjNubDVHNGlFU0tKRHBiSXNLWmRPc2ZpZmFvSFZkcnJYOTh3SjhQLVJ1V2Z4TVNGNmRFcENhb1ZDdGliTy0yV2N0Y0F4UFBHNW9GUVBWdk1lXy11OTJ1VzVF0gHkAUFVX3lxTE44c3RSN2M4am5zSjI1N2N4RVpsOXJRVGd2dD",
+        "source": "Telegraph India",
+        "source_url": "https://www.telegraphindia.com",
+        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVW8xdFp5YkNTUm9KcWpTWDJpbTI1RmlPRF9Ec1hieEQ4NVZZZVRGSWpmSW9QVmJqbW45YU56aEJXTEpQVTh2WERPU0hWTTF6SmZFUFpOd01oM0htN2EzQlI4LWhXejhqZ1FOWGNMbkdKQkJKM2F0QlQzd2RXc2M1cEQ2dXFncjNubDVHNGlFU0tKRHBiSXNLWmRPc2ZpZmFvSFZkcnJYOTh3SjhQLVJ1V2Z4TVNGNmRFcENhb1ZDdGliTy0yV2N0Y0F4UFBHNW9GUVBWdk1lXy11OTJ1VzVF0gHkAUFVX3lxTE44c3RSN2M4am5zSjI1N2N4RVpsOXJRVGd2dDR1NWhscGFLeGhPVm9pYzhRYVppTEFxVXYzUmJvT1dyYVNhcUNVOWdMX1B6dDllX0hOTmFVSk05T2VZN0FiSTFrZ2FvUW1fOXpBS0tqNHN0SjlTNkFBQ2lQM1VxQi1nSVl1VlBrMFplWkQ1cmhCaUxIYVY4U0VteWZSZVVsek1MTXMxQU8zc2gyZzdKUXZUWWlDZkI1MmpxTWlILXE3OFpWYTRHMlBTZmlOaTEtMmRQMGZ2bTJzeHh3RE1oMGN5blhmSQ?oc=5",
+        "published": "2026-06-24T12:22:57+00:00",
+        "published_display": "24 Jun 2026, 12:22 PM",
+        "category": "minister",
+        "sentiment_score": 0.4939,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.176,
+          "neu": 0.824,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "f77cadb0218e",
+        "title": "India edges closer to interim trade deal as USTR envoy, Piyush Goyal conclude two-day talks",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxNTWdjNE9vaXJPeGJwUkZPekFPcjlVSG1TQm5LLU1SekJsVmdLcUZTRURYX2xpRVBEamZ4QUlJaFpTYmhVSDdxamNIcE9jWmw1VG1kRG01SEttMDNoOW1ScnBveDRFNjdpZ1RDZGxwY0o0LWpRUUZGR2d1cUN6US1yNkdtclRTbWZic2ZUUUFCeW9IZUJobWNUYWVFdFRKVXgxWDVoRHMzNUVhTW1iWElWMDFDNWxOZFM4MkYxVWZLcW44UlctNHhuXzlMbF9Gek9WTzhza2Y4VXVQd2FRaTZSU3M0RFp0X2dRUDRZ0gH4AUFVX3lxTFBLSkxvWFZNeUpKMkdIYU",
+        "source": "The New Indian Express",
+        "source_url": "https://www.newindianexpress.com",
+        "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNTWdjNE9vaXJPeGJwUkZPekFPcjlVSG1TQm5LLU1SekJsVmdLcUZTRURYX2xpRVBEamZ4QUlJaFpTYmhVSDdxamNIcE9jWmw1VG1kRG01SEttMDNoOW1ScnBveDRFNjdpZ1RDZGxwY0o0LWpRUUZGR2d1cUN6US1yNkdtclRTbWZic2ZUUUFCeW9IZUJobWNUYWVFdFRKVXgxWDVoRHMzNUVhTW1iWElWMDFDNWxOZFM4MkYxVWZLcW44UlctNHhuXzlMbF9Gek9WTzhza2Y4VXVQd2FRaTZSU3M0RFp0X2dRUDRZ0gH4AUFVX3lxTFBLSkxvWFZNeUpKMkdIYUNVLUdCVEV2b0dXMkJZZTk1MGhaSnh6Nk9BN3BlOGhfZjAwUGg5djFweklyQ3FmTzlpaVF3OGlJMENteVVMbEtBa3U1OExhRW1SYlY4emRHQ0ppNWNoenp1WXV0dThMb1RlRi10RkdLUi1Kd2huQ3Nzb0JYdGp6dWpfc3BPZTNodHBmYmxteE02NzkzcU9qTkVUN1RPT0R3cFhDWUdWTWFJTkZpLTQ1ZUtFREpfd0J1QW92SnJSTnNvZEIzeVctMEd1SFloZkhLTG00c0tLdDZrakVwS0U1NDJzbE1ITnEyMnZC?oc=5",
+        "published": "2026-06-24T11:56:26+00:00",
+        "published_display": "24 Jun 2026, 11:56 AM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "34520ea0fb02",
+        "title": "Union Minister Piyush Goyal Criticises Congress for Avoiding Scheduled Lok Sabha Debate",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNWFQtRkFTNEdWUlFibWRQNmRaZWdpa2dHVFVGUWdRcWxWTGE4MVRkbUxsOEFoLWxnRGVDTkowRlQtZXRGcEttM2RiaEJHLVlOTXh6ZW5IZi1PNUJBcS1rZVpZejNMdUpKVTJLRmhTVk9WaDU2c0hTRkFUUFduY2dGeHlKdlRqeHExZUdUM3pFTzNjTEppNzZfb1lyVU5lclJMMnFz?oc=5\" target=\"_blank\">Union Minister Piyush Goyal Criticises Congress for Avoiding Scheduled Lok Sabha Debate</a>&nbsp;&nbsp;<fon",
+        "source": "News On AIR",
+        "source_url": "https://newsonair.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNWFQtRkFTNEdWUlFibWRQNmRaZWdpa2dHVFVGUWdRcWxWTGE4MVRkbUxsOEFoLWxnRGVDTkowRlQtZXRGcEttM2RiaEJHLVlOTXh6ZW5IZi1PNUJBcS1rZVpZejNMdUpKVTJLRmhTVk9WaDU2c0hTRkFUUFduY2dGeHlKdlRqeHExZUdUM3pFTzNjTEppNzZfb1lyVU5lclJMMnFz?oc=5",
+        "published": "2026-06-24T11:55:33+00:00",
+        "published_display": "24 Jun 2026, 11:55 AM",
+        "category": "minister",
+        "sentiment_score": -0.04,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 0.749,
+          "neg": 0.251
+        },
+        "adjustment": "reclassified: minister as critic, not subject of criticism"
+      },
+      {
+        "id": "1f477feaf569",
+        "title": "Goyal, US trade chief Greer held multiple rounds of talks to advance trade deal talks",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxQWFhoN3c3VXdJUktaREhmTnFmLXo3RFFtTzYxM0FhZjRoSk9YNXI1V25McEh6cW5DeFJybU5veGc0LUNxeFBfTlpDSTcxY2FORmg2eVJKeFVBVTlaRmZEZDV3OW9NNWVFV0hvR2V2U2NSbnZFWHExblNJTmt4bHhJdkg4em9acGt6RndaLTkyNk40MmR2cGMwSXZ1M2I2czI3cnVGS2t5RGQ4dmx6RGJUMkQwb0FuRVJsb0hfakNNMloxdDRqTVJkTW90M2FYd0NYX29XTdIB2gFBVV95cUxPSmxmMjRTbVE0SGtRMzhLdnlQeDNzbXlzY2RYdF9HN0pnQ3lMZk",
+        "source": "Moneycontrol.com",
+        "source_url": "https://www.moneycontrol.com",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQWFhoN3c3VXdJUktaREhmTnFmLXo3RFFtTzYxM0FhZjRoSk9YNXI1V25McEh6cW5DeFJybU5veGc0LUNxeFBfTlpDSTcxY2FORmg2eVJKeFVBVTlaRmZEZDV3OW9NNWVFV0hvR2V2U2NSbnZFWHExblNJTmt4bHhJdkg4em9acGt6RndaLTkyNk40MmR2cGMwSXZ1M2I2czI3cnVGS2t5RGQ4dmx6RGJUMkQwb0FuRVJsb0hfakNNMloxdDRqTVJkTW90M2FYd0NYX29XTdIB2gFBVV95cUxPSmxmMjRTbVE0SGtRMzhLdnlQeDNzbXlzY2RYdF9HN0pnQ3lMZkpLR2JsaU9uYnB5Si04VHR1bnIyYkY3MU43NmZHOEtGU0NZZGpoNW5BQ1lBMjEzVE1wa0U4ZmlwOHFaZGNtUHI5LTBDMXdzcGEzaldFWEk0ZzBUZGwyVF8zWkxfT0RoOW1PSFJaenpxTWZBV3lmSGh4OEZhRlFDX2kzNW51Ymo5LWo2OWJMM1A3Yk1EajFZdU5kRE1mc0lUYUs2UFBGdFp4X285QWp6cnVXdGF4dw?oc=5",
+        "published": "2026-06-24T10:55:11+00:00",
+        "published_display": "24 Jun 2026, 10:55 AM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "6b0d629bbea0",
+        "title": "Piyush Goyal, USTR Greer discuss interim trade deal, review progress on BTA negotiations",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMi6wFBVV95cUxOa1A2c2RzVkJjUXJKOTNJT3JMNVpiM0U2NlM4aUxFc0Z3a2FJYWlPLUNvMDJmYUZESEZNeTlROXdQOGhGaHNPLTBWRC0zN2ZCSkgtMkd4cllvQzFueVN2WEQzOXZBdjFRc20xUlVmMWN5OFczdkNFajF1M3NaVk0xWWJTeTkyd0tuQjMtRmh4Tm1EaXFwZV9VSElWN0JhV1FGOUNMRGtVa041NnY3WF8ybHI2YzlGYVBhaTRIMTM4Y2xkOG5laUlmeFhDMnRkSXVoZ0RJMGV3c0MtSGc4WTZZZnAxUlBkZlVfX1hn?oc=5\" target=\"_blank\">Piyush Goya",
+        "source": "Upstox",
+        "source_url": "https://upstox.com",
+        "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOa1A2c2RzVkJjUXJKOTNJT3JMNVpiM0U2NlM4aUxFc0Z3a2FJYWlPLUNvMDJmYUZESEZNeTlROXdQOGhGaHNPLTBWRC0zN2ZCSkgtMkd4cllvQzFueVN2WEQzOXZBdjFRc20xUlVmMWN5OFczdkNFajF1M3NaVk0xWWJTeTkyd0tuQjMtRmh4Tm1EaXFwZV9VSElWN0JhV1FGOUNMRGtVa041NnY3WF8ybHI2YzlGYVBhaTRIMTM4Y2xkOG5laUlmeFhDMnRkSXVoZ0RJMGV3c0MtSGc4WTZZZnAxUlBkZlVfX1hn?oc=5",
+        "published": "2026-06-24T10:53:27+00:00",
+        "published_display": "24 Jun 2026, 10:53 AM",
+        "category": "minister",
+        "sentiment_score": 0.4215,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.167,
+          "neu": 0.833,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "411458c86c9d",
+        "title": "Union Minister Goyal reviews progress of trade talks with US Trade Representative Ambassador Greer",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRjF4RkEtWFBlN29PU1VxOGM0YWVwTUd2cTVvVy1PcmIzMnZ0WUpDejdOaHdxcW9sRlU4dkxYZWFZWXhlMmZtQlBkM3NJOUpfT2ltcDhxbXJGNjdhQTVpaWZOWV9MeXJJTzVfTWdSNFFKRVFuclhURnhsWkJRU1cteTdtNnM5YnFQeUFUdW41cTRsUWp0UU5FYi0yTjVNM0xHS1Jnc3FJV3VodlF2dTNJbW9oQXNTSXJTVFFLSHV1blE3QQ?oc=5\" target=\"_blank\">Union Minister Goyal reviews progress of trade talks with US Trad",
+        "source": "News On AIR",
+        "source_url": "https://newsonair.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNRjF4RkEtWFBlN29PU1VxOGM0YWVwTUd2cTVvVy1PcmIzMnZ0WUpDejdOaHdxcW9sRlU4dkxYZWFZWXhlMmZtQlBkM3NJOUpfT2ltcDhxbXJGNjdhQTVpaWZOWV9MeXJJTzVfTWdSNFFKRVFuclhURnhsWkJRU1cteTdtNnM5YnFQeUFUdW41cTRsUWp0UU5FYi0yTjVNM0xHS1Jnc3FJV3VodlF2dTNJbW9oQXNTSXJTVFFLSHV1blE3QQ?oc=5",
+        "published": "2026-06-24T10:35:20+00:00",
+        "published_display": "24 Jun 2026, 10:35 AM",
+        "category": "minister",
+        "sentiment_score": 0.4215,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.157,
+          "neu": 0.843,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "de2df4e034a0",
+        "title": "India, US push trade talks forward as Goyal hails \u2018constructive\u2019 discussions",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOOTh2eU9xdmtWVzhBTWhBRHRtZmpEZUluQ2Q1dXhuNk5vaGlNTnhZRXY2RFZTR2QtVE1IX1VSVEpzNTFJVEFzSl9VYUhhTFYybFZTU295SGlKS0VXa1Q5TzNRUHpsUmhHclpab1lvQUIwZlJCcDl5MXVtM1g4Qm1BZTY3MHlXZlJ5clVXdzk0eldaQ1kxbmllOFpINlNXWmZYUTFGajVlT0s1UHFROTBmdzZEeENZSGpBRjJJNXg5UdIBxAFBVV95cUxOTElYZWdzdmdvQXRWaks0X0FMTWo4YmRjTzgtVnpjSGc2cTQyNDZEbkFVN1F1Zm5YOWpWdjhxX3d2V0",
+        "source": "Firstpost",
+        "source_url": "https://www.firstpost.com",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOOTh2eU9xdmtWVzhBTWhBRHRtZmpEZUluQ2Q1dXhuNk5vaGlNTnhZRXY2RFZTR2QtVE1IX1VSVEpzNTFJVEFzSl9VYUhhTFYybFZTU295SGlKS0VXa1Q5TzNRUHpsUmhHclpab1lvQUIwZlJCcDl5MXVtM1g4Qm1BZTY3MHlXZlJ5clVXdzk0eldaQ1kxbmllOFpINlNXWmZYUTFGajVlT0s1UHFROTBmdzZEeENZSGpBRjJJNXg5UdIBxAFBVV95cUxOTElYZWdzdmdvQXRWaks0X0FMTWo4YmRjTzgtVnpjSGc2cTQyNDZEbkFVN1F1Zm5YOWpWdjhxX3d2V093NVlQS3lySm5YcWFrTU5qVW5hZU1BU1ZrWFA2WTZPTno0WGpwTHBIZmVkdDdLS2lDMTNtT3ItSlhNZVhJQTFURXhCNERoRXdaMm9UQVJmU0U0TWtDWUwxdTdYRWRDWXo2NzhIQzZ6SkNsaFlWMWVSeXVWd2lxSGhYRzdibjl1M3Mx?oc=5",
+        "published": "2026-06-24T10:04:03+00:00",
+        "published_display": "24 Jun 2026, 10:04 AM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "9984c0f2dad5",
+        "title": "PM Modi shares article written by Union Minister Piyush Goyal in national daily about India-New Zealand FTA",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxQMk4zTGd4LU52WmttUnV3NkxiT01qTVNaRlBUM2MwdUhyRjl1VndSOHlKcUF4T21CVzZDN2NhRU50bmpjMzlDcHBRRkNSaUl6aFRxMFd3b1NkaWlFN3J0WW42b3RMTXMxUGFLWlQ1T1MwU0t0OHkzMTh2RVEwOVBQTHViLWRtblNsM1Y1M28zdmdYMXYxNVV4WHZwMU9UbjhHWDJpUTFUWEZNWmxaT25kUHJySGI0UzRIWnJ5ZzNheERmR0ZFYlR0X1NxSWxpQQ?oc=5\" target=\"_blank\">PM Modi shares article written by Union Minister ",
+        "source": "News On AIR",
+        "source_url": "https://newsonair.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQMk4zTGd4LU52WmttUnV3NkxiT01qTVNaRlBUM2MwdUhyRjl1VndSOHlKcUF4T21CVzZDN2NhRU50bmpjMzlDcHBRRkNSaUl6aFRxMFd3b1NkaWlFN3J0WW42b3RMTXMxUGFLWlQ1T1MwU0t0OHkzMTh2RVEwOVBQTHViLWRtblNsM1Y1M28zdmdYMXYxNVV4WHZwMU9UbjhHWDJpUTFUWEZNWmxaT25kUHJySGI0UzRIWnJ5ZzNheERmR0ZFYlR0X1NxSWxpQQ?oc=5",
+        "published": "2026-06-24T08:37:05+00:00",
+        "published_display": "24 Jun 2026, 08:37 AM",
+        "category": "minister",
+        "sentiment_score": 0.296,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.109,
+          "neu": 0.891,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "eed0e7155e83",
+        "title": "Piyush Goyal chairs meeting to strengthen India\u2019s position in global agriculture sector",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNU0VGOUxQY3ZLM0s1TmVtQ0ZyR0RUWklOaXdrTkdxQk1La2lOZndlWkxhTFMyblZDcDdvdzRhUGhBRTRudXkyLVBia0pfNERhblZTZ09NN25XM2hFSnFmZjZFT2NzdVozUzYxaURucXMzYVZMNFdFcUkxX2hta2I4NGdGV2pia3c4eDJwSkVZclY2Q1dhVlNra1dETHpLZmpPVU85LW5zNl9LZ0ZWa2xGN3hn?oc=5\" target=\"_blank\">Piyush Goyal chairs meeting to strengthen India\u2019s position in global agriculture sector",
+        "source": "DD News",
+        "source_url": "https://ddnews.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNU0VGOUxQY3ZLM0s1TmVtQ0ZyR0RUWklOaXdrTkdxQk1La2lOZndlWkxhTFMyblZDcDdvdzRhUGhBRTRudXkyLVBia0pfNERhblZTZ09NN25XM2hFSnFmZjZFT2NzdVozUzYxaURucXMzYVZMNFdFcUkxX2hta2I4NGdGV2pia3c4eDJwSkVZclY2Q1dhVlNra1dETHpLZmpPVU85LW5zNl9LZ0ZWa2xGN3hn?oc=5",
+        "published": "2026-06-24T07:41:27+00:00",
+        "published_display": "24 Jun 2026, 07:41 AM",
+        "category": "minister",
+        "sentiment_score": 0.3182,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.141,
+          "neu": 0.859,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "623e9dd1d0ad",
+        "title": "Piyush Goyal to hold talks in London as India, UK prepare to operationalise CETA",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPNkNUZEhvVVpkUjBRSGtoZXB0NUlISy1xTW40V2hDVDJsZVJoRl9UWGtwcUN1RDBRNzBFNzJOMmVKZVl6VTd0YVNHa2JrRHQ4aVdoSEU5YUhfYzB3Tmt2TTVydHJMc0lMRVVkWHpaZmZYZW82eG5ZSlFtaTZyWVV4eW4zMzdLb2lQYWVfUFpFOUJ0ZWRENmh1TkxDWU5vLUp4UVVsbVRuNVQ?oc=5\" target=\"_blank\">Piyush Goyal to hold talks in London as India, UK prepare to operationalise CETA</a>&nbsp;&nbsp;<fon",
+        "source": "DD News",
+        "source_url": "https://ddnews.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPNkNUZEhvVVpkUjBRSGtoZXB0NUlISy1xTW40V2hDVDJsZVJoRl9UWGtwcUN1RDBRNzBFNzJOMmVKZVl6VTd0YVNHa2JrRHQ4aVdoSEU5YUhfYzB3Tmt2TTVydHJMc0lMRVVkWHpaZmZYZW82eG5ZSlFtaTZyWVV4eW4zMzdLb2lQYWVfUFpFOUJ0ZWRENmh1TkxDWU5vLUp4UVVsbVRuNVQ?oc=5",
+        "published": "2026-06-24T07:40:11+00:00",
+        "published_display": "24 Jun 2026, 07:40 AM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "13b83cd8f4ec",
+        "title": "Piyush Goyal talks to Kuwaiti counterpart post ceasefire declaration in region",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNRVdjelVWQUc4SVRNZElYaWFUdHNFZjhJWkFqakFQZlhtY2VWX2w4N08yT09mUTRramdRTlRUSjEwZWpWRGx3X2NVak50TmJ2X3E0STd3Ykd0R2tBQWpSTkRxUzc5cU83cjNycDNDdDFSbnBabTk1dERnbXJXRU5aOFU5WG5wMDJvNHZtOElKMUhJdVh0b3plcU5STUtKVUJtZjBoNVhPNA?oc=5\" target=\"_blank\">Piyush Goyal talks to Kuwaiti counterpart post ceasefire declaration in region</a>&nbsp;&nbsp;<font c",
+        "source": "DD News",
+        "source_url": "https://ddnews.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNRVdjelVWQUc4SVRNZElYaWFUdHNFZjhJWkFqakFQZlhtY2VWX2w4N08yT09mUTRramdRTlRUSjEwZWpWRGx3X2NVak50TmJ2X3E0STd3Ykd0R2tBQWpSTkRxUzc5cU83cjNycDNDdDFSbnBabTk1dERnbXJXRU5aOFU5WG5wMDJvNHZtOElKMUhJdVh0b3plcU5STUtKVUJtZjBoNVhPNA?oc=5",
+        "published": "2026-06-24T07:30:38+00:00",
+        "published_display": "24 Jun 2026, 07:30 AM",
+        "category": "minister",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "5dac82043a1a",
+        "title": "Piyush Goyal welcomes Todd McClay ahead of India-New Zealand FTA signing on April 27",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQWjFTV2ROTnJXTk55bUZTWkRtWUJqcExrUFBsYXFJYW4xLUgycXhFRDhrQWVfUDA0aXJOb3JpdHNRMDBpS0haOUYtdkVMOWpoQjQ3Y3JLOFFxVkJQMFVpS2dJZDVLRFhTN3dWRHNBNUVvcUVGRW04RnhKV0FUal9mSURzRnVHSUo3MmVEbm1ia3BjNEtieE5zT0dLemtTVmpWX3hYVUZJQ3M4cW5kRnln?oc=5\" target=\"_blank\">Piyush Goyal welcomes Todd McClay ahead of India-New Zealand FTA signing on April 27</a>&nb",
+        "source": "DD News",
+        "source_url": "https://ddnews.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWjFTV2ROTnJXTk55bUZTWkRtWUJqcExrUFBsYXFJYW4xLUgycXhFRDhrQWVfUDA0aXJOb3JpdHNRMDBpS0haOUYtdkVMOWpoQjQ3Y3JLOFFxVkJQMFVpS2dJZDVLRFhTN3dWRHNBNUVvcUVGRW04RnhKV0FUal9mSURzRnVHSUo3MmVEbm1ia3BjNEtieE5zT0dLemtTVmpWX3hYVUZJQ3M4cW5kRnln?oc=5",
+        "published": "2026-06-24T07:28:48+00:00",
+        "published_display": "24 Jun 2026, 07:28 AM",
+        "category": "minister",
+        "sentiment_score": 0.4019,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.144,
+          "neu": 0.856,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "0c15ad27f44c",
+        "title": "Design to play key role in India\u2019s decisive decade of development: Piyush Goyal",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxOeU1EUUotUE9lbjlfS0NFbndreUQ2Ql93ekpfTi1TeWR6TVRJVENOT2RiT2Fpbk1QcmNLY2lPeFkxQW9sdnB4NzJXaEJ1c29iQnIzUHNjU2NGaWFMcWw4amNVS1JmTHNvT0tIcWZEeDhHdmtUclJycU9YSTNJdklZR0JvNVZvTDRReWNOdnY4Sm12RzZmNUhFVUg5aktCYV9lWkVTMGlB?oc=5\" target=\"_blank\">Design to play key role in India\u2019s decisive decade of development: Piyush Goyal</a>&nbsp;&nbsp;<font co",
+        "source": "DD News",
+        "source_url": "https://ddnews.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOeU1EUUotUE9lbjlfS0NFbndreUQ2Ql93ekpfTi1TeWR6TVRJVENOT2RiT2Fpbk1QcmNLY2lPeFkxQW9sdnB4NzJXaEJ1c29iQnIzUHNjU2NGaWFMcWw4amNVS1JmTHNvT0tIcWZEeDhHdmtUclJycU9YSTNJdklZR0JvNVZvTDRReWNOdnY4Sm12RzZmNUhFVUg5aktCYV9lWkVTMGlB?oc=5",
+        "published": "2026-06-24T07:13:49+00:00",
+        "published_display": "24 Jun 2026, 07:13 AM",
+        "category": "minister",
+        "sentiment_score": 0.5106,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.235,
+          "neu": 0.765,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      }
+    ],
+    "tweets": [
+      {
+        "id": "2070002942334337349",
+        "platform": "Twitter/X",
+        "handle": "@PiyushGoyal",
+        "text": "RT @narendramodi: \u0938\u0902\u0935\u093f\u0927\u093e\u0928 \u0939\u0924\u094d\u092f\u093e \u0926\u093f\u0935\u0938 \u0906\u091c \u0939\u092e\u0947\u0902 \u0909\u0938 \u0915\u093e\u0932\u0947 \u0926\u094c\u0930 \u0915\u0940 \u092f\u093e\u0926 \u0926\u093f\u0932\u093e \u0930\u0939\u093e \u0939\u0948, \u091c\u092c \u092d\u093e\u0930\u0924\u0940\u092f \u0932\u094b\u0915\u0924\u0902\u0924\u094d\u0930 \u0915\u094b \u092c\u0941\u0930\u0940 \u0924\u0930\u0939 \u0938\u0947 \u0915\u0941\u091a\u0932\u093e \u0917\u092f\u093e \u0925\u093e\u0964 \u092f\u0939 \u0939\u092e\u0947\u0902 \u0932\u094b\u0915\u0924\u0902\u2026",
+        "published": "2026-06-25T04:35:34+00:00",
+        "published_display": "25 Jun 2026, 04:35 AM",
+        "likes": 0,
+        "retweets": 1074,
+        "replies": 0,
+        "url": "https://x.com/PiyushGoyal/status/2070002942334337349",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "engagement": 3222,
+        "sentiment_basis": "post_content"
+      },
+      {
+        "id": "2070002923254448563",
+        "platform": "Twitter/X",
+        "handle": "@PiyushGoyal",
+        "text": "RT @narendramodi: Today, we pay homage to all those who steadfastly defended democratic values during one of the darkest chapters in India\u2019\u2026",
+        "published": "2026-06-25T04:35:30+00:00",
+        "published_display": "25 Jun 2026, 04:35 AM",
+        "likes": 0,
+        "retweets": 804,
+        "replies": 0,
+        "url": "https://x.com/PiyushGoyal/status/2070002923254448563",
+        "sentiment_score": -0.2263,
+        "sentiment_label": "negative",
+        "engagement": 2412,
+        "sentiment_basis": "post_content"
+      },
+      {
+        "id": "2070002918829482374",
+        "platform": "Twitter/X",
+        "handle": "@PiyushGoyal",
+        "text": "RT @narendramodi: Yesterday, chaired the 52nd PRAGATI meeting, during which we reviewed infrastructure works worth over Rs. 30,000 crore. T\u2026",
+        "published": "2026-06-25T04:35:29+00:00",
+        "published_display": "25 Jun 2026, 04:35 AM",
+        "likes": 0,
+        "retweets": 691,
+        "replies": 0,
+        "url": "https://x.com/PiyushGoyal/status/2070002918829482374",
+        "sentiment_score": 0.2263,
+        "sentiment_label": "positive",
+        "engagement": 2073,
+        "sentiment_basis": "post_content"
+      },
+      {
+        "id": "2069987873307213932",
+        "platform": "Twitter/X",
+        "handle": "@PiyushGoyal",
+        "text": "25 \u091c\u0942\u0928 1975...\n\n\u092f\u0939 \u0935\u0939 \u0915\u093e\u0932\u093e \u0905\u0927\u094d\u092f\u093e\u092f \u0939\u0948, \u091c\u092c \u0938\u0924\u094d\u0924\u093e \u0915\u0947 \u0905\u0939\u0902\u0915\u093e\u0930 \u092e\u0947\u0902 \u091a\u0942\u0930 \u0915\u093e\u0902\u0917\u094d\u0930\u0947\u0938 \u0928\u0947 \u0938\u0902\u0935\u093f\u0927\u093e\u0928 \u0915\u0940 \u0906\u0924\u094d\u092e\u093e \u0915\u094b \u0915\u0941\u091a\u0932\u0924\u0947 \u0939\u0941\u090f \u0926\u0947\u0936 \u092a\u0930 \u0906\u092a\u093e\u0924\u0915\u093e\u0932 \u0925\u094b\u092a \u0926\u093f\u092f\u093e \u0925\u093e\u0964 \u092e\u094c\u0932\u093f\u0915 \u0905\u0927\u093f\u0915\u093e\u0930 \u091b\u0940\u0928\u0947 \u0917\u090f, \u0905\u092d\u093f\u0935\u094d\u092f\u0915\u094d\u0924\u093f \u0915\u0940 \u0938\u094d\u0935\u0924\u0902\u0924\u094d\u0930\u0924\u093e \u0915\u093e \u0917\u0932\u093e \u0918\u094b\u0902\u091f\u093e \u0917\u092f\u093e \u0914\u0930 \u0932\u094b\u0915\u0924\u0902\u0924\u094d\u0930 \u0915\u094b \u092c\u0902\u0926\u0940 \u092c\u0928\u093e \u0932\u093f\u092f\u093e \u0917\u092f\u093e\u0964\n\n#SamvidhanHatyaDiwas \u0909\u0938 \u0918\u093f\u0928\u094c\u0928\u0947 \u0915\u093e\u0932\u0916\u0902\u0921 \u0915\u0940 \u092f\u093e\u0926 https://t.co/8Q2KgUPP39",
+        "published": "2026-06-25T03:35:42+00:00",
+        "published_display": "25 Jun 2026, 03:35 AM",
+        "likes": 190,
+        "retweets": 76,
+        "replies": 23,
+        "url": "https://x.com/PiyushGoyal/status/2069987873307213932",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "engagement": 464,
+        "sentiment_basis": "post_content"
+      },
+      {
+        "id": "2069800661961801835",
+        "platform": "Twitter/X",
+        "handle": "@PiyushGoyal",
+        "text": "Held a productive meeting with Export Promotion Councils (EPCs) and Industry Associations to review strategies for advancing India\u2019s export ecosystem, accelerating market diversification and enhancing our global trade competitiveness.\n\nDiscussed measures to strengthen support for https://t.co/M2HhxILSrj",
+        "published": "2026-06-24T15:11:47+00:00",
+        "published_display": "24 Jun 2026, 03:11 PM",
+        "likes": 381,
+        "retweets": 65,
+        "replies": 10,
+        "url": "https://x.com/PiyushGoyal/status/2069800661961801835",
+        "sentiment_score": 0.6124,
+        "sentiment_label": "positive",
+        "engagement": 596,
+        "sentiment_basis": "post_content"
+      },
+      {
+        "id": "2069708774659739990",
+        "platform": "Twitter/X",
+        "handle": "@PiyushGoyal",
+        "text": "Concluded a series of meetings with @USTradeRep Ambassador Jamieson Greer and his delegation this morning.\n\nWe reviewed progress of the ongoing India\u2013U.S. trade discussions and explored avenues to further deepen our economic partnership. \n\nI appreciate Ambassador Greer\u2019s https://t.co/FjQ8AWMyYO",
+        "published": "2026-06-24T09:06:39+00:00",
+        "published_display": "24 Jun 2026, 09:06 AM",
+        "likes": 991,
+        "retweets": 181,
+        "replies": 30,
+        "url": "https://x.com/PiyushGoyal/status/2069708774659739990",
+        "sentiment_score": 0.6705,
+        "sentiment_label": "positive",
+        "engagement": 1594,
+        "sentiment_basis": "post_content"
+      }
+    ],
+    "instagram": [
+      {
+        "id": "DZ9o6frOMIi",
+        "platform": "Instagram",
+        "handle": "@piyushgoyalofficial",
+        "text": "Concluded a series of meetings with US Trade Representative Ambassador Jamieson Greer and his delegation this morning.\n\nWe reviewed progress of the ongoing India\u2013U.S. trade discussions and explored avenues to further deepen our economic partnership. \n\nI appreciate Ambassador Greer\u2019s leadership and the sustained efforts of both teams in advancing our discussions in a constructive and forward-looking manner.",
+        "published": "2026-06-24T09:10:47+00:00",
+        "published_display": "24 Jun 2026, 09:10 AM",
+        "likes": 339,
+        "comments": 19,
+        "url": "https://www.instagram.com/p/DZ9o6frOMIi/",
+        "media_type": "GraphImage",
+        "thumbnail": "https://instagram.fdel1-8.fna.fbcdn.net/v/t51.82787-15/729179235_18469565467111387_4514868375589277169_n.heic?stp=c240.0.959.959a_dst-jpg_e15_s640x640_tt6&_nc_ht=instagram.fdel1-8.fna.fbcdn.net&_nc_cat=107&_nc_oc=Q6cZ2gHAvCCIgLJhOohz3ddItCquRpTuWBg5Zmfv8GtdogDArTmARjFICRZEq4P7mYrNnis_jWYS3qB9MOEfEzplTzrg&_nc_ohc=Fig8GCVXVk0Q7kNvwErY64S&_nc_gid=qwJT0Cb8RC4ieJLKF9fSoQ&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzkyNjQ3NDM5MTczODE3MTkzOA%3D%3D.3.c-ccb7-5&oh=00_Af_OIoLfp7zDrC799DxhdjWqrZj_Xzd72izM1ZwSJgCD_w&oe=6A42B422&_nc_sid=8b3546",
+        "sentiment_score": 0.6705,
+        "sentiment_label": "positive",
+        "engagement": 377,
+        "sentiment_basis": "post_content"
+      }
+    ],
+    "facebook": [],
+    "source_breakdown": {
+      "pragativadi.com": 1,
+      "India Shipping News": 1,
+      "ANI News": 1,
+      "Daily Pioneer": 1,
+      "News On AIR": 12,
+      "Deccan Herald": 1,
+      "The Hindu": 2,
+      "The Indian Awaaz": 1,
+      "The Economic Times": 2,
+      "Telangana Today": 1,
+      "NDTV": 1,
+      "Hindustan Times": 1,
+      "Mint": 1,
+      "The Tribune": 1,
+      "Metro Vaartha": 1,
+      "Open Magazine": 1,
+      "BusinessLine": 1,
+      "DT Next": 1,
+      "CNBC TV18": 1,
+      "Rediff MoneyWiz": 1,
+      "Business Standard": 1,
+      "Reuters": 1,
+      "Devdiscourse": 1,
+      "TheWire.in": 1,
+      "Telegraph India": 1,
+      "The New Indian Express": 1,
+      "Moneycontrol.com": 1,
+      "Upstox": 1,
+      "Firstpost": 1,
+      "DD News": 5,
+      "Twitter/X": 6,
+      "Instagram": 1
+    }
+  },
+  "ministry": {
+    "name": "Ministry of Commerce & Industry",
+    "sentiment": {
+      "score": 0.1197,
+      "label": "positive",
+      "positive": 3,
+      "negative": 0,
+      "neutral": 5,
+      "total": 8,
+      "pct_positive": 37.5,
+      "pct_negative": 0.0,
+      "pct_neutral": 62.5
+    },
+    "news": [
+      {
+        "id": "4226c93d3888",
+        "title": "Strengthening economic corridor: India and US advance strategic trade talks",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQeVhRNF9FLWZQTTZuM1ROazVfdVJCQnpRMXFwZTlmdWVXZ0h2UXVUZFF4eXk3czdjVkhTWmJIdjhOWHJCZGQ3MVlzRlZJMWw1bGlpLUNJczE1d3JNLW8wV0l5VW4xUEdxVTNDM0p0bjcwYWExSFVfNVg3Y1NpWmxmVFdyV3owYnlNY2U4NU9uc1o4MFN5bHR6OVhqRVNyc1JVM1kydFNXRnI?oc=5\" target=\"_blank\">Strengthening economic corridor: India and US advance strategic trade talks</a>&nbsp;&nbsp;<font col",
+        "source": "India Shipping News",
+        "source_url": "https://indiashippingnews.com",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQeVhRNF9FLWZQTTZuM1ROazVfdVJCQnpRMXFwZTlmdWVXZ0h2UXVUZFF4eXk3czdjVkhTWmJIdjhOWHJCZGQ3MVlzRlZJMWw1bGlpLUNJczE1d3JNLW8wV0l5VW4xUEdxVTNDM0p0bjcwYWExSFVfNVg3Y1NpWmxmVFdyV3owYnlNY2U4NU9uc1o4MFN5bHR6OVhqRVNyc1JVM1kydFNXRnI?oc=5",
+        "published": "2026-06-25T03:39:14+00:00",
+        "published_display": "25 Jun 2026, 03:39 AM",
+        "category": "ministry",
+        "sentiment_score": 0.4939,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.211,
+          "neu": 0.789,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "7d36d45b9f3e",
+        "title": "India\u2019s wholesale inflation rises to 2.13 per cent in February, says Commerce Ministry",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPYTJGOW8xZkpPbkdJblZqTWNTc1lNYWlSenRQSHNQYVI1cUdMRXFFRHVmb2ZPV1MtamRuZUVORk4tNExBdHNTcEVpSXRrU3dVNGtIenlrS2FQZ2VZYnJxeXNBR25QR1VldDE4NjIwTGhQUHhxRWJRSXpQQ3ZCQzJlWG1GRUlnNnlNd0NENmtubUkyOTkyWEt0RGliRk5waVVCQklqLXQtcTd3bE9VLWJv?oc=5\" target=\"_blank\">India\u2019s wholesale inflation rises to 2.13 per cent in February, says Commerce Ministry</a>&",
+        "source": "News On AIR",
+        "source_url": "https://newsonair.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPYTJGOW8xZkpPbkdJblZqTWNTc1lNYWlSenRQSHNQYVI1cUdMRXFFRHVmb2ZPV1MtamRuZUVORk4tNExBdHNTcEVpSXRrU3dVNGtIenlrS2FQZ2VZYnJxeXNBR25QR1VldDE4NjIwTGhQUHhxRWJRSXpQQ3ZCQzJlWG1GRUlnNnlNd0NENmtubUkyOTkyWEt0RGliRk5waVVCQklqLXQtcTd3bE9VLWJv?oc=5",
+        "published": "2026-06-25T00:40:07+00:00",
+        "published_display": "25 Jun 2026, 12:40 AM",
+        "category": "ministry",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "8fc5f0c47f8c",
+        "title": "Market access to non-tariff barriers: India, US review trade core elements",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxNXzJWZV90R05MbmVsMjcydW9yTkI4Vmo0OWhTeHlDd2p1SFV5dm16eDRhZkctdzlKbjlsMWJjTFdrTmE3WnRDQ3JOVHh1MGJtbkFuU0dtY3pXSXBsT0FzNnpaNHFnVWtaTk81Y1RXS190ZkZWUDJueV9zcHVnRXA0ZW9rRUx6MTZhai1uT3NMd2lTRHcwTHZnRnBiN3hFbVdlUEN5THZzOWxoOWVVdG5lclVnQWktQ29DZHRUQ0pHQ25TTmvSAcoBQVVfeXFMT2hkT0U0VzktTHdzS2hlX3U4VlgzaTVEbjd5ek1rRlRJVFFRTV9zNDI1TndpS1BZWEVzUTc4Sk",
+        "source": "The Indian Express",
+        "source_url": "https://indianexpress.com",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNXzJWZV90R05MbmVsMjcydW9yTkI4Vmo0OWhTeHlDd2p1SFV5dm16eDRhZkctdzlKbjlsMWJjTFdrTmE3WnRDQ3JOVHh1MGJtbkFuU0dtY3pXSXBsT0FzNnpaNHFnVWtaTk81Y1RXS190ZkZWUDJueV9zcHVnRXA0ZW9rRUx6MTZhai1uT3NMd2lTRHcwTHZnRnBiN3hFbVdlUEN5THZzOWxoOWVVdG5lclVnQWktQ29DZHRUQ0pHQ25TTmvSAcoBQVVfeXFMT2hkT0U0VzktTHdzS2hlX3U4VlgzaTVEbjd5ek1rRlRJVFFRTV9zNDI1TndpS1BZWEVzUTc4SkxYTkp1QXBCd1lUbjZTd2FReEZ2aF81N1lmaTdaOUgyUnA4QVNVVG9mRnUzM29WWlNfb3YxbUQ1RFdXVTBuWGh1UzhGZkd4S1oyaGw4T2tZMnUtNVFtSVBQbmU5ejRqcEtuajVaT3dTcmFBNlVMeUZKMG96bGFtcDJ5MV9Gc0pCVHF5RU8xVHVKQ29jQQ?oc=5",
+        "published": "2026-06-25T00:00:43+00:00",
+        "published_display": "25 Jun 2026, 12:00 AM",
+        "category": "ministry",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "d459ff2e719e",
+        "title": "Asia's Premier News Agency - India News, Business & Political, National & International, Bollywood, Sports",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxNX2xjRFVTc1ZmRkRFUzczQUdyc284RU9sZVBrWmdMbl93TEVMZmF5YkRyOGtud3pxUEdmczFpXzFNel9VTmgwRGZ2N0lldWZrckVYWmdwbU1DanZQMk5XY1ozV2d0Yng4TEVuSEhCa0p1Y1YtZDV6b1hwSFdyckVjMHp2MklLTXV4Tm5xZHRTZ1pyWXRuNU5wQ2hGUGhWbDkzdnJUY2hfRF9qcURyWFFxel9yRnE1b1hUenNqbVNYX0d1UEJxSEt0Um5jaVJHUQ?oc=5\" target=\"_blank\">Asia's Premier News Agency - India News, Business",
+        "source": "ANI News",
+        "source_url": "https://www.aninews.in",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNX2xjRFVTc1ZmRkRFUzczQUdyc284RU9sZVBrWmdMbl93TEVMZmF5YkRyOGtud3pxUEdmczFpXzFNel9VTmgwRGZ2N0lldWZrckVYWmdwbU1DanZQMk5XY1ozV2d0Yng4TEVuSEhCa0p1Y1YtZDV6b1hwSFdyckVjMHp2MklLTXV4Tm5xZHRTZ1pyWXRuNU5wQ2hGUGhWbDkzdnJUY2hfRF9qcURyWFFxel9yRnE1b1hUenNqbVNYX0d1UEJxSEt0Um5jaVJHUQ?oc=5",
+        "published": "2026-06-24T19:40:56+00:00",
+        "published_display": "24 Jun 2026, 07:40 PM",
+        "category": "ministry",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "343244494d9d",
+        "title": "India hails progress in US trade talks, but no deal yet",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE50UHY4M1Q3bnNqSWg5QkhXaEp5NDE0Y19TanFCaW1OX3pwSlZvTVI5UUppS0dvdE9XcEFZY0lVc1Y4bjZTVHZHTWl2cXdyazNf?oc=5\" target=\"_blank\">India hails progress in US trade talks, but no deal yet</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Bangladesh Sangbad Sangstha (BSS)</font>",
+        "source": "Bangladesh Sangbad Sangstha (BSS)",
+        "source_url": "https://www.bssnews.net",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE50UHY4M1Q3bnNqSWg5QkhXaEp5NDE0Y19TanFCaW1OX3pwSlZvTVI5UUppS0dvdE9XcEFZY0lVc1Y4bjZTVHZHTWl2cXdyazNf?oc=5",
+        "published": "2026-06-24T12:30:27+00:00",
+        "published_display": "24 Jun 2026, 12:30 PM",
+        "category": "ministry",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.164,
+          "neu": 0.673,
+          "neg": 0.164
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "a0cf27b24cfc",
+        "title": "India\u2019s Petroleum Ministry assures availability, affordability of energy amid West Asia crisis",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOTC0xX1hTeXJ1M2ZLalFubzJEVVpZcXZvVk1YTy13SHFadC1lalVxN05tYjRTMXpIVzVuZlQ5Y1hXMXY0YnJ0NGtLaU9qdEZPeFpKbzhnbG9wcF9SQVRuakZGMnpTQVVENk1hOUd2M3diUldpeUZvTEdGQnlCb1dMa2lnbm13R3VUUXppckJFM1h5c0hCSnMxZ3Ffc3dnak1hX0pyakZkRnhhNFZJbGJUaTQwY0t6TWlWWVE?oc=5\" target=\"_blank\">India\u2019s Petroleum Ministry assures availability, affordability of energy ami",
+        "source": "DD News",
+        "source_url": "https://ddnews.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOTC0xX1hTeXJ1M2ZLalFubzJEVVpZcXZvVk1YTy13SHFadC1lalVxN05tYjRTMXpIVzVuZlQ5Y1hXMXY0YnJ0NGtLaU9qdEZPeFpKbzhnbG9wcF9SQVRuakZGMnpTQVVENk1hOUd2M3diUldpeUZvTEdGQnlCb1dMa2lnbm13R3VUUXppckJFM1h5c0hCSnMxZ3Ffc3dnak1hX0pyakZkRnhhNFZJbGJUaTQwY0t6TWlWWVE?oc=5",
+        "published": "2026-06-24T07:55:08+00:00",
+        "published_display": "24 Jun 2026, 07:55 AM",
+        "category": "ministry",
+        "sentiment_score": 0.1027,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.239,
+          "neu": 0.598,
+          "neg": 0.163
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "bef7214d61c0",
+        "title": "India in FTA talks with 6 countries, including Australia, Sri Lanka, Peru, Chile & Israel: Commerce Ministry",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQbzFWTzVNc3cySHRTRkdPVEZLRzUzVktQbFFqcmNZa01mN3AtRVJRWTNjb0tFY056eUlidUF4cXpSZnlneVdTUm16ODcydnFCbnlLUTZGSTBNR2M2dkE1N29jazF2TnRQT3VhTGx3VEt4ODJMVzF6bk9sZEJkbHhVNEQ5X3pka1RwMzB1VV93Vll5OW5QZXhTT1ZoYl9KTC1OYzRGMDFIVWxUQTM1WktKVXVHTTRyMzRyWTNMTU9lQkNPQjF1Y1E?oc=5\" target=\"_blank\">India in FTA talks with 6 countries, including Australia, Sr",
+        "source": "DD News",
+        "source_url": "https://ddnews.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQbzFWTzVNc3cySHRTRkdPVEZLRzUzVktQbFFqcmNZa01mN3AtRVJRWTNjb0tFY056eUlidUF4cXpSZnlneVdTUm16ODcydnFCbnlLUTZGSTBNR2M2dkE1N29jazF2TnRQT3VhTGx3VEt4ODJMVzF6bk9sZEJkbHhVNEQ5X3pka1RwMzB1VV93Vll5OW5QZXhTT1ZoYl9KTC1OYzRGMDFIVWxUQTM1WktKVXVHTTRyMzRyWTNMTU9lQkNPQjF1Y1E?oc=5",
+        "published": "2026-06-24T07:28:18+00:00",
+        "published_display": "24 Jun 2026, 07:28 AM",
+        "category": "ministry",
+        "sentiment_score": 0.0,
+        "sentiment_label": "neutral",
+        "sentiment_detail": {
+          "pos": 0.0,
+          "neu": 1.0,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      },
+      {
+        "id": "1147bd788388",
+        "title": "India\u2019s Trade Surplus with US Narrows in FY26, Exports to China Surge",
+        "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxPT0JtUXBHWTYxWlBMN25jTWhKSml1ZzNrLWZ4UlpOVmNRNGZqWDlTUjI5NTR4YUVSMEVEcTFBR2ttcjM0MHJocTVSbDkxcGdFVU56UTg5N2d3TDN1bGpkT3FNUWlGdTJ2a0d5amE5TTZ0Q3Jfb3V0OWdISHZSeEtmb1M5TnpwUm9CbzQxaEdoSW50RG14ZFpaSQ?oc=5\" target=\"_blank\">India\u2019s Trade Surplus with US Narrows in FY26, Exports to China Surge</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">DD News</font>",
+        "source": "DD News",
+        "source_url": "https://ddnews.gov.in",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPT0JtUXBHWTYxWlBMN25jTWhKSml1ZzNrLWZ4UlpOVmNRNGZqWDlTUjI5NTR4YUVSMEVEcTFBR2ttcjM0MHJocTVSbDkxcGdFVU56UTg5N2d3TDN1bGpkT3FNUWlGdTJ2a0d5amE5TTZ0Q3Jfb3V0OWdISHZSeEtmb1M5TnpwUm9CbzQxaEdoSW50RG14ZFpaSQ?oc=5",
+        "published": "2026-06-24T07:23:41+00:00",
+        "published_display": "24 Jun 2026, 07:23 AM",
+        "category": "ministry",
+        "sentiment_score": 0.3612,
+        "sentiment_label": "positive",
+        "sentiment_detail": {
+          "pos": 0.135,
+          "neu": 0.865,
+          "neg": 0.0
+        },
+        "adjustment": ""
+      }
+    ]
+  },
+  "followers": [
+    {
+      "platform": "Twitter/X",
+      "handle": "@PiyushGoyal",
+      "url": "https://x.com/PiyushGoyal",
+      "followers": 12100000,
+      "followers_display": "12.1M",
+      "delta": 0,
+      "delta_display": "+0",
+      "is_live": false,
+      "as_of": "2026-06-25T06:16:02.748939+00:00"
+    },
+    {
+      "platform": "Instagram",
+      "handle": "@piyushgoyalofficial",
+      "url": "https://www.instagram.com/piyushgoyalofficial/",
+      "followers": 1662027,
+      "followers_display": "1.7M",
+      "delta": 957,
+      "delta_display": "+957",
+      "is_live": true,
+      "as_of": "2026-06-25T06:16:02.748939+00:00"
+    },
+    {
+      "platform": "Facebook",
+      "handle": "/PiyushGoyalOfficial",
+      "url": "https://www.facebook.com/PiyushGoyalOfficial/",
+      "followers": 10344222,
+      "followers_display": "10.3M",
+      "delta": -166,
+      "delta_display": "-166",
+      "is_live": true,
+      "as_of": "2026-06-25T06:16:02.748939+00:00"
+    },
+    {
+      "platform": "Twitter/X (Office)",
+      "handle": "",
+      "url": "https://x.com/PiyushGoyalOffc",
+      "followers": 850000,
+      "followers_display": "850.0K",
+      "delta": null,
+      "delta_display": "\u2014",
+      "is_live": false,
+      "as_of": "2026-06-25T06:16:02.748939+00:00"
+    },
+    {
+      "platform": "YouTube",
+      "handle": "",
+      "url": "https://www.youtube.com/@PiyushGoyal",
+      "followers": 180000,
+      "followers_display": "180.0K",
+      "delta": null,
+      "delta_display": "\u2014",
+      "is_live": false,
+      "as_of": "2026-06-25T06:16:02.748939+00:00"
+    },
+    {
+      "platform": "LinkedIn",
+      "handle": "",
+      "url": "https://www.linkedin.com/in/piyushgoyalofficial/",
+      "followers": 95000,
+      "followers_display": "95.0K",
+      "delta": null,
+      "delta_display": "\u2014",
+      "is_live": false,
+      "as_of": "2026-06-25T06:16:02.748939+00:00"
+    }
+  ],
+  "stats": {
+    "total_news": 55,
+    "minister_news": 47,
+    "ministry_news": 8,
+    "total_tweets": 6,
+    "total_instagram": 1,
+    "total_facebook": 0,
+    "dedup_skipped": 1
+  }
+}

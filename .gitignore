@@ -9,4 +9,3 @@ venv/
 # Keep data files — GitHub Actions commits fresh reports here
 # and Streamlit Cloud reads from them
 .claude/
-.github/

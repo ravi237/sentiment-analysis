@@ -476,33 +476,14 @@ def _parse_meta(report: dict):
 
 def _resolve_mentions(report: dict):
     """
-    Return (sm_sent, tw_n, li_n, all_mentions).
-    Uses mentions stored in the report if present; otherwise fetches live
-    (Google News site:x.com + site:linkedin.com — no API key needed).
+    Return (sm_sent, tw_n, li_n, all_mentions) using only data stored in the report.
+    No live network calls — PDFs are a snapshot of the report data.
     """
     sm    = report["minister"].get("mentions_sentiment", {})
     ments = report["minister"].get("mentions", [])
-
-    if sm.get("total", 0) > 0:
-        tw_n = sum(1 for m in ments if m["platform"] == "Twitter/X")
-        li_n = sum(1 for m in ments if m["platform"] == "LinkedIn")
-        return sm, tw_n, li_n, ments
-
-    # Live fallback — the report pre-dates the mentions feature
-    try:
-        from collectors.mentions_collector import (fetch_twitter_mentions,
-                                                    fetch_linkedin_mentions)
-        from sentiment.analyzer import aggregate_sentiment
-        tw_items = fetch_twitter_mentions(48)
-        li_items = fetch_linkedin_mentions(48)
-        all_items = tw_items + li_items
-        if all_items:
-            sm_live = aggregate_sentiment(all_items)
-            return sm_live, len(tw_items), len(li_items), all_items
-    except Exception as exc:
-        print(f"[pdf] mentions live fetch failed: {exc}")
-
-    return {}, 0, 0, []
+    tw_n  = sum(1 for m in ments if m["platform"] == "Twitter/X")
+    li_n  = sum(1 for m in ments if m["platform"] == "LinkedIn")
+    return sm, tw_n, li_n, ments
 
 
 def _sec_masthead(pdf: BriefPDF, report: dict, subtitle: str):

@@ -13,7 +13,7 @@ from datetime import datetime, timezone, timedelta
 
 _DATA_DIR      = os.path.join(os.path.dirname(__file__), "data")
 _SEEN_FILE     = os.path.join(_DATA_DIR, "seen_articles.json")
-RETENTION_DAYS = 5
+RETENTION_DAYS = 1
 
 
 # ── Internal helpers ───────────────────────────────────────────────────────────

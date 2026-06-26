@@ -19,17 +19,13 @@ def generate_report(hours: int = 24) -> dict:
     from collectors.follower_tracker import collect_all_counts
     from sentiment.analyzer import aggregate_sentiment
 
-    from dedup import filter_seen, mark_seen
-
     ts = datetime.now(timezone.utc)
     print(f"[report] Generating report for last {hours}h at {ts.isoformat()}")
 
     # ── Collect ────────────────────────────────────────────────────────────────
     print("[report] Fetching news...")
-    news_raw = fetch_news(hours)
-    news, dedup_skipped = filter_seen(news_raw)
-    print(f"[report] Dedup: {dedup_skipped} articles skipped (seen in last 5 days), "
-          f"{len(news)} new")
+    news = fetch_news(hours)
+    print(f"[report] News: {len(news)} articles in last {hours}h")
 
     print("[report] Fetching tweets...")
     tweets = fetch_tweets(hours)
@@ -52,10 +48,9 @@ def generate_report(hours: int = 24) -> dict:
     tw_mentions_raw = fetch_twitter_mentions(mention_hours)
     print("[report] Fetching LinkedIn mentions...")
     li_mentions_raw = fetch_linkedin_mentions(mention_hours)
-    all_mentions_raw = tw_mentions_raw + li_mentions_raw
-    all_mentions, mentions_skipped = filter_seen(all_mentions_raw)
-    print(f"[report] Mentions dedup: {mentions_skipped} skipped, "
-          f"{len(all_mentions)} new")
+    all_mentions = tw_mentions_raw + li_mentions_raw
+    print(f"[report] Mentions: {len(tw_mentions_raw)} Twitter/X, "
+          f"{len(li_mentions_raw)} LinkedIn")
 
     # ── Sentiment aggregations ─────────────────────────────────────────────────
     minister_news = [n for n in news if n["category"] == "minister"]
@@ -110,7 +105,6 @@ def generate_report(hours: int = 24) -> dict:
             "total_facebook": len(fb),
             "total_tw_mentions": len(tw_mentions_raw),
             "total_li_mentions": len(li_mentions_raw),
-            "dedup_skipped": dedup_skipped,
         },
     }
 
@@ -124,10 +118,6 @@ def generate_report(hours: int = 24) -> dict:
         json.dump(report, f, indent=2, default=str)
 
     print(f"[report] Saved → {filepath}")
-
-    # Record news + mentions as seen (5-day dedup window)
-    tracked = mark_seen(news + all_mentions)
-    print(f"[report] Dedup DB updated: {tracked} items tracked")
 
     return report
 

@@ -7,6 +7,23 @@ from dateutil import parser as dateparser
 import pytz
 
 
+@st.cache_data(show_spinner=False)
+def _build_wordcloud_cached(report_ts: str, report: dict):
+    return _build_wordcloud(report)
+
+
+@st.cache_data(show_spinner=False)
+def _generate_pdfs_cached(report_ts: str, report: dict):
+    from pdf_generator import generate_executive_summary, generate_full_report
+    return generate_executive_summary(report), generate_full_report(report)
+
+
+@st.cache_data(show_spinner=False)
+def _cached_group_similar(cache_key: str, news: list):
+    from collectors.news_collector import group_similar
+    return sorted(group_similar(news), key=lambda x: x["sentiment_score"])
+
+
 @st.cache_data(ttl=3600, show_spinner=False)
 def _fetch_live_mentions(hours: int = 48):
     """Fetch Twitter/X and LinkedIn mentions live. Cached for 1 hour."""
@@ -803,10 +820,14 @@ with st.sidebar:
                 st.error(str(e))
 
     from report_generator import load_latest_report, list_reports
-    if "report" not in st.session_state:
+    # Always check if a newer report is available on disk and auto-load it.
+    _latest_path = os.path.join("data", "reports", "latest.json")
+    _latest_mtime = os.path.getmtime(_latest_path) if os.path.exists(_latest_path) else 0
+    if _latest_mtime != st.session_state.get("_report_mtime"):
         r = load_latest_report()
         if r:
             st.session_state["report"] = r
+            st.session_state["_report_mtime"] = _latest_mtime
 
     saved = list_reports()
     if saved:
@@ -818,28 +839,23 @@ with st.sidebar:
 
     st.markdown("<hr style='border-color:#2d3548;margin:20px 0'>", unsafe_allow_html=True)
 
-    # PDF downloads — generated once per report, cached in session state
+    # PDF downloads — generated once per report via @st.cache_data
     if st.session_state.get("report"):
         try:
-            from pdf_generator import generate_executive_summary, generate_full_report
             _r    = st.session_state["report"]
             _r_ts = _r.get("generated_at", "")
-            if st.session_state.get("_pdf_report_ts") != _r_ts:
-                with st.spinner("Preparing PDFs…"):
-                    st.session_state["_pdf_exec"]      = generate_executive_summary(_r)
-                    st.session_state["_pdf_full"]      = generate_full_report(_r)
-                    st.session_state["_pdf_report_ts"] = _r_ts
+            _pdf_exec_sb, _pdf_full_sb = _generate_pdfs_cached(_r_ts, _r)
             _ts = datetime.now(IST).strftime("%Y%m%d_%H%M")
             st.download_button(
                 label="⬇ Executive Summary",
-                data=st.session_state["_pdf_exec"],
+                data=_pdf_exec_sb,
                 file_name=f"executive_summary_{_ts}.pdf",
                 mime="application/pdf",
                 use_container_width=True,
             )
             st.download_button(
                 label="⬇ Full Report",
-                data=st.session_state["_pdf_full"],
+                data=_pdf_full_sb,
                 file_name=f"full_report_{_ts}.pdf",
                 mime="application/pdf",
                 use_container_width=True,
@@ -850,17 +866,6 @@ with st.sidebar:
     st.markdown("<hr style='border-color:#2d3548;margin:20px 0'>", unsafe_allow_html=True)
     show_summary = st.toggle("Show article summaries", value=False)
 
-    # Article history management
-    from dedup import tracked_count, clear as dedup_clear
-    n_tracked = tracked_count()
-    st.markdown(
-        f"<p style='color:#94a3b8;font-size:11px;margin-top:16px'>"
-        f"Article history: <b style='color:#cbd5e1'>{n_tracked}</b> seen in last 5 days</p>",
-        unsafe_allow_html=True,
-    )
-    if st.button("🗑 Clear article history", use_container_width=True):
-        dedup_clear()
-        st.success("History cleared — all articles will reappear on next report.")
 
     st.markdown("""
     <div style='font-size:11px;color:#94a3b8;margin-top:16px;line-height:1.8'>
@@ -944,11 +949,7 @@ if _rep_mm.get("total", 0) > 0:
     sm_tw_n = sum(1 for m in _rep_ments if m["platform"] == "Twitter/X")
     sm_li_n = sum(1 for m in _rep_ments if m["platform"] == "LinkedIn")
 else:
-    with st.spinner("Loading social media mentions…"):
-        try:
-            _, sm_sent, sm_tw_n, sm_li_n = _fetch_live_mentions()
-        except Exception:
-            sm_sent, sm_tw_n, sm_li_n = {}, 0, 0
+    sm_sent, sm_tw_n, sm_li_n = {}, 0, 0
 sm_total = sm_sent.get("total", 0)
 sm_sc    = sm_sent.get("score", 0.0) if sm_total > 0 else 0.0
 sm_color = POS if sm_sc >= 0.05 else (NEG if sm_sc <= -0.05 else NEU)
@@ -1038,21 +1039,16 @@ with _sc_col:
     </div>
     """, unsafe_allow_html=True)
 
-# PDF download — two options, reuse cached bytes from sidebar (generated once per report)
+# PDF download — reuse cached bytes from _generate_pdfs_cached (generated once per report)
 try:
-    from pdf_generator import generate_executive_summary, generate_full_report
     _r_ts2 = report.get("generated_at", "")
-    if st.session_state.get("_pdf_report_ts") != _r_ts2:
-        with st.spinner("Preparing PDFs…"):
-            st.session_state["_pdf_exec"]      = generate_executive_summary(report)
-            st.session_state["_pdf_full"]      = generate_full_report(report)
-            st.session_state["_pdf_report_ts"] = _r_ts2
+    _pdf_exec2, _pdf_full2 = _generate_pdfs_cached(_r_ts2, report)
     _ts2 = datetime.now(IST).strftime("%Y%m%d_%H%M")
     _pc1, _pc2 = st.columns(2)
     with _pc1:
         st.download_button(
             label="⬇ Executive Summary",
-            data=st.session_state["_pdf_exec"],
+            data=_pdf_exec2,
             file_name=f"executive_summary_{_ts2}.pdf",
             mime="application/pdf",
             use_container_width=True,
@@ -1061,7 +1057,7 @@ try:
     with _pc2:
         st.download_button(
             label="⬇ Full Report",
-            data=st.session_state["_pdf_full"],
+            data=_pdf_full2,
             file_name=f"full_report_{_ts2}.pdf",
             mime="application/pdf",
             use_container_width=True,
@@ -1150,13 +1146,7 @@ neg_news = sorted(
 )
 
 # Negative mentions: prefer report data; fall back to cached live fetch.
-# _fetch_live_mentions is cached for 1 hour so repeated calls are instant.
 _report_mentions = report["minister"].get("mentions", [])
-if not _report_mentions:
-    try:
-        _report_mentions, *_ = _fetch_live_mentions()
-    except Exception:
-        _report_mentions = []
 
 neg_mentions = sorted(
     [m for m in _report_mentions if m["sentiment_label"] == "negative"],
@@ -1225,7 +1215,7 @@ st.markdown(
     "<div class='section-label'>Topics in Focus — News Headlines &amp; Top Engaged Posts</div>",
     unsafe_allow_html=True,
 )
-_wc_bytes = _build_wordcloud(report)
+_wc_bytes = _build_wordcloud_cached(report.get("generated_at", ""), report)
 if _wc_bytes:
     st.image(_wc_bytes, use_container_width=True)
 else:
@@ -1239,11 +1229,10 @@ tab_news, tab_social, tab_mentions, tab_ministry = st.tabs(
 
 # ── Tab 1: News feed ──────────────────────────────────────────────────────────
 with tab_news:
-    from collectors.news_collector import group_similar
-
     minister_news = report["minister"]["news"]
-    grouped = group_similar(minister_news)
-    grouped_sorted = sorted(grouped, key=lambda x: x["sentiment_score"])
+    grouped_sorted = _cached_group_similar(
+        report.get("generated_at", "") + ":minister", minister_news
+    )
 
     f1, f2, f3 = st.columns([1, 1, 4])
     with f1:
@@ -1259,11 +1248,7 @@ with tab_news:
 
     pos_n = sum(1 for i in grouped_sorted if i["sentiment_label"] == "positive")
     neg_n = sum(1 for i in grouped_sorted if i["sentiment_label"] == "negative")
-    dedup_n = stats.get("dedup_skipped", 0)
-    caption = f"Showing {len(grouped_sorted)} stories ({len(minister_news)} total articles)  ·  🟢 {pos_n}  🔴 {neg_n}"
-    if dedup_n:
-        caption += f"  ·  {dedup_n} repeated articles filtered"
-    st.caption(caption)
+    st.caption(f"Showing {len(grouped_sorted)} stories ({len(minister_news)} total articles)  ·  🟢 {pos_n}  🔴 {neg_n}")
 
     if not grouped_sorted:
         st.info("No articles match the current filter.")
@@ -1365,8 +1350,9 @@ with tab_mentions:
 # ── Tab 4: Ministry news ───────────────────────────────────────────────────────
 with tab_ministry:
     ministry_news = report["ministry"]["news"]
-    grouped_min   = group_similar(ministry_news)
-    grouped_min   = sorted(grouped_min, key=lambda x: x["sentiment_score"])
+    grouped_min = _cached_group_similar(
+        report.get("generated_at", "") + ":ministry", ministry_news
+    )
 
     st.markdown(f"""
     <div class="card" style="margin-bottom:20px;border-left:4px solid {color2}">

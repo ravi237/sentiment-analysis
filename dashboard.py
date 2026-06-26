@@ -235,6 +235,19 @@ st.markdown("""
     border-bottom: 2px solid #e0ddd7;
   }
 
+  /* ── Force dark text — prevents white-on-grey on mobile dark mode ── */
+  [data-testid="stMarkdownContainer"] p,
+  [data-testid="stMarkdownContainer"] span:not([style]),
+  .stMarkdown p { color: #1a1917; }
+
+  /* ── Compact PDF download buttons (main content only, not sidebar) ── */
+  :not([data-testid="stSidebar"]) [data-testid="stDownloadButton"] > button {
+    padding: 0.2rem 0.55rem !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    min-height: auto !important;
+  }
+
   /* ── Follower panel ── */
   .follower-panel {
     background: #faf8f4;
@@ -406,7 +419,10 @@ def render_mention_card(item: dict):
             unsafe_allow_html=True,
         )
         text = item.get("text", "") or item.get("title", "")
-        st.write(text[:300])
+        st.markdown(
+            f"<p style='color:#1a1917;font-size:14px;line-height:1.5;margin:4px 0 6px'>{_e(text[:300])}</p>",
+            unsafe_allow_html=True,
+        )
         caption_parts = []
         if item.get("summary"):
             caption_parts.append(item["summary"][:200])
@@ -919,23 +935,45 @@ if stats.get('total_li_mentions'):
     _stat_parts.append(f"{stats['total_li_mentions']} 💼 mentions")
 _header_stats = " &nbsp;·&nbsp; ".join(_stat_parts)
 
-st.markdown(f"""
-<div style="border-top:3px solid {ACCENT};padding-top:18px;border-bottom:1px solid #e8e6e0;padding-bottom:16px;margin-bottom:24px">
-  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px">
-    <div>
+_h_left, _h_right = st.columns([5, 1])
+with _h_left:
+    st.markdown(f"""
+    <div style="border-top:3px solid {ACCENT};padding-top:18px;padding-bottom:10px">
       <h1 style="margin:0;font-size:28px;color:#1a1917;font-family:'Georgia',serif;letter-spacing:-0.02em">Piyush Goyal — Daily Media Brief</h1>
       <div style="font-size:14px;color:#5c5956;margin-top:6px">
         📅 <b style="color:#1a1917">{date_str}</b> &nbsp;·&nbsp;
         <span style="color:#78716c">{period_str}</span>
       </div>
+      <div style="font-size:12px;color:#a8a29e;margin-top:4px">
+        Generated: <span style="color:#7c7975">{generated}</span> &nbsp;·&nbsp; {_header_stats}
+      </div>
     </div>
-    <div style="font-size:12px;color:#a8a29e;text-align:right;line-height:1.8">
-      Generated: <span style="color:#7c7975">{generated}</span><br>
-      {_header_stats}
-    </div>
-  </div>
-</div>
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
+with _h_right:
+    try:
+        _r_ts_hdr = report.get("generated_at", "")
+        _pdf_exec_hdr, _pdf_full_hdr = _generate_pdfs_cached(_r_ts_hdr, report)
+        _ts_hdr = datetime.now(IST).strftime("%Y%m%d_%H%M")
+        st.markdown("<div style='height:24px'></div>", unsafe_allow_html=True)
+        st.download_button(
+            label="⬇ Exec Summary",
+            data=_pdf_exec_hdr,
+            file_name=f"executive_summary_{_ts_hdr}.pdf",
+            mime="application/pdf",
+            use_container_width=True,
+            help="Sentiment scores, word cloud, top engagement, key negative & positive items",
+        )
+        st.download_button(
+            label="⬇ Full Report",
+            data=_pdf_full_hdr,
+            file_name=f"full_report_{_ts_hdr}.pdf",
+            mime="application/pdf",
+            use_container_width=True,
+            help="Everything — complete news feed, social posts, mentions, ministry news",
+        )
+    except Exception:
+        pass
+st.markdown("<hr style='border:none;border-top:1px solid #e8e6e0;margin:0 0 24px'>", unsafe_allow_html=True)
 
 # ── Sentiment overview — 3 equal columns, scores on −100 to +100 scale ────────
 # Order: Minister (news) | Minister (social mentions) | Ministry (news)
@@ -1038,33 +1076,6 @@ with _sc_col:
       </div>
     </div>
     """, unsafe_allow_html=True)
-
-# PDF download — reuse cached bytes from _generate_pdfs_cached (generated once per report)
-try:
-    _r_ts2 = report.get("generated_at", "")
-    _pdf_exec2, _pdf_full2 = _generate_pdfs_cached(_r_ts2, report)
-    _ts2 = datetime.now(IST).strftime("%Y%m%d_%H%M")
-    _pc1, _pc2 = st.columns(2)
-    with _pc1:
-        st.download_button(
-            label="⬇ Executive Summary",
-            data=_pdf_exec2,
-            file_name=f"executive_summary_{_ts2}.pdf",
-            mime="application/pdf",
-            use_container_width=True,
-            help="Sentiment scores, word cloud, top engagement, key negative & positive items",
-        )
-    with _pc2:
-        st.download_button(
-            label="⬇ Full Report",
-            data=_pdf_full2,
-            file_name=f"full_report_{_ts2}.pdf",
-            mime="application/pdf",
-            use_container_width=True,
-            help="Everything — complete news feed, social posts, mentions, ministry news",
-        )
-except Exception as _pdf_e:
-    st.caption(f"PDF unavailable: {_pdf_e}")
 
 # ── Follower counts — horizontal, below sentiment cards ───────────────────────
 st.markdown("<hr class='divider'>", unsafe_allow_html=True)

@@ -267,6 +267,19 @@ st.markdown("""
     padding-bottom: 8px;
     border-bottom: 2px solid #e0ddd7;
   }
+
+  /* ── Main content buttons — white bg, navy text, readable on mobile ── */
+  :not([data-testid="stSidebar"]) [data-testid="stButton"] > button {
+    background-color: #ffffff !important;
+    color: #1e3a5f !important;
+    border: 1.5px solid #c8c4bc !important;
+    font-weight: 600 !important;
+  }
+  :not([data-testid="stSidebar"]) [data-testid="stButton"] > button:hover {
+    background-color: #1e3a5f !important;
+    color: #ffffff !important;
+    border-color: #1e3a5f !important;
+  }
 </style>
 """, unsafe_allow_html=True)
 

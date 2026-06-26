@@ -280,17 +280,12 @@ def _to_ist(iso: str) -> datetime:
 
 
 def report_period_header(report: dict) -> str:
-    gen_iso  = report.get("generated_at", "")
-    hours    = report.get("period_hours", 24)
+    gen_iso = report.get("generated_at", "")
+    hours   = report.get("period_hours", 24)
     try:
-        gen_ist  = _to_ist(gen_iso)
-        report_9am = gen_ist.replace(hour=9, minute=0, second=0, microsecond=0)
-        start_9am  = report_9am - timedelta(hours=hours)
-        date_str   = report_9am.strftime("%d %B %Y")
-        period_str = (
-            f"{start_9am.strftime('%d %b, %I:%M %p')} — "
-            f"{report_9am.strftime('%d %b, %I:%M %p')} IST"
-        )
+        gen_ist    = _to_ist(gen_iso)
+        date_str   = gen_ist.strftime("%d %B %Y")
+        period_str = f"Last {hours} hours"
         generated  = gen_ist.strftime("%d %b %Y, %I:%M %p IST")
         return date_str, period_str, generated
     except Exception:

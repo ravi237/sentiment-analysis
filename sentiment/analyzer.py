@@ -3,6 +3,33 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 _analyzer = SentimentIntensityAnalyzer()
 
+# ── Phrase normalisation ───────────────────────────────────────────────────────
+# VADER scores individual words without context. "lower" = −1.2 in VADER's
+# lexicon, so "lower cost / lower taxes / lower tariffs" score as negative even
+# though they describe a positive outcome. We replace these known false-negative
+# patterns with semantically equivalent phrases that VADER handles correctly.
+_PHRASE_SUBS = [
+    # "lower/reduce cost|price|tax|tariff|inflation|burden|rate" → positive framing
+    (re.compile(
+        r'\b(lower(?:ing)?|reduc(?:e|ing|tion\s+of))\s+'
+        r'(cost|costs|price|prices|tax|taxes|tariff|tariffs|inflation|deficit|burden|rate|rates)\b',
+        re.IGNORECASE,
+    ), r'ease \2 beneficially'),
+    # "lower cost of doing business" — full phrase
+    (re.compile(r'\blower\s+cost\s+of\s+doing\s+business\b', re.IGNORECASE),
+     'improve ease of doing business'),
+    # "ease of doing business" — already positive but make it explicit
+    (re.compile(r'\bease\s+of\s+doing\s+business\b', re.IGNORECASE),
+     'excellent business environment'),
+]
+
+
+def _normalize(text: str) -> str:
+    """Apply phrase-level substitutions before VADER scoring."""
+    for pattern, replacement in _PHRASE_SUBS:
+        text = pattern.sub(replacement, text)
+    return text
+
 # Add India-specific political terms to VADER lexicon
 CUSTOM_LEXICON = {
     "atmanirbhar": 2.0, "viksit": 1.5, "growth": 1.0, "boost": 1.5,
@@ -71,7 +98,7 @@ def score(text: str, apply_subject_adjustment: bool = False) -> dict:
     """Return VADER scores + label for a piece of text."""
     if not text or not text.strip():
         return {"compound": 0.0, "pos": 0.0, "neu": 1.0, "neg": 0.0, "label": "neutral", "adjustment": ""}
-    scores = _analyzer.polarity_scores(text)
+    scores = _analyzer.polarity_scores(_normalize(text))
     c = scores["compound"]
     note = ""
     if apply_subject_adjustment:

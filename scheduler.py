@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 IST = pytz.timezone("Asia/Kolkata")
 
-REFRESH_HOURS = 1   # how often to regenerate the report
+REFRESH_HOURS = 6   # how often to regenerate the report
 
 
 def run_report():

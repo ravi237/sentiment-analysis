@@ -413,7 +413,7 @@ def render_mention_card(item: dict):
         date_str   = _e(item.get("published_display", ""))
         meta = f"{handle_str} · {date_str}" if handle_str else date_str
         st.markdown(
-            f"<span style='background:{pc};color:white;padding:2px 8px;border-radius:4px;"
+            f"<span style='background:#1d6aff;color:white;padding:2px 8px;border-radius:4px;"
             f"font-size:11px;font-weight:600'>{platform}</span>"
             f"&nbsp;<span style='font-size:12px;color:#7c7975'>{meta}</span>",
             unsafe_allow_html=True,
@@ -476,7 +476,7 @@ def _top_post_card_html(post: dict, rank: int) -> str:
                 box-shadow:0 1px 4px rgba(0,0,0,0.05)">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
         <span style="font-size:20px;line-height:1">{medal}</span>
-        <span style="background:{pc};color:white;padding:2px 9px;border-radius:4px;
+        <span style="background:#1d6aff;color:white;padding:2px 9px;border-radius:4px;
                      font-size:10px;font-weight:700;letter-spacing:0.3px">{platform}</span>
       </div>
       <div style="font-size:30px;font-weight:700;color:#1a1917;font-family:Georgia,serif;
@@ -511,7 +511,7 @@ def render_social_card(post: dict):
     c1, c2 = st.columns([11, 2])
     with c1:
         st.markdown(
-            f"<span style='background:{pc};color:white;padding:2px 8px;border-radius:4px;"
+            f"<span style='background:#1d6aff;color:white;padding:2px 8px;border-radius:4px;"
             f"font-size:11px;font-weight:600'>{platform}</span>"
             f"&nbsp;<span style='font-size:12px;color:#7c7975'>"
             f"{_e(post.get('handle',''))} · {_e(post.get('published_display',''))}</span>",
@@ -757,7 +757,7 @@ def follower_pill(f: dict) -> str:
         f'box-shadow:0 1px 4px rgba(0,0,0,0.05)">'
         f'{watermark}'
         f'<div style="position:relative;z-index:1">'
-        f'<div style="font-size:10px;color:{pc};font-weight:700;'
+        f'<div style="font-size:10px;color:#1d6aff;font-weight:700;'
         f'letter-spacing:0.5px;margin-bottom:6px">{live}&nbsp;{platform}</div>'
         f'<div style="font-size:26px;font-weight:700;color:#1a1917;'
         f'font-family:Georgia,serif;letter-spacing:-0.03em">'
@@ -811,7 +811,7 @@ def follower_card_vertical(f: dict) -> str:
         f'box-shadow:0 1px 2px rgba(0,0,0,0.04),0 2px 6px rgba(0,0,0,0.04)">'
         f'{icon_html}'
         f'<div style="flex:1;min-width:0">'
-        f'<div style="font-size:8.5px;color:{pc};font-weight:700;letter-spacing:0.5px;'
+        f'<div style="font-size:8.5px;color:#1d6aff;font-weight:700;letter-spacing:0.5px;'
         f'text-transform:uppercase;line-height:1">{live}&nbsp;{platform}</div>'
         f'<div style="font-size:15px;font-weight:700;color:#18171a;'
         f'font-family:Georgia,serif;letter-spacing:-0.02em;line-height:1.2">'
@@ -935,45 +935,18 @@ if stats.get('total_li_mentions'):
     _stat_parts.append(f"{stats['total_li_mentions']} 💼 mentions")
 _header_stats = " &nbsp;·&nbsp; ".join(_stat_parts)
 
-_h_left, _h_right = st.columns([5, 1])
-with _h_left:
-    st.markdown(f"""
-    <div style="border-top:3px solid {ACCENT};padding-top:18px;padding-bottom:10px">
-      <h1 style="margin:0;font-size:28px;color:#1a1917;font-family:'Georgia',serif;letter-spacing:-0.02em">Piyush Goyal — Daily Media Brief</h1>
-      <div style="font-size:14px;color:#5c5956;margin-top:6px">
-        📅 <b style="color:#1a1917">{date_str}</b> &nbsp;·&nbsp;
-        <span style="color:#78716c">{period_str}</span>
-      </div>
-      <div style="font-size:12px;color:#a8a29e;margin-top:4px">
-        Generated: <span style="color:#7c7975">{generated}</span> &nbsp;·&nbsp; {_header_stats}
-      </div>
-    </div>
-    """, unsafe_allow_html=True)
-with _h_right:
-    try:
-        _r_ts_hdr = report.get("generated_at", "")
-        _pdf_exec_hdr, _pdf_full_hdr = _generate_pdfs_cached(_r_ts_hdr, report)
-        _ts_hdr = datetime.now(IST).strftime("%Y%m%d_%H%M")
-        st.markdown("<div style='height:24px'></div>", unsafe_allow_html=True)
-        st.download_button(
-            label="⬇ Exec Summary",
-            data=_pdf_exec_hdr,
-            file_name=f"executive_summary_{_ts_hdr}.pdf",
-            mime="application/pdf",
-            use_container_width=True,
-            help="Sentiment scores, word cloud, top engagement, key negative & positive items",
-        )
-        st.download_button(
-            label="⬇ Full Report",
-            data=_pdf_full_hdr,
-            file_name=f"full_report_{_ts_hdr}.pdf",
-            mime="application/pdf",
-            use_container_width=True,
-            help="Everything — complete news feed, social posts, mentions, ministry news",
-        )
-    except Exception:
-        pass
-st.markdown("<hr style='border:none;border-top:1px solid #e8e6e0;margin:0 0 24px'>", unsafe_allow_html=True)
+st.markdown(f"""
+<div style="border-top:3px solid {ACCENT};padding-top:18px;border-bottom:1px solid #e8e6e0;padding-bottom:16px;margin-bottom:24px">
+  <h1 style="margin:0;font-size:28px;color:#1a1917;font-family:'Georgia',serif;letter-spacing:-0.02em">Piyush Goyal — Daily Media Brief</h1>
+  <div style="font-size:14px;color:#5c5956;margin-top:6px">
+    📅 <b style="color:#1a1917">{date_str}</b> &nbsp;·&nbsp;
+    <span style="color:#78716c">{period_str}</span>
+  </div>
+  <div style="font-size:12px;color:#a8a29e;margin-top:4px">
+    Generated: <span style="color:#7c7975">{generated}</span> &nbsp;·&nbsp; {_header_stats}
+  </div>
+</div>
+""", unsafe_allow_html=True)
 
 # ── Sentiment overview — 3 equal columns, scores on −100 to +100 scale ────────
 # Order: Minister (news) | Minister (social mentions) | Ministry (news)
@@ -1077,76 +1050,6 @@ with _sc_col:
     </div>
     """, unsafe_allow_html=True)
 
-# ── Follower counts — horizontal, below sentiment cards ───────────────────────
-st.markdown("<hr class='divider'>", unsafe_allow_html=True)
-st.markdown("<div class='section-label'>Official Handles — Follower Count</div>",
-            unsafe_allow_html=True)
-pills_html = "".join(follower_pill(f) for f in followers)
-st.markdown(f"<div style='display:flex;flex-wrap:wrap;gap:6px'>{pills_html}</div>",
-            unsafe_allow_html=True)
-
-# Trend toggle
-st.markdown("<div style='margin-top:10px'></div>", unsafe_allow_html=True)
-if "show_follower_trend" not in st.session_state:
-    st.session_state.show_follower_trend = False
-if st.button(
-    "📈 Social Media Follower Trends" if not st.session_state.show_follower_trend
-    else "▲ Hide Follower Trends",
-    key="btn_follower_trend",
-):
-    st.session_state.show_follower_trend = not st.session_state.show_follower_trend
-
-# ── Follower trend chart ───────────────────────────────────────────────────────
-if st.session_state.show_follower_trend:
-    try:
-        from collectors.follower_tracker import load_history_df
-        _hist = load_history_df()
-        _live_platforms = [p for p in _hist if len(_hist[p]) >= 2]
-        if _live_platforms:
-            _fig = go.Figure()
-            for _p in _live_platforms:
-                _df = _hist[_p].sort_values("ts")
-                _pc = PLATFORM_COLORS.get(_p, "#6b7280")
-                _fig.add_trace(go.Scatter(
-                    x=_df["ts"], y=_df["count"],
-                    mode="lines+markers",
-                    name=_p,
-                    line=dict(color=_pc, width=2),
-                    marker=dict(size=5, color=_pc),
-                    hovertemplate=(
-                        f"<b>{_p}</b><br>"
-                        "%{x|%d %b %Y}<br>"
-                        "<b>%{y:,.0f}</b> followers"
-                        "<extra></extra>"
-                    ),
-                ))
-            _fig.update_layout(
-                height=280,
-                margin=dict(l=0, r=10, t=10, b=0),
-                plot_bgcolor="#ffffff",
-                paper_bgcolor="#eeebe5",
-                legend=dict(
-                    orientation="h", yanchor="bottom", y=1.02,
-                    xanchor="left", x=0, font=dict(size=11),
-                ),
-                xaxis=dict(
-                    showgrid=True, gridcolor="#f0efec",
-                    tickformat="%d %b", tickfont=dict(size=10),
-                ),
-                yaxis=dict(
-                    showgrid=True, gridcolor="#f0efec",
-                    tickfont=dict(size=10), tickformat=",.0f",
-                ),
-                hovermode="x unified",
-                font=dict(family="-apple-system, BlinkMacSystemFont, sans-serif"),
-            )
-            st.plotly_chart(_fig, use_container_width=True,
-                            config={"displayModeBar": False})
-        else:
-            st.caption("Not enough history yet — run a few daily reports to build the trend.")
-    except Exception as _e:
-        st.caption(f"Trend chart unavailable: {_e}")
-
 # ── Alert section — negative news + negative mentions ─────────────────────────
 all_news   = report["minister"]["news"] + report["ministry"]["news"]
 all_social = report["minister"]["tweets"] + report["minister"]["instagram"] + report["minister"]["facebook"]
@@ -1231,6 +1134,76 @@ if _wc_bytes:
     st.image(_wc_bytes, use_container_width=True)
 else:
     st.caption("Not enough text to generate a word cloud — run a fresh report.")
+
+# ── Follower counts — below word cloud ────────────────────────────────────────
+st.markdown("<hr class='divider'>", unsafe_allow_html=True)
+st.markdown("<div class='section-label'>Official Handles — Follower Count</div>",
+            unsafe_allow_html=True)
+pills_html = "".join(follower_pill(f) for f in followers)
+st.markdown(f"<div style='display:flex;flex-wrap:wrap;gap:6px'>{pills_html}</div>",
+            unsafe_allow_html=True)
+
+# Trend toggle
+st.markdown("<div style='margin-top:10px'></div>", unsafe_allow_html=True)
+if "show_follower_trend" not in st.session_state:
+    st.session_state.show_follower_trend = False
+if st.button(
+    "📈 Social Media Follower Trends" if not st.session_state.show_follower_trend
+    else "▲ Hide Follower Trends",
+    key="btn_follower_trend",
+):
+    st.session_state.show_follower_trend = not st.session_state.show_follower_trend
+
+# ── Follower trend chart ───────────────────────────────────────────────────────
+if st.session_state.show_follower_trend:
+    try:
+        from collectors.follower_tracker import load_history_df
+        _hist = load_history_df()
+        _live_platforms = [p for p in _hist if len(_hist[p]) >= 2]
+        if _live_platforms:
+            _fig = go.Figure()
+            for _p in _live_platforms:
+                _df = _hist[_p].sort_values("ts")
+                _pc = PLATFORM_COLORS.get(_p, "#6b7280")
+                _fig.add_trace(go.Scatter(
+                    x=_df["ts"], y=_df["count"],
+                    mode="lines+markers",
+                    name=_p,
+                    line=dict(color=_pc, width=2),
+                    marker=dict(size=5, color=_pc),
+                    hovertemplate=(
+                        f"<b>{_p}</b><br>"
+                        "%{x|%d %b %Y}<br>"
+                        "<b>%{y:,.0f}</b> followers"
+                        "<extra></extra>"
+                    ),
+                ))
+            _fig.update_layout(
+                height=280,
+                margin=dict(l=0, r=10, t=10, b=0),
+                plot_bgcolor="#ffffff",
+                paper_bgcolor="#eeebe5",
+                legend=dict(
+                    orientation="h", yanchor="bottom", y=1.02,
+                    xanchor="left", x=0, font=dict(size=11),
+                ),
+                xaxis=dict(
+                    showgrid=True, gridcolor="#f0efec",
+                    tickformat="%d %b", tickfont=dict(size=10),
+                ),
+                yaxis=dict(
+                    showgrid=True, gridcolor="#f0efec",
+                    tickfont=dict(size=10), tickformat=",.0f",
+                ),
+                hovermode="x unified",
+                font=dict(family="-apple-system, BlinkMacSystemFont, sans-serif"),
+            )
+            st.plotly_chart(_fig, use_container_width=True,
+                            config={"displayModeBar": False})
+        else:
+            st.caption("Not enough history yet — run a few daily reports to build the trend.")
+    except Exception as _e:
+        st.caption(f"Trend chart unavailable: {_e}")
 
 # ── Main tabs ──────────────────────────────────────────────────────────────────
 st.markdown("<hr class='divider'>", unsafe_allow_html=True)
@@ -1568,3 +1541,30 @@ st.markdown(f"""
   &nbsp;·&nbsp; Sentiment: VADER with subject-awareness &nbsp;·&nbsp; Period: {period_str}
 </div>
 """, unsafe_allow_html=True)
+
+# ── PDF downloads — absolute bottom ───────────────────────────────────────────
+try:
+    _r_ts_bot = report.get("generated_at", "")
+    _pdf_exec_bot, _pdf_full_bot = _generate_pdfs_cached(_r_ts_bot, report)
+    _ts_bot = datetime.now(IST).strftime("%Y%m%d_%H%M")
+    _b1, _b2, _b3 = st.columns([4, 1, 1])
+    with _b2:
+        st.download_button(
+            label="⬇ Exec Summary",
+            data=_pdf_exec_bot,
+            file_name=f"executive_summary_{_ts_bot}.pdf",
+            mime="application/pdf",
+            use_container_width=True,
+            help="Sentiment scores, word cloud, top engagement, key negative & positive items",
+        )
+    with _b3:
+        st.download_button(
+            label="⬇ Full Report",
+            data=_pdf_full_bot,
+            file_name=f"full_report_{_ts_bot}.pdf",
+            mime="application/pdf",
+            use_container_width=True,
+            help="Everything — complete news feed, social posts, mentions, ministry news",
+        )
+except Exception:
+    pass

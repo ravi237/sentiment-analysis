@@ -623,10 +623,33 @@ def _strip_html(text: str) -> str:
     return text.strip()
 
 
+# POS tags to exclude from the word cloud.
+# Keeps only content words: nouns (NN*), adjectives (JJ*), and meaningful adverbs (RB*).
+_EXCL_TAGS = frozenset({
+    # All verb forms — VB, VBD, VBG, VBN, VBP, VBZ covered by startswith("VB") below
+    "MD",    # modal verbs: will, would, shall, should, may, might, can, could, must
+    "IN",    # prepositions & subordinating conjunctions: in, on, at, by, for, with, about…
+    "TO",    # infinitive marker "to"
+    "RP",    # particles: up, off, out, down…
+    "CC",    # coordinating conjunctions: and, but, or, nor…
+    "DT",    # determiners: the, a, an, this, that, these, those…
+    "PDT",   # predeterminers: all, both, half
+    "PRP",   # personal pronouns: I, he, she, it, they, we, you…
+    "PRP$",  # possessive pronouns: my, his, her, its, their, our…
+    "WDT",   # wh-determiners: which, that
+    "WP",    # wh-pronouns: who, what
+    "WP$",   # possessive wh-pronoun: whose
+    "WRB",   # wh-adverbs: where, when, why, how
+    "EX",    # existential "there"
+    "UH",    # interjections
+})
+
+
 def _pos_filter(corpus: str, stop_words: set) -> dict:
     """
-    POS-tag the corpus with NLTK and return a {word: frequency} dict with
-    ALL verbs removed (tags VB, VBD, VBG, VBN, VBP, VBZ).
+    POS-tag the corpus and return {word: frequency} keeping only nouns,
+    adjectives, and meaningful adverbs. Filters verbs (VB*), modals (MD),
+    prepositions (IN), determiners, pronouns, and other function words.
     Falls back to a plain frequency count if NLTK is unavailable.
     """
     import re
@@ -642,14 +665,14 @@ def _pos_filter(corpus: str, stop_words: set) -> dict:
         freq = {}
         for word, tag in tagged:
             w = word.lower()
-            if tag.startswith("VB"):          # skip all verb forms
+            if tag.startswith("VB") or tag in _EXCL_TAGS:
                 continue
             if w in stop_words or len(w) < 2:
                 continue
             freq[w] = freq.get(w, 0) + 1
         return freq
     except Exception:
-        # Fallback without verb filtering
+        # Fallback: no POS tagger — rely on stop_words alone
         freq = {}
         for w in (w.lower() for w in words):
             if w not in stop_words and len(w) >= 2:
@@ -737,6 +760,19 @@ def _build_wordcloud_data(report: dict) -> dict:
         "while", "though", "although", "however", "therefore", "thus",
         "s", "t", "u", "re", "ve", "ll",
         "href", "src", "alt", "rel", "class", "nbsp",
+        # Modal verbs (MD tag) — fallback when NLTK POS tagger unavailable
+        "will", "would", "shall", "should", "may", "might",
+        "can", "could", "must", "cannot", "need", "dare",
+        # Prepositions & particles (IN / RP tags) — fallback
+        "in", "on", "at", "by", "for", "with", "about", "as",
+        "into", "through", "during", "before", "after", "above",
+        "below", "from", "up", "down", "out", "off", "over",
+        "under", "of", "to", "an", "the", "a",
+        # Coordinating conjunctions (CC)
+        "and", "but", "or", "nor", "so", "yet",
+        # Common pronouns (PRP / PRP$)
+        "he", "she", "it", "they", "we", "you", "his",
+        "her", "its", "their", "our", "my", "your",
     })
 
     return _pos_filter(corpus, stop_words)

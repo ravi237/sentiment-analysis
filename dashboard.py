@@ -319,6 +319,39 @@ st.markdown("""
     color: #ffffff !important;
     border-color: #1e3a5f !important;
   }
+
+  /* ── Tab buttons (st.tabs) ── */
+  [data-testid="stTabs"] [data-baseweb="tab-list"] {
+    background-color: transparent !important;
+    border-bottom: 2px solid #e0ddd7;
+    gap: 4px;
+  }
+  [data-testid="stTabs"] [data-baseweb="tab"] {
+    color: #5c5956 !important;
+    background-color: transparent !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+  }
+  [data-testid="stTabs"] [data-baseweb="tab"]:hover {
+    color: #1e3a5f !important;
+    background-color: #f0ede8 !important;
+  }
+  [data-testid="stTabs"] [data-baseweb="tab"][aria-selected="true"] {
+    color: #1e3a5f !important;
+    font-weight: 700 !important;
+  }
+  [data-testid="stTabs"] [data-baseweb="tab-highlight"] {
+    background-color: #1e3a5f !important;
+  }
+  [data-testid="stTabs"] [data-baseweb="tab-border"] {
+    background-color: #e0ddd7 !important;
+  }
+
+  /* ── Force readable dark text inside tab content and markdown containers ── */
+  [data-testid="stMarkdownContainer"] p,
+  [data-testid="stMarkdownContainer"] li,
+  [data-testid="stMarkdownContainer"] span:not([style]),
+  .stMarkdown p { color: #1a1917 !important; }
 </style>
 """, unsafe_allow_html=True)
 

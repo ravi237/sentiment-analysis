@@ -9,7 +9,7 @@ import pytz
 
 @st.cache_data(show_spinner=False)
 def _build_wordcloud_cached(report_ts: str, report: dict):
-    return _build_wordcloud(report)
+    return _build_wordcloud_data(report)
 
 
 @st.cache_data(show_spinner=False)
@@ -657,15 +657,24 @@ def _pos_filter(corpus: str, stop_words: set) -> dict:
         return freq
 
 
-def _build_wordcloud(report: dict):
+# Design-spec blue tonal ramp (most → least prominent).
+# Source: handover README "Word-cloud blue tonal ramp".
+_WC_RAMP = [
+    "#163E9E", "#1F47E6", "#2B61E0", "#3F73D9", "#4B7AD0", "#5E86D6",
+    "#6E8FCF", "#7C97C9", "#88A2D2", "#9DB1D8", "#A7B8DC", "#B4C2E0",
+    "#C0CCE6", "#C8D3EA", "#CFD8EC", "#D2DBEE", "#D7DEEF",
+]
+
+
+def _build_wordcloud_data(report: dict) -> dict:
     """
-    Generate a word cloud PNG from news headlines/summaries and the text of
-    the top-10 most-engaged social posts.  Returns PNG bytes or None.
+    Build word-frequency dict from news headlines/summaries and the text of
+    the top-10 most-engaged social posts.  Returns {} when corpus is too small.
     """
     try:
-        from wordcloud import WordCloud, STOPWORDS
+        from wordcloud import STOPWORDS
     except ImportError:
-        return None
+        STOPWORDS = set()
 
     news   = report["minister"]["news"] + report["ministry"]["news"]
     social = (report["minister"]["tweets"]
@@ -676,32 +685,24 @@ def _build_wordcloud(report: dict):
 
     parts: list[str] = []
 
-    # News titles (clean) + stripped summaries
     for item in news:
         parts.append(_strip_html(item.get("title", "")))
         parts.append(_strip_html(item.get("summary") or ""))
 
-    # Top engaged social posts — repeated by engagement tier
     for post in top_social:
         text   = _strip_html(post.get("text", ""))
         eng    = _total_engagement(post)
-        weight = 1 + min(eng // 3000, 4)   # 1× … 5× for > 12 k engagement
+        weight = 1 + min(eng // 3000, 4)
         parts.extend([text] * weight)
 
     corpus = " ".join(p for p in parts if p.strip())
     if len(corpus.split()) < 10:
-        return None
+        return {}
 
-    # Verbs are now removed automatically by NLTK POS tagging in _pos_filter().
-    # This list covers only non-verb noise: subject boilerplate, generic
-    # uninformative nouns/adjectives, time words, and HTML residue.
     stop_words = set(STOPWORDS)
     stop_words.update({
-        # Subject boilerplate
         "piyush", "goyal", "minister", "union", "commerce", "ministry",
         "india", "indian", "government", "bjp",
-
-        # Vague adjectives with no topic signal
         "amazing", "global", "strong", "stronger", "key", "major",
         "important", "significant", "great", "good", "better", "best",
         "high", "higher", "big", "large", "broad", "robust", "dynamic",
@@ -712,8 +713,6 @@ def _build_wordcloud(report: dict):
         "overall", "general", "common", "possible", "potential", "similar",
         "different", "additional", "further", "full", "whole", "entire",
         "wide", "long", "short",
-
-        # Generic uninformative nouns
         "pact", "post", "progress", "growth", "move", "step", "way",
         "place", "part", "role", "work", "focus", "level", "number",
         "area", "side", "effort", "efforts", "goal", "goals",
@@ -728,8 +727,6 @@ def _build_wordcloud(report: dict):
         "session", "conference", "summit", "event", "programme", "program",
         "initiative", "initiatives", "measure", "measures",
         "action", "actions", "response", "responses",
-
-        # Time / quantity noise
         "new", "one", "two", "three", "four", "five",
         "year", "years", "today", "day", "week", "time", "mr", "ms",
         "per", "rs", "lakh", "crore", "cent", "news", "article",
@@ -738,35 +735,59 @@ def _build_wordcloud(report: dict):
         "ever", "never", "just", "even", "well", "back", "around",
         "across", "among", "between", "within", "without", "whether",
         "while", "though", "although", "however", "therefore", "thus",
-
-        # Single letters / short noise
         "s", "t", "u", "re", "ve", "ll",
-
-        # HTML attribute residue
         "href", "src", "alt", "rel", "class", "nbsp",
     })
 
-    freq = _pos_filter(corpus, stop_words)
+    return _pos_filter(corpus, stop_words)
+
+
+def _wordcloud_html(freq: dict, max_words: int = 80) -> str:
+    """
+    Render the design-spec HTML flex word cloud.
+    Font-size encodes prominence (62 → 12 px), colour steps through the blue
+    tonal ramp (darker = more prominent), weight 800 → 500.
+    """
     if not freq:
-        return None
+        return ""
 
-    wc = WordCloud(
-        width=1600,
-        height=520,
-        background_color="#f5f4f0",
-        colormap="Blues",
-        max_words=120,
-        collocations=False,
-        min_font_size=11,
-        max_font_size=130,
-        prefer_horizontal=0.80,
-    ).generate_from_frequencies(freq)
+    items  = sorted(freq.items(), key=lambda x: x[1], reverse=True)[:max_words]
+    max_f  = items[0][1]
+    min_f  = items[-1][1] if len(items) > 1 else 1
+    f_rng  = max(max_f - min_f, 1)
+    n_clrs = len(_WC_RAMP)
 
-    import io
-    buf = io.BytesIO()
-    wc.to_image().save(buf, format="PNG")
-    buf.seek(0)
-    return buf.getvalue()
+    spans = []
+    for word, f in items:
+        t = (f - min_f) / f_rng          # 0 = least prominent, 1 = most
+        # Square-root scale compresses the top end for a more natural spread
+        ts     = t ** 0.5
+        size   = 12 + round(ts * 50)     # 12 px … 62 px
+        weight = round((500 + ts * 300) / 100) * 100   # 500 … 800
+        weight = min(800, max(500, weight))
+        ramp_i = int((1 - ts) * (n_clrs - 1))
+        color  = _WC_RAMP[ramp_i]
+        safe   = _html.escape(word)
+        spans.append(
+            f'<span style="font-size:{size}px;font-weight:{weight};'
+            f'color:{color};line-height:1;display:inline-block">{safe}</span>'
+        )
+
+    inner    = "\n".join(spans)
+    top_five = ", ".join(w for w, _ in items[:5])
+    aria_lbl = (
+        f"Word cloud of topics in focus. Most prominent words include: {top_five}. "
+        "Larger, darker words appear more frequently in the coverage."
+    )
+    return (
+        f'<div style="background:#fff;border:1px solid #E2E5EA;'
+        f'padding:30px 28px;border-radius:2px" '
+        f'role="img" aria-label="{_html.escape(aria_lbl)}">'
+        f'<div style="display:flex;flex-wrap:wrap;gap:6px 18px;line-height:1;'
+        f'justify-content:center;align-items:center">'
+        f'{inner}'
+        f'</div></div>'
+    )
 
 
 def _fmt_delta(val) -> str:
@@ -1223,21 +1244,9 @@ st.markdown(
     "<div class='section-label'>Topics in Focus — News Headlines &amp; Top Engaged Posts</div>",
     unsafe_allow_html=True,
 )
-_wc_bytes = _build_wordcloud_cached(report.get("generated_at", ""), report)
-if _wc_bytes:
-    import base64 as _b64
-    _wc_src = _b64.b64encode(_wc_bytes).decode()
-    _wc_alt = (
-        "Word cloud of the most prominent topics from the last 24 hours of "
-        "news headlines and top social media posts. Larger words represent "
-        "higher frequency."
-    )
-    st.markdown(
-        f'<img src="data:image/png;base64,{_wc_src}" '
-        f'alt="{_wc_alt}" '
-        f'style="width:100%;height:auto;border-radius:8px;display:block">',
-        unsafe_allow_html=True,
-    )
+_wc_freq = _build_wordcloud_cached(report.get("generated_at", ""), report)
+if _wc_freq:
+    st.markdown(_wordcloud_html(_wc_freq), unsafe_allow_html=True)
 else:
     st.caption("Not enough text to generate a word cloud — run a fresh report.")
 

@@ -55,45 +55,24 @@ st.set_page_config(
 
 IST = pytz.timezone("Asia/Kolkata")
 
-# ── Design tokens ──────────────────────────────────────────────────────────────
-INK         = "#0E1116"
-INK_2       = "#33393F"
-SLATE       = "#5B6472"
-SLATE_MUTE  = "#8A93A1"
-SLATE_FAINT = "#A2AAB6"
-DISABLED    = "#C0C6CF"
-PAPER       = "#F4F5F7"
-PAGE        = "#E7E9EC"
-WHITE       = "#FFFFFF"
-HAIR        = "#E2E5EA"
-HAIR_2      = "#EEF0F3"
-RULE        = "#D7DBE1"
-ACCENT      = "#1F47E6"
-ACCENT_DEEP = "#163E9E"
-POS         = "#137A3F"
-POS_BG      = "#E8F3EC"
-NEG         = "#C4361E"
-NEG_BG      = "#FBEAE6"
-NEU_BAR     = "#C9CFD8"
-NEU_PILL    = "#EEF0F3"
-GOLD        = "#9A6B2F"
-
-# Aliases for backward-compat with PDF generator / helpers
-BG     = PAPER
-CARD   = WHITE
-BORDER = HAIR
-NEU    = SLATE
+# ── Palette ────────────────────────────────────────────────────────────────────
+POS    = "#1a7f37"
+NEG    = "#b91c1c"
+NEU    = "#78716c"
+GOLD   = "#b45309"
+BG     = "#f5f4f0"
+CARD   = "#ffffff"
+BORDER = "#e8e6e0"
+ACCENT = "#1e3a5f"
 
 PLATFORM_COLORS = {
-    "Twitter/X":          ACCENT,
-    "Twitter/X (Office)": INK,
-    "Instagram":          NEG,
-    "Facebook":           ACCENT,
-    "YouTube":            NEG,
-    "LinkedIn":           ACCENT,
+    "Twitter/X": "#1d9bf0", "Twitter/X (Office)": "#0d8ecf",
+    "Instagram": "#e1306c", "Facebook": "#1877f2",
+    "YouTube": "#ff0000",   "LinkedIn": "#0a66c2",
 }
 
 # SVG path data (d=) for each platform — used as low-opacity watermarks.
+# Multiple sub-paths are separated by spaces; fill-rule="evenodd" handles holes.
 _PLATFORM_SVG = {
     "Twitter/X": (
         "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231"
@@ -152,202 +131,155 @@ _PLATFORM_SVG = {
         " 0 22.222 0h.003z"
     ),
 }
-SENT_COLOR = {"positive": POS, "negative": NEG, "neutral": SLATE}
+SENT_COLOR = {"positive": POS, "negative": NEG, "neutral": NEU}
 SENT_ICON  = {"positive": "▲", "negative": "▼", "neutral": "●"}
 
-# ── Google Fonts ───────────────────────────────────────────────────────────────
-st.markdown(
-    '<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800'
-    '&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">',
-    unsafe_allow_html=True,
-)
-
 # ── Inject global CSS ──────────────────────────────────────────────────────────
-st.markdown(f"""
+st.markdown("""
 <style>
   /* ── Base ── */
-  [data-testid="stAppViewContainer"] {{
-    background: {PAGE};
-    font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
-  }}
-  [data-testid="stSidebar"] {{
-    background: {INK};
+  [data-testid="stAppViewContainer"] {
+    background: #eeebe5;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
+  }
+  [data-testid="stSidebar"] {
+    background: #0f1623;
     color: white;
     border-right: 1px solid #1c2333;
-  }}
-  .block-container {{
-    padding: 0 32px 3rem;
-    max-width: 1320px;
-  }}
-  h1, h2, h3 {{
-    font-family: 'Archivo', sans-serif;
-    letter-spacing: -0.025em;
-  }}
+  }
+  .block-container { padding: 2rem 2.8rem 3.5rem; max-width: 1480px; }
+  h1, h2, h3 { font-family: 'Georgia', 'Cambria', serif; letter-spacing: -0.025em; }
 
-  /* ── Dividers — bleed to card edge ── */
-  .divider {{
+  /* ── Dividers ── */
+  .divider {
     border: none;
-    border-top: 1px solid {HAIR};
-    margin: 1.6rem -32px;
-  }}
+    border-top: 1px solid #e0ddd7;
+    margin: 2rem 0;
+  }
 
-  /* ── Cards — sharp, flat ── */
-  .card {{
-    background: {WHITE};
-    border: 1px solid {HAIR};
-    border-radius: 0;
-    padding: 22px;
+  /* ── Premium cards ── */
+  .card {
+    background: #ffffff;
+    border: 1px solid #e0ddd7;
+    border-radius: 16px;
+    padding: 18px 22px;
     margin-bottom: 12px;
-    box-shadow: none;
-  }}
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.04),
+      0 4px 12px rgba(0,0,0,0.06),
+      0 16px 40px rgba(0,0,0,0.04);
+  }
 
   /* ── Sentiment item cards ── */
-  .neg-card {{
-    background: {NEG_BG};
-    border: 1px solid {HAIR};
-    border-top: 3px solid {NEG};
-    border-radius: 0;
+  .neg-card {
+    background: #fff9f9;
+    border: 1px solid #f2d0d0;
+    border-left: 4px solid #b91c1c;
+    border-radius: 12px;
     padding: 15px 20px;
     margin-bottom: 10px;
-  }}
-  .pos-card {{
-    background: {POS_BG};
-    border: 1px solid {HAIR};
-    border-top: 3px solid {POS};
-    border-radius: 0;
+    box-shadow: 0 1px 4px rgba(185,28,28,0.06);
+  }
+  .pos-card {
+    background: #f7fdf8;
+    border: 1px solid #c4e8cc;
+    border-left: 4px solid #1a7f37;
+    border-radius: 12px;
     padding: 15px 20px;
     margin-bottom: 10px;
-  }}
-  .neu-card {{
-    background: {WHITE};
-    border: 1px solid {HAIR};
-    border-radius: 0;
+    box-shadow: 0 1px 4px rgba(26,127,55,0.06);
+  }
+  .neu-card {
+    background: #f9f8f5;
+    border: 1px solid #e0ddd7;
+    border-radius: 12px;
     padding: 15px 20px;
     margin-bottom: 10px;
-  }}
+  }
 
   /* ── Badges ── */
-  .badge {{
+  .badge {
     display: inline-block;
-    padding: 3px 9px;
-    border-radius: 0;
-    font-size: 10px;
+    padding: 3px 11px;
+    border-radius: 20px;
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.06em;
-    font-family: 'IBM Plex Mono', monospace;
-    text-transform: uppercase;
-  }}
-  .badge-neg {{ background: {NEG_BG}; color: {NEG}; }}
-  .badge-pos {{ background: {POS_BG}; color: {POS}; }}
-  .badge-neu {{ background: {NEU_PILL}; color: {SLATE}; }}
+    letter-spacing: 0.3px;
+  }
+  .badge-neg { background: #fde8e8; color: #9b1c1c; }
+  .badge-pos { background: #d6f5df; color: #145728; }
+  .badge-neu { background: #efede9; color: #5c5956; }
 
   /* ── Score display ── */
-  .score-big {{
-    font-size: 48px;
-    font-weight: 800;
-    font-family: 'Archivo', sans-serif;
-    letter-spacing: -0.035em;
-    line-height: .85;
-  }}
+  .score-big {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Georgia', serif;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
 
-  /* ── Meta text ── */
-  .meta-text {{
-    font-size: 11px;
-    color: {SLATE_MUTE};
-    font-family: 'IBM Plex Mono', monospace;
-    letter-spacing: 0.04em;
-    line-height: 1.65;
-  }}
+  /* ── Misc ── */
+  .meta-text { font-size: 12px; color: #7c7975; line-height: 1.65; }
+  .platform-pill { display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600; color:white; }
+  .adjusted-badge { font-size:10px; color:#92400e; background:#fef3c7; padding:1px 6px; border-radius:8px; }
 
-  /* ── Platform chips ── */
-  .platform-pill {{
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 0;
-    font-size: 10px;
-    font-weight: 600;
-    color: white;
-    font-family: 'IBM Plex Mono', monospace;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }}
-  .adjusted-badge {{
-    font-size: 10px;
-    color: {ACCENT};
-    font-family: 'IBM Plex Mono', monospace;
-    letter-spacing: 0.04em;
-  }}
+  /* ── Section labels ── */
+  .section-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2c2a28;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e0ddd7;
+  }
 
-  /* ── Section labels — data terminal pattern ── */
-  .section-label {{
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    font-size: 11px;
-    font-family: 'IBM Plex Mono', monospace;
-    letter-spacing: .16em;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: {INK};
-    margin-bottom: 16px;
-    padding-bottom: 0;
-    border-bottom: none;
-  }}
-
-  /* ── Force dark text ── */
+  /* ── Force dark text — prevents white-on-grey on mobile dark mode ── */
   [data-testid="stMarkdownContainer"] p,
   [data-testid="stMarkdownContainer"] span:not([style]),
-  .stMarkdown p {{ color: {INK_2}; }}
+  .stMarkdown p { color: #1a1917; }
 
-  /* ── Compact PDF download buttons ── */
-  :not([data-testid="stSidebar"]) [data-testid="stDownloadButton"] > button {{
+  /* ── Compact PDF download buttons (main content only, not sidebar) ── */
+  :not([data-testid="stSidebar"]) [data-testid="stDownloadButton"] > button {
     padding: 0.2rem 0.55rem !important;
     font-size: 11px !important;
     line-height: 1.4 !important;
     min-height: auto !important;
-    border-radius: 0 !important;
-    font-family: 'IBM Plex Mono', monospace !important;
-    letter-spacing: 0.04em !important;
-  }}
+  }
 
-  /* ── Main content buttons — data terminal style ── */
-  :not([data-testid="stSidebar"]) [data-testid="stButton"] > button {{
-    background-color: {INK} !important;
-    color: {WHITE} !important;
-    border: 1px solid {INK} !important;
-    border-radius: 0 !important;
+  /* ── Follower panel ── */
+  .follower-panel {
+    background: #faf8f4;
+    border: 1px solid #e0ddd7;
+    border-radius: 18px;
+    padding: 20px 18px;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.03),
+      0 4px 12px rgba(0,0,0,0.05);
+  }
+  .follower-panel-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2c2a28;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e0ddd7;
+  }
+
+  /* ── Main content buttons — white bg, navy text, readable on mobile ── */
+  :not([data-testid="stSidebar"]) [data-testid="stButton"] > button {
+    background-color: #ffffff !important;
+    color: #1e3a5f !important;
+    border: 1.5px solid #c8c4bc !important;
     font-weight: 600 !important;
-    font-family: 'IBM Plex Mono', monospace !important;
-    font-size: 11px !important;
-    letter-spacing: 0.08em !important;
-    text-transform: uppercase !important;
-  }}
-  :not([data-testid="stSidebar"]) [data-testid="stButton"] > button:hover {{
-    background-color: {ACCENT} !important;
-    border-color: {ACCENT} !important;
-  }}
-
-  /* ── Streamlit tab overrides ── */
-  [data-testid="stTabs"] [role="tab"] {{
-    font-family: 'IBM Plex Mono', monospace !important;
-    font-size: 11px !important;
-    letter-spacing: 0.08em !important;
-    text-transform: uppercase !important;
-    border-radius: 0 !important;
-  }}
-  [data-testid="stTabs"] [role="tab"][aria-selected="true"] {{
-    color: {INK} !important;
-    font-weight: 600 !important;
-    border-bottom-color: {ACCENT} !important;
-  }}
-
-  /* ── Selectbox ── */
-  [data-testid="stSelectbox"] > div > div {{
-    border-radius: 0 !important;
-    border-color: {RULE} !important;
-    font-family: 'IBM Plex Mono', monospace !important;
-    font-size: 11px !important;
-  }}
+  }
+  :not([data-testid="stSidebar"]) [data-testid="stButton"] > button:hover {
+    background-color: #1e3a5f !important;
+    color: #ffffff !important;
+    border-color: #1e3a5f !important;
+  }
 </style>
 """, unsafe_allow_html=True)
 
@@ -365,30 +297,12 @@ def report_period_header(report: dict) -> str:
     hours   = report.get("period_hours", 24)
     try:
         gen_ist    = _to_ist(gen_iso)
-        date_str   = gen_ist.strftime("%d %b %Y").upper()
+        date_str   = gen_ist.strftime("%d %B %Y")
         period_str = f"Last {hours} hours"
-        generated  = gen_ist.strftime("%d %b %Y · %I:%M %p IST").upper()
+        generated  = gen_ist.strftime("%d %b %Y, %I:%M %p IST")
         return date_str, period_str, generated
     except Exception:
         return "—", "—", "—"
-
-
-def _section_hdr(num: str, title: str, caption: str = "", num_color: str = "") -> str:
-    """Render a data-terminal section header: [num] [TITLE] [caption] [──]"""
-    nc = num_color or ACCENT
-    cap_html = (
-        f"<span style='font-family:\"IBM Plex Mono\",monospace;font-size:10px;"
-        f"letter-spacing:.06em;color:{SLATE_MUTE};font-weight:400'>{_e(caption)}</span>"
-    ) if caption else ""
-    return f"""
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;margin-top:4px">
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;
-                   color:{nc};font-weight:600">{num}</span>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;
-                   color:{INK};font-weight:600">{title}</span>
-      {cap_html}
-      <span style="flex:1;height:1px;background:{RULE}"></span>
-    </div>"""
 
 
 def sentiment_bar_html(pos: int, neu: int, neg: int) -> str:
@@ -397,27 +311,15 @@ def sentiment_bar_html(pos: int, neu: int, neg: int) -> str:
     np_ = neu / total * 100
     ngp = neg / total * 100
     return f"""
-    <div style="display:flex;height:8px;width:100%;margin:14px 0 0">
+    <div style="display:flex;gap:2px;height:8px;border-radius:6px;overflow:hidden;margin:12px 0 10px">
       <div style="background:{POS};width:{pp:.1f}%;min-width:{('2px' if pp > 0 else '0')}"></div>
-      <div style="background:{NEU_BAR};width:{np_:.1f}%;min-width:{('2px' if np_ > 0 else '0')}"></div>
+      <div style="background:{NEU};width:{np_:.1f}%;min-width:{('2px' if np_ > 0 else '0')}"></div>
       <div style="background:{NEG};width:{ngp:.1f}%;min-width:{('2px' if ngp > 0 else '0')}"></div>
     </div>
-    <div style="display:flex;gap:16px;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:11px">
-      <span style="display:flex;align-items:center;gap:6px">
-        <span style="width:8px;height:8px;background:{POS};display:inline-block"></span>
-        <b style="color:{INK}">{pos}</b>
-        <span style="color:{SLATE}">POS&nbsp;{pp:.0f}%</span>
-      </span>
-      <span style="display:flex;align-items:center;gap:6px">
-        <span style="width:8px;height:8px;background:{NEU_BAR};display:inline-block"></span>
-        <b style="color:{INK}">{neu}</b>
-        <span style="color:{SLATE}">NEU&nbsp;{np_:.0f}%</span>
-      </span>
-      <span style="display:flex;align-items:center;gap:6px">
-        <span style="width:8px;height:8px;background:{NEG};display:inline-block"></span>
-        <b style="color:{INK}">{neg}</b>
-        <span style="color:{SLATE}">NEG&nbsp;{ngp:.0f}%</span>
-      </span>
+    <div style="display:flex;gap:20px;font-size:12px;color:#5c5956">
+      <span><span style="color:{POS};font-weight:700">{pos}</span> <span style="opacity:.75">positive ({pp:.0f}%)</span></span>
+      <span><span style="color:{NEU};font-weight:700">{neu}</span> <span style="opacity:.75">neutral ({np_:.0f}%)</span></span>
+      <span><span style="color:{NEG};font-weight:700">{neg}</span> <span style="opacity:.75">negative ({ngp:.0f}%)</span></span>
     </div>"""
 
 
@@ -437,15 +339,14 @@ def _md_escape(text: str) -> str:
 
 
 def _score_badge(label: str, sc: float) -> str:
-    """Sharp monospace score pill — only constants and a float, no user text."""
+    """Safe badge HTML — contains only constants (hex colors) and a float. No user text."""
     color = SENT_COLOR[label]
-    bg    = POS_BG if label == "positive" else (NEG_BG if label == "negative" else NEU_PILL)
     icon  = SENT_ICON[label]
     return (
         f"<div style='text-align:right;padding-top:4px'>"
-        f"<span style='background:{bg};color:{color};"
-        f"padding:4px 8px;font-size:11px;font-weight:600;"
-        f"white-space:nowrap;font-family:\"IBM Plex Mono\",monospace;letter-spacing:0.04em'>"
+        f"<span style='background:{color}12;border:1.5px solid {color}55;color:{color};"
+        f"padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;"
+        f"white-space:nowrap;font-family:Georgia,serif;letter-spacing:0.3px'>"
         f"{icon} {sc:+.2f}</span></div>"
     )
 
@@ -454,6 +355,7 @@ def render_news_card(item: dict, show_summary: bool = False):
     """Render a news card using native Streamlit components. No user text goes into HTML."""
     label = item["sentiment_label"]
     sc    = item["sentiment_score"]
+    color = SENT_COLOR[label]
 
     c1, c2 = st.columns([11, 2])
     with c1:
@@ -463,6 +365,7 @@ def render_news_card(item: dict, show_summary: bool = False):
 
         group_items = item.get("group_items", [])
         meta_parts = [f"`{item.get('source','')}`", item.get("published_display", "")]
+        # Show "+N similar" only for old reports that lack group_items detail
         if item.get("group_size", 1) > 1 and not group_items:
             meta_parts.append(f"*+{item['group_size']-1} similar*")
         if item.get("adjustment"):
@@ -493,12 +396,12 @@ def render_news_card(item: dict, show_summary: bool = False):
                 with gb:
                     st.markdown(_score_badge(g_label, g_sc), unsafe_allow_html=True)
                 st.markdown(
-                    f"<hr style='margin:2px 0 8px;border:none;border-top:1px solid {HAIR_2}'>",
+                    "<hr style='margin:2px 0 8px;border:none;border-top:1px solid #f5f4f0'>",
                     unsafe_allow_html=True,
                 )
 
     st.markdown(
-        f"<hr style='margin:4px 0 10px;border:none;border-top:1px solid {HAIR_2}'>",
+        "<hr style='margin:4px 0 10px;border:none;border-top:1px solid #f0efec'>",
         unsafe_allow_html=True,
     )
 
@@ -508,7 +411,7 @@ def render_mention_card(item: dict):
     label    = item.get("sentiment_label", "neutral")
     sc       = item.get("sentiment_score", 0.0)
     platform = item.get("platform", "")
-    pc       = PLATFORM_COLORS.get(platform, SLATE)
+    pc       = PLATFORM_COLORS.get(platform, "#6b7280")
     url      = item.get("url", "")
     total_eng = _total_engagement(item)
 
@@ -518,17 +421,14 @@ def render_mention_card(item: dict):
         date_str   = _e(item.get("published_display", ""))
         meta = f"{handle_str} · {date_str}" if handle_str else date_str
         st.markdown(
-            f"<span style='background:{pc};color:white;padding:3px 8px;"
-            f"font-size:10px;font-weight:600;font-family:\"IBM Plex Mono\",monospace;"
-            f"letter-spacing:.04em'>{_e(platform)}</span>"
-            f"&nbsp;<span style='font-size:11px;color:{SLATE_MUTE};"
-            f"font-family:\"IBM Plex Mono\",monospace'>{meta}</span>",
+            f"<span style='background:#1d6aff;color:white;padding:2px 8px;border-radius:4px;"
+            f"font-size:11px;font-weight:600'>{platform}</span>"
+            f"&nbsp;<span style='font-size:12px;color:#7c7975'>{meta}</span>",
             unsafe_allow_html=True,
         )
         text = item.get("text", "") or item.get("title", "")
         st.markdown(
-            f"<p style='color:{INK_2};font-size:14px;line-height:1.5;margin:4px 0 6px'>"
-            f"{_e(text[:300])}</p>",
+            f"<p style='color:#1a1917;font-size:14px;line-height:1.5;margin:4px 0 6px'>{_e(text[:300])}</p>",
             unsafe_allow_html=True,
         )
         caption_parts = []
@@ -547,7 +447,7 @@ def render_mention_card(item: dict):
         st.markdown(_score_badge(label, sc), unsafe_allow_html=True)
 
     st.markdown(
-        f"<hr style='margin:4px 0 10px;border:none;border-top:1px solid {HAIR_2}'>",
+        "<hr style='margin:4px 0 10px;border:none;border-top:1px solid #f0efec'>",
         unsafe_allow_html=True,
     )
 
@@ -562,8 +462,8 @@ def _total_engagement(post: dict) -> int:
 
 
 def _top_post_card_html(post: dict, rank: int) -> str:
-    """HTML card for the Top Posts grid — data terminal style."""
-    pc       = PLATFORM_COLORS.get(post.get("platform", ""), SLATE)
+    """HTML card for the Top Posts grid."""
+    pc       = PLATFORM_COLORS.get(post.get("platform", ""), "#6b7280")
     platform = post.get("platform", "")
     likes    = post.get("likes", 0) or 0
     cmt      = post.get("comments", 0) or 0
@@ -572,40 +472,35 @@ def _top_post_card_html(post: dict, rank: int) -> str:
     url      = post.get("url", "")
     text     = post.get("text", "")
     preview  = _e(text[:150]) + ("…" if len(text) > 150 else "")
+    medal    = {1: "🥇", 2: "🥈", 3: "🥉"}.get(rank, f"#{rank}")
 
-    rank_bg  = {1: INK, 2: SLATE, 3: GOLD}.get(rank, SLATE)
     wrap_open  = f'<a href="{url}" target="_blank" style="text-decoration:none">' if url else "<div>"
     wrap_close = "</a>" if url else "</div>"
 
     return f"""
     {wrap_open}
-    <div style="background:{WHITE};border:1px solid {HAIR};border-radius:0;
-                padding:20px 22px;margin-bottom:8px;display:flex;flex-direction:column">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
-        <span style="display:inline-flex;align-items:center;justify-content:center;
-                     width:24px;height:24px;background:{rank_bg};color:{WHITE};
-                     font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600">
-          {rank}
-        </span>
-        <span style="background:{pc};color:{WHITE};font-family:'IBM Plex Mono',monospace;
-                     font-size:10px;letter-spacing:.04em;padding:3px 8px">{_e(platform)}</span>
+    <div style="background:#fff;border:1px solid #e8e6e0;border-top:3px solid {pc};
+                border-radius:14px;padding:18px 20px;margin-bottom:8px;
+                box-shadow:0 1px 4px rgba(0,0,0,0.05)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <span style="font-size:20px;line-height:1">{medal}</span>
+        <span style="background:#1d6aff;color:white;padding:2px 9px;border-radius:4px;
+                     font-size:10px;font-weight:700;letter-spacing:0.3px">{platform}</span>
       </div>
-      <div style="font-size:36px;font-weight:800;letter-spacing:-.03em;
-                  line-height:.9;color:{INK};font-family:'Archivo',sans-serif">{total:,}</div>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;
-                  color:{SLATE_MUTE};margin-top:5px">TOTAL ENGAGEMENT</div>
-      <div style="display:flex;gap:14px;margin-top:14px;padding-bottom:14px;
-                  border-bottom:1px solid {HAIR_2};font-family:'IBM Plex Mono',monospace;font-size:11px">
-        <span style="color:{SLATE}">LIKE <b style="color:{INK}">{likes:,}</b></span>
-        <span style="color:{SLATE}">CMT <b style="color:{INK}">{cmt:,}</b></span>
-        <span style="color:{SLATE}">RT <b style="color:{INK}">{rt:,}</b></span>
+      <div style="font-size:30px;font-weight:700;color:#1a1917;font-family:Georgia,serif;
+                  letter-spacing:-0.03em;line-height:1">{total:,}</div>
+      <div style="font-size:9px;font-weight:700;color:#a8a29e;letter-spacing:1.2px;
+                  text-transform:uppercase;margin-bottom:10px">Total Engagement</div>
+      <div style="display:flex;gap:14px;font-size:11px;color:#5c5956;margin-bottom:12px">
+        <span>❤ {likes:,}</span>
+        <span>💬 {cmt:,}</span>
+        <span>🔁 {rt:,}</span>
       </div>
-      <p style="font-size:13px;color:{INK_2};line-height:1.5;margin-top:14px;
-                display:-webkit-box;-webkit-line-clamp:3;
-                -webkit-box-orient:vertical;overflow:hidden">{preview}</p>
-      <div style="margin-top:auto;padding-top:10px;font-family:'IBM Plex Mono',monospace;
-                  font-size:10px;color:{SLATE_MUTE}">
-        {_e(post.get('handle',''))} · {_e(post.get('published_display',''))}
+      <div style="font-size:12px;color:#374151;line-height:1.5;border-top:1px solid #f0efec;
+                  padding-top:10px;display:-webkit-box;-webkit-line-clamp:3;
+                  -webkit-box-orient:vertical;overflow:hidden">{preview}</div>
+      <div style="font-size:10px;color:#a8a29e;margin-top:8px">
+        {_e(post.get('handle',''))} &nbsp;·&nbsp; {_e(post.get('published_display',''))}
       </div>
     </div>
     {wrap_close}"""
@@ -613,7 +508,7 @@ def _top_post_card_html(post: dict, rank: int) -> str:
 
 def render_social_card(post: dict):
     """Render a social media post card with total-engagement badge."""
-    pc       = PLATFORM_COLORS.get(post.get("platform", ""), SLATE)
+    pc       = PLATFORM_COLORS.get(post.get("platform", ""), "#6b7280")
     likes    = post.get("likes", 0) or 0
     cmt      = post.get("comments", 0) or 0
     rt       = post.get("retweets") or post.get("shares") or 0
@@ -624,11 +519,9 @@ def render_social_card(post: dict):
     c1, c2 = st.columns([11, 2])
     with c1:
         st.markdown(
-            f"<span style='background:{pc};color:white;padding:3px 8px;"
-            f"font-size:10px;font-weight:600;font-family:\"IBM Plex Mono\",monospace;"
-            f"letter-spacing:.04em'>{_e(platform)}</span>"
-            f"&nbsp;<span style='font-size:11px;color:{SLATE_MUTE};"
-            f"font-family:\"IBM Plex Mono\",monospace'>"
+            f"<span style='background:#1d6aff;color:white;padding:2px 8px;border-radius:4px;"
+            f"font-size:11px;font-weight:600'>{platform}</span>"
+            f"&nbsp;<span style='font-size:12px;color:#7c7975'>"
             f"{_e(post.get('handle',''))} · {_e(post.get('published_display',''))}</span>",
             unsafe_allow_html=True,
         )
@@ -645,23 +538,25 @@ def render_social_card(post: dict):
         if total > 0:
             st.markdown(
                 f"<div style='text-align:right;padding-top:4px'>"
-                f"<span style='background:{pc}18;border:1px solid {pc}55;color:{pc};"
-                f"padding:4px 10px;font-size:12px;font-weight:700;"
-                f"white-space:nowrap;font-family:\"IBM Plex Mono\",monospace'>{total:,}</span>"
-                f"<div style='font-size:9px;color:{SLATE_MUTE};margin-top:3px;text-align:right;"
-                f"letter-spacing:0.5px;font-family:\"IBM Plex Mono\",monospace'>engagement</div>"
-                f"</div>",
+                f"<span style='background:{pc}14;border:1.5px solid {pc}55;color:{pc};"
+                f"padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700;"
+                f"white-space:nowrap;font-family:Georgia,serif'>{total:,}</span>"
+                f"<div style='font-size:9px;color:#a8a29e;margin-top:3px;text-align:right;"
+                f"letter-spacing:0.5px'>engagement</div></div>",
                 unsafe_allow_html=True,
             )
 
     st.markdown(
-        f"<hr style='margin:4px 0 10px;border:none;border-top:1px solid {HAIR_2}'>",
+        "<hr style='margin:4px 0 10px;border:none;border-top:1px solid #f0efec'>",
         unsafe_allow_html=True,
     )
 
 
 def _strip_html(text: str) -> str:
-    """Remove HTML markup, URLs, HTML entities, and non-Latin characters."""
+    """
+    Remove HTML markup, URLs, HTML entities, and non-Latin characters so the
+    word cloud only sees meaningful English terms.
+    """
     import re
     text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"https?://\S+", " ", text)
@@ -673,7 +568,11 @@ def _strip_html(text: str) -> str:
 
 
 def _pos_filter(corpus: str, stop_words: set) -> dict:
-    """POS-tag the corpus and return {word: frequency} with all verbs removed."""
+    """
+    POS-tag the corpus with NLTK and return a {word: frequency} dict with
+    ALL verbs removed (tags VB, VBD, VBG, VBN, VBP, VBZ).
+    Falls back to a plain frequency count if NLTK is unavailable.
+    """
     import re
     words = re.findall(r"[a-zA-Z']{2,}", corpus)
     try:
@@ -687,13 +586,14 @@ def _pos_filter(corpus: str, stop_words: set) -> dict:
         freq = {}
         for word, tag in tagged:
             w = word.lower()
-            if tag.startswith("VB"):
+            if tag.startswith("VB"):          # skip all verb forms
                 continue
             if w in stop_words or len(w) < 2:
                 continue
             freq[w] = freq.get(w, 0) + 1
         return freq
     except Exception:
+        # Fallback without verb filtering
         freq = {}
         for w in (w.lower() for w in words):
             if w not in stop_words and len(w) >= 2:
@@ -702,7 +602,10 @@ def _pos_filter(corpus: str, stop_words: set) -> dict:
 
 
 def _build_wordcloud(report: dict):
-    """Generate a word cloud PNG from news headlines/summaries and top social posts."""
+    """
+    Generate a word cloud PNG from news headlines/summaries and the text of
+    the top-10 most-engaged social posts.  Returns PNG bytes or None.
+    """
     try:
         from wordcloud import WordCloud, STOPWORDS
     except ImportError:
@@ -716,23 +619,33 @@ def _build_wordcloud(report: dict):
     top_social = sorted(social, key=_total_engagement, reverse=True)[:10]
 
     parts: list[str] = []
+
+    # News titles (clean) + stripped summaries
     for item in news:
         parts.append(_strip_html(item.get("title", "")))
         parts.append(_strip_html(item.get("summary") or ""))
+
+    # Top engaged social posts — repeated by engagement tier
     for post in top_social:
         text   = _strip_html(post.get("text", ""))
         eng    = _total_engagement(post)
-        weight = 1 + min(eng // 3000, 4)
+        weight = 1 + min(eng // 3000, 4)   # 1× … 5× for > 12 k engagement
         parts.extend([text] * weight)
 
     corpus = " ".join(p for p in parts if p.strip())
     if len(corpus.split()) < 10:
         return None
 
+    # Verbs are now removed automatically by NLTK POS tagging in _pos_filter().
+    # This list covers only non-verb noise: subject boilerplate, generic
+    # uninformative nouns/adjectives, time words, and HTML residue.
     stop_words = set(STOPWORDS)
     stop_words.update({
+        # Subject boilerplate
         "piyush", "goyal", "minister", "union", "commerce", "ministry",
         "india", "indian", "government", "bjp",
+
+        # Vague adjectives with no topic signal
         "amazing", "global", "strong", "stronger", "key", "major",
         "important", "significant", "great", "good", "better", "best",
         "high", "higher", "big", "large", "broad", "robust", "dynamic",
@@ -743,6 +656,8 @@ def _build_wordcloud(report: dict):
         "overall", "general", "common", "possible", "potential", "similar",
         "different", "additional", "further", "full", "whole", "entire",
         "wide", "long", "short",
+
+        # Generic uninformative nouns
         "pact", "post", "progress", "growth", "move", "step", "way",
         "place", "part", "role", "work", "focus", "level", "number",
         "area", "side", "effort", "efforts", "goal", "goals",
@@ -757,6 +672,8 @@ def _build_wordcloud(report: dict):
         "session", "conference", "summit", "event", "programme", "program",
         "initiative", "initiatives", "measure", "measures",
         "action", "actions", "response", "responses",
+
+        # Time / quantity noise
         "new", "one", "two", "three", "four", "five",
         "year", "years", "today", "day", "week", "time", "mr", "ms",
         "per", "rs", "lakh", "crore", "cent", "news", "article",
@@ -765,7 +682,11 @@ def _build_wordcloud(report: dict):
         "ever", "never", "just", "even", "well", "back", "around",
         "across", "among", "between", "within", "without", "whether",
         "while", "though", "although", "however", "therefore", "thus",
+
+        # Single letters / short noise
         "s", "t", "u", "re", "ve", "ll",
+
+        # HTML attribute residue
         "href", "src", "alt", "rel", "class", "nbsp",
     })
 
@@ -776,7 +697,7 @@ def _build_wordcloud(report: dict):
     wc = WordCloud(
         width=1600,
         height=520,
-        background_color=WHITE,
+        background_color="#f5f4f0",
         colormap="Blues",
         max_words=120,
         collocations=False,
@@ -795,53 +716,73 @@ def _build_wordcloud(report: dict):
 def _fmt_delta(val) -> str:
     """Format a follower delta as a coloured HTML snippet."""
     if val is None:
-        return f"<span style='color:{DISABLED};font-family:\"IBM Plex Mono\",monospace'>—</span>"
+        return "<span style='color:#a8a29e'>—</span>"
     sign  = "+" if val >= 0 else ""
-    color = POS if val >= 0 else NEG
+    color = "#1a7f37" if val >= 0 else "#b91c1c"
     arrow = "▲" if val >= 0 else "▼"
     n = abs(val)
     txt = f"{n/1_000_000:.1f}M" if n >= 1_000_000 else \
           f"{n/1_000:.1f}K"     if n >= 1_000      else str(n)
-    return (f"<span style='color:{color};font-weight:700;"
-            f"font-family:\"IBM Plex Mono\",monospace;font-size:11px'>"
+    return (f"<span style='color:{color};font-weight:700'>"
             f"{arrow}&nbsp;{sign}{txt}</span>")
 
 
-def follower_grid_cell(f: dict) -> str:
-    """HTML for one cell in the 6-col hairline follower grid."""
+def follower_pill(f: dict) -> str:
     platform = f["platform"]
-    pc       = PLATFORM_COLORS.get(platform, SLATE)
+    pc       = PLATFORM_COLORS.get(platform, "#6b7280")
+    live     = "●" if f["is_live"] else "○"
     url      = f["url"]
-    d_day    = _fmt_delta(f.get("delta_daily"))
+    svg_d    = _PLATFORM_SVG.get(platform, "")
+
+    if svg_d:
+        fill_rule = 'fill-rule="evenodd"' if platform == "Instagram" else ""
+        watermark = (
+            f'<div style="position:absolute;right:-10px;bottom:-10px;'
+            f'width:76px;height:76px;opacity:0.07;pointer-events:none">'
+            f'<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" '
+            f'style="width:100%;height:100%;fill:{pc}">'
+            f'<path {fill_rule} d="{svg_d}"/>'
+            f'</svg></div>'
+        )
+    else:
+        watermark = ""
+
+    d_day      = _fmt_delta(f.get("delta_daily"))
+    delta_html = (
+        f'<div style="border-top:1px solid #f0efec;padding-top:6px;margin-top:6px">'
+        f'<div style="font-size:8px;color:#a8a29e;letter-spacing:0.8px;'
+        f'text-transform:uppercase;margin-bottom:2px">Today</div>'
+        f'<div style="font-size:11px">{d_day}</div>'
+        f'</div>'
+    )
 
     return (
-        f'<a href="{url}" target="_blank" style="text-decoration:none;display:block">'
-        f'<div style="background:{WHITE};border-top:3px solid {pc};padding:18px 18px;height:100%">'
-        f'<div style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;'
-        f'letter-spacing:.08em;color:{pc};margin-bottom:14px">{_e(platform)}</div>'
-        f'<div style="font-size:28px;font-weight:800;letter-spacing:-.03em;'
-        f'color:{INK};font-family:\'Archivo\',sans-serif">{_e(f["followers_display"])}</div>'
-        f'<div style="font-family:\'IBM Plex Mono\',monospace;font-size:9px;'
-        f'letter-spacing:.12em;color:{SLATE_MUTE};margin-top:3px">FOLLOWERS</div>'
-        f'<div style="margin-top:14px;padding-top:11px;border-top:1px solid {HAIR_2};'
-        f'display:flex;justify-content:space-between;align-items:center;'
-        f'font-family:\'IBM Plex Mono\',monospace;font-size:10px">'
-        f'<span style="color:{SLATE_FAINT};letter-spacing:.1em">TODAY</span>'
-        f'{d_day}'
+        f'<a href="{url}" target="_blank" style="text-decoration:none">'
+        f'<div style="position:relative;display:inline-block;background:#fff;'
+        f'border:1px solid #e8e6e0;border-top:3px solid {pc};'
+        f'border-radius:12px;padding:16px 20px 14px;text-align:center;'
+        f'min-width:130px;margin:4px;overflow:hidden;vertical-align:top;'
+        f'box-shadow:0 1px 4px rgba(0,0,0,0.05)">'
+        f'{watermark}'
+        f'<div style="position:relative;z-index:1">'
+        f'<div style="font-size:10px;color:#1d6aff;font-weight:700;'
+        f'letter-spacing:0.5px;margin-bottom:6px">{live}&nbsp;{platform}</div>'
+        f'<div style="font-size:26px;font-weight:700;color:#1a1917;'
+        f'font-family:Georgia,serif;letter-spacing:-0.03em">'
+        f'{f["followers_display"]}</div>'
+        f'<div style="font-size:9px;color:#a8a29e;margin-top:2px;letter-spacing:0.3px">'
+        f'followers</div>'
+        f'{delta_html}'
         f'</div>'
         f'</div></a>'
     )
 
 
-def follower_pill(f: dict) -> str:
-    """Pill-style follower card (used as fallback / PDF)."""
-    return follower_grid_cell(f)
-
-
 def follower_card_vertical(f: dict) -> str:
-    """Ultra-compact follower row for sidebar-style layouts."""
+    """Ultra-compact follower row for the vertical right panel (~32 px each)."""
     platform = f["platform"]
-    pc       = PLATFORM_COLORS.get(platform, SLATE)
+    pc       = PLATFORM_COLORS.get(platform, "#6b7280")
+    live     = "●" if f["is_live"] else "○"
     url      = f["url"]
     svg_d    = _PLATFORM_SVG.get(platform, "")
 
@@ -859,30 +800,30 @@ def follower_card_vertical(f: dict) -> str:
     d_day = f.get("delta_daily")
     if d_day is not None:
         sign    = "+" if d_day >= 0 else ""
-        d_color = POS if d_day >= 0 else NEG
+        d_color = "#1a7f37" if d_day >= 0 else "#b91c1c"
         n = abs(d_day)
         d_txt = (f"{n/1_000_000:.1f}M" if n >= 1_000_000
                  else f"{n/1_000:.1f}K"  if n >= 1_000 else str(n))
         delta_html = (
             f'<span style="font-size:11px;font-weight:700;color:{d_color};'
-            f'font-family:\"IBM Plex Mono\",monospace;flex-shrink:0">{sign}{d_txt}</span>'
+            f'letter-spacing:-0.01em;flex-shrink:0">{sign}{d_txt}</span>'
         )
     else:
-        delta_html = f'<span style="font-size:11px;color:{DISABLED};flex-shrink:0">—</span>'
+        delta_html = '<span style="font-size:11px;color:#d0cdc8;flex-shrink:0">—</span>'
 
     return (
         f'<a href="{url}" target="_blank" style="text-decoration:none;display:block">'
         f'<div style="display:flex;align-items:center;gap:8px;padding:5px 11px;'
-        f'background:{WHITE};border:1px solid {HAIR};border-left:3px solid {pc};'
-        f'margin-bottom:5px">'
+        f'background:#ffffff;border:1px solid #e0ddd7;border-left:2.5px solid {pc};'
+        f'border-radius:8px;margin-bottom:5px;'
+        f'box-shadow:0 1px 2px rgba(0,0,0,0.04),0 2px 6px rgba(0,0,0,0.04)">'
         f'{icon_html}'
         f'<div style="flex:1;min-width:0">'
-        f'<div style="font-size:8.5px;color:{pc};font-weight:700;letter-spacing:0.5px;'
-        f'font-family:\"IBM Plex Mono\",monospace;text-transform:uppercase;line-height:1">'
-        f'{_e(platform)}</div>'
-        f'<div style="font-size:15px;font-weight:800;color:{INK};'
-        f'font-family:\'Archivo\',sans-serif;letter-spacing:-0.02em;line-height:1.2">'
-        f'{_e(f["followers_display"])}</div>'
+        f'<div style="font-size:8.5px;color:#1d6aff;font-weight:700;letter-spacing:0.5px;'
+        f'text-transform:uppercase;line-height:1">{live}&nbsp;{platform}</div>'
+        f'<div style="font-size:15px;font-weight:700;color:#18171a;'
+        f'font-family:Georgia,serif;letter-spacing:-0.02em;line-height:1.2">'
+        f'{f["followers_display"]}</div>'
         f'</div>'
         f'{delta_html}'
         f'</div></a>'
@@ -891,11 +832,7 @@ def follower_card_vertical(f: dict) -> str:
 
 # ── Sidebar ────────────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.markdown(
-        f"<h3 style='color:#e2e8f0;font-size:13px;letter-spacing:1px;margin-bottom:16px;"
-        f"font-family:\"IBM Plex Mono\",monospace;text-transform:uppercase'>⚙ Controls</h3>",
-        unsafe_allow_html=True,
-    )
+    st.markdown("<h3 style='color:#e2e8f0;font-size:15px;letter-spacing:0.5px;margin-bottom:16px'>⚙ Controls</h3>", unsafe_allow_html=True)
     if st.button("🔄 Generate Report Now", type="primary", use_container_width=True):
         with st.spinner("Collecting data… (60–90 sec)"):
             try:
@@ -907,6 +844,7 @@ with st.sidebar:
                 st.error(str(e))
 
     from report_generator import load_latest_report, list_reports
+    # Always check if a newer report is available on disk and auto-load it.
     _latest_path = os.path.join("data", "reports", "latest.json")
     _latest_mtime = os.path.getmtime(_latest_path) if os.path.exists(_latest_path) else 0
     if _latest_mtime != st.session_state.get("_report_mtime"):
@@ -917,12 +855,7 @@ with st.sidebar:
 
     saved = list_reports()
     if saved:
-        st.markdown(
-            f"<p style='color:#94a3b8;font-size:11px;letter-spacing:1px;"
-            f"text-transform:uppercase;margin-top:20px;margin-bottom:6px;"
-            f"font-family:\"IBM Plex Mono\",monospace'>Archive</p>",
-            unsafe_allow_html=True,
-        )
+        st.markdown("<p style='color:#94a3b8;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-top:20px;margin-bottom:6px'>Archive</p>", unsafe_allow_html=True)
         sel = st.selectbox("", saved, label_visibility="collapsed")
         if st.button("Load selected", use_container_width=True):
             with open(os.path.join("data", "reports", sel)) as f:
@@ -930,6 +863,7 @@ with st.sidebar:
 
     st.markdown("<hr style='border-color:#2d3548;margin:20px 0'>", unsafe_allow_html=True)
 
+    # PDF downloads — generated once per report via @st.cache_data
     if st.session_state.get("report"):
         try:
             _r    = st.session_state["report"]
@@ -956,9 +890,9 @@ with st.sidebar:
     st.markdown("<hr style='border-color:#2d3548;margin:20px 0'>", unsafe_allow_html=True)
     show_summary = st.toggle("Show article summaries", value=False)
 
-    st.markdown(f"""
-    <div style='font-size:11px;color:#94a3b8;margin-top:16px;line-height:1.8;
-                font-family:"IBM Plex Mono",monospace'>
+
+    st.markdown("""
+    <div style='font-size:11px;color:#94a3b8;margin-top:16px;line-height:1.8'>
     <b style='color:#cbd5e1;letter-spacing:0.5px'>Handles tracked</b><br>
     🐦 @PiyushGoyal · @PiyushGoyalOffc<br>
     📸 @piyushgoyalofficial<br>
@@ -974,25 +908,12 @@ report = st.session_state.get("report")
 # ── Empty state ────────────────────────────────────────────────────────────────
 if not report:
     st.markdown(f"""
-    <div style="background:{INK};color:{WHITE};display:flex;align-items:center;
-                justify-content:space-between;padding:11px 32px;
-                font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.09em;
-                margin:0 -32px 28px">
-      <div style="display:flex;align-items:center;gap:11px">
-        <span style="width:7px;height:7px;background:{ACCENT};display:inline-block"></span>
-        <span>MEDIA INTELLIGENCE // DAILY BRIEF</span>
-      </div>
-      <span style="color:{SLATE_MUTE}">NO REPORT LOADED</span>
-    </div>
-    <div style="padding-bottom:20px;border-bottom:1px solid {HAIR};margin-bottom:24px">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;
-                  color:{ACCENT};margin-bottom:9px">SUBJECT // PIYUSH GOYAL</div>
-      <h1 style="margin:0;font-size:40px;font-weight:800;letter-spacing:-.025em;
-                 color:{INK};font-family:'Archivo',sans-serif;line-height:.95">Daily Media Brief</h1>
+    <div style="border-top:3px solid {ACCENT};padding-top:20px;margin-bottom:28px">
+      <h1 style="margin:0;font-size:28px;color:#1a1917;font-family:'Georgia',serif">Piyush Goyal — Daily Media Brief</h1>
     </div>
     """, unsafe_allow_html=True)
     st.info("Click **Generate Report Now** in the sidebar (☰) to fetch live data.")
-    st.markdown(f"""
+    st.markdown("""
 **What this dashboard tracks:**
 - News from Google News, Economic Times, NDTV, Business Standard, Hindustan Times, LiveMint
 - Posts from Twitter/X (@PiyushGoyal, @PiyushGoyalOffc), Instagram, Facebook
@@ -1008,76 +929,38 @@ ms       = report["minister"]["sentiment"]
 m2       = report["ministry"]["sentiment"]
 followers = report.get("followers", [])
 
-# ── Status ribbon ──────────────────────────────────────────────────────────────
-st.markdown(f"""
-<div style="background:{INK};color:{WHITE};display:flex;align-items:center;
-            justify-content:space-between;padding:11px 32px;
-            font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.09em;
-            margin:0 -32px">
-  <div style="display:flex;align-items:center;gap:11px">
-    <span style="width:7px;height:7px;background:{ACCENT};display:inline-block"></span>
-    <span>MEDIA INTELLIGENCE // DAILY BRIEF</span>
-  </div>
-  <div style="display:flex;gap:26px">
-    <span style="color:{SLATE_MUTE}">GEN&nbsp;·&nbsp;{generated}</span>
-    <span style="color:{WHITE}">WINDOW · LAST 24H</span>
-  </div>
-</div>
-""", unsafe_allow_html=True)
-
 # ── Header ─────────────────────────────────────────────────────────────────────
-_n_news = stats.get('total_news', 0)
-_n_tw   = stats.get('total_tweets', 0)
-_n_ig   = stats.get('total_instagram', 0)
-_n_fb   = stats.get('total_facebook', 0)
-_n_twm  = stats.get('total_tw_mentions', 0)
-_n_lim  = stats.get('total_li_mentions', 0)
-
-def _count_chip(n, label):
-    return (
-        f"<div style='background:{WHITE};padding:13px 16px'>"
-        f"<div style='font-size:20px;font-weight:700;letter-spacing:-.02em;"
-        f"color:{INK};font-family:\"Archivo\",sans-serif'>{n}</div>"
-        f"<div style='font-family:\"IBM Plex Mono\",monospace;font-size:9px;"
-        f"letter-spacing:.12em;color:{SLATE_MUTE};margin-top:2px'>{label}</div>"
-        f"</div>"
-    )
-
-_chips = "".join([
-    _count_chip(_n_news,  "NEWS"),
-    _count_chip(_n_tw,    "TWEETS"),
-    _count_chip(_n_ig,    "INSTAGRAM"),
-    _count_chip(_n_fb,    "FACEBOOK"),
-    _count_chip(_n_twm,   "X MENTIONS"),
-    _count_chip(_n_lim,   "LI MENTIONS"),
-])
+# Build stats line — only include non-zero mention counts to avoid showing "0"
+_stat_parts = [
+    f"{stats.get('total_news', 0)} news",
+    f"{stats.get('total_tweets', 0)} tweets",
+    f"{stats.get('total_instagram', 0)} IG",
+    f"{stats.get('total_facebook', 0)} FB",
+]
+if stats.get('total_tw_mentions'):
+    _stat_parts.append(f"{stats['total_tw_mentions']} 🐦 mentions")
+if stats.get('total_li_mentions'):
+    _stat_parts.append(f"{stats['total_li_mentions']} 💼 mentions")
+_header_stats = " &nbsp;·&nbsp; ".join(_stat_parts)
 
 st.markdown(f"""
-<div style="padding:28px 32px 24px;background:{WHITE};border-bottom:1px solid {HAIR};margin:0 -32px;
-            margin-bottom:0">
-  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px">
-    <div>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;
-                  color:{ACCENT};margin-bottom:9px">SUBJECT // PIYUSH GOYAL</div>
-      <h1 style="margin:0;font-size:40px;font-weight:800;letter-spacing:-.025em;
-                 color:{INK};font-family:'Archivo',sans-serif;line-height:.95">
-        Daily Media Brief
-      </h1>
-    </div>
-    <div style="text-align:right;font-family:'IBM Plex Mono',monospace;
-                font-size:12px;color:{SLATE};line-height:1.5;flex-shrink:0">
-      <div style="font-size:16px;color:{INK};font-weight:600">{date_str}</div>
-      <div>LAST 24 HOURS</div>
-    </div>
+<div style="border-top:3px solid {ACCENT};padding-top:18px;border-bottom:1px solid #e8e6e0;padding-bottom:16px;margin-bottom:24px">
+  <h1 style="margin:0;font-size:28px;color:#1a1917;font-family:'Georgia',serif;letter-spacing:-0.02em">Piyush Goyal — Daily Media Brief</h1>
+  <div style="font-size:14px;color:#5c5956;margin-top:6px">
+    📅 <b style="color:#1a1917">{date_str}</b> &nbsp;·&nbsp;
+    <span style="color:#78716c">{period_str}</span>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:1px;
-              background:{HAIR};border:1px solid {HAIR};margin-top:22px">
-    {_chips}
+  <div style="font-size:12px;color:#a8a29e;margin-top:4px">
+    Generated: <span style="color:#7c7975">{generated}</span> &nbsp;·&nbsp; {_header_stats}
   </div>
 </div>
 """, unsafe_allow_html=True)
 
-# ── Sentiment overview — 3-col hairline grid ───────────────────────────────────
+# ── Sentiment overview — 3 equal columns, scores on −100 to +100 scale ────────
+# Order: Minister (news) | Minister (social mentions) | Ministry (news)
+_sa, _sb, _sc_col = st.columns(3, gap="medium")
+
+# Fetch social mentions data before rendering (needed for middle card)
 _rep_mm    = report["minister"].get("mentions_sentiment", {})
 _rep_ments = report["minister"].get("mentions", [])
 if _rep_mm.get("total", 0) > 0:
@@ -1088,42 +971,31 @@ else:
     sm_sent, sm_tw_n, sm_li_n = {}, 0, 0
 sm_total = sm_sent.get("total", 0)
 sm_sc    = sm_sent.get("score", 0.0) if sm_total > 0 else 0.0
-sm_color = POS if sm_sc >= 0.05 else (NEG if sm_sc <= -0.05 else SLATE)
+sm_color = POS if sm_sc >= 0.05 else (NEG if sm_sc <= -0.05 else NEU)
 
 _SCALE_NOTE = (
-    f"<div style='font-family:\"IBM Plex Mono\",monospace;font-size:9px;"
-    f"letter-spacing:.08em;color:{SLATE_FAINT};margin:14px 0 7px'>"
-    f"SCALE &minus;100 &rarr; +100</div>"
+    "<div style='font-size:9px;color:#b0ada8;letter-spacing:0.3px;margin-top:3px'>"
+    "Scale: −100 (most negative) to +100 (most positive)</div>"
 )
-
-st.markdown("<div style='background:" + PAPER + ";padding:28px 0 0'>", unsafe_allow_html=True)
-st.markdown(_section_hdr("01", "SENTIMENT OVERVIEW"), unsafe_allow_html=True)
-
-_sa, _sb, _sc_col = st.columns(3, gap="small")
 
 # ── Card A: Minister sentiment based on news ──────────────────────────────────
 with _sa:
     sc    = ms["score"]
-    color = POS if sc >= 0.05 else (NEG if sc <= -0.05 else SLATE)
+    color = POS if sc >= 0.05 else (NEG if sc <= -0.05 else NEU)
     disp  = sc * 100
-    lbl   = score_label(sc).upper()
-    lbl_bg = POS_BG if sc >= 0.05 else (NEG_BG if sc <= -0.05 else NEU_PILL)
     st.markdown(f"""
-    <div class="card">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;
-                  color:{SLATE_MUTE};margin-bottom:16px">MINISTER — PIYUSH GOYAL</div>
-      <div style="display:flex;align-items:baseline;gap:11px">
+    <div class="card" style="border-left:4px solid {color};margin-bottom:10px">
+      <div style="font-size:9.5px;font-weight:700;color:#9e9b96;letter-spacing:1.5px;
+                  text-transform:uppercase;margin-bottom:10px">Minister — Piyush Goyal</div>
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px">
         <span class="score-big" style="color:{color}">{disp:+.1f}</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;
-                     color:{color};background:{lbl_bg};padding:4px 8px">{lbl}</span>
+        <span style="font-size:14px;font-weight:600;color:{color}">{score_label(sc)}</span>
       </div>
       {_SCALE_NOTE}
       {sentiment_bar_html(ms['positive'], ms['neutral'], ms['negative'])}
-      <div style="margin-top:16px;padding-top:12px;border-top:1px solid {HAIR_2};
-                  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;
-                  color:{SLATE_MUTE};display:flex;justify-content:space-between">
-        <span>{ms['total']} NEWS ARTICLES</span>
-        <span style="color:{ACCENT}">NEWS-BASED</span>
+      <div class="meta-text" style="margin-top:5px">
+        {ms['total']} news articles &nbsp;·&nbsp;
+        <span style="color:#92400e;font-style:italic">News-based only</span>
       </div>
     </div>
     """, unsafe_allow_html=True)
@@ -1132,37 +1004,33 @@ with _sa:
 with _sb:
     if sm_total > 0:
         sm_disp = sm_sc * 100
-        sm_lbl  = score_label(sm_sc).upper()
-        sm_lbl_bg = POS_BG if sm_sc >= 0.05 else (NEG_BG if sm_sc <= -0.05 else NEU_PILL)
         st.markdown(f"""
-        <div class="card">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;
-                      color:{SLATE_MUTE};margin-bottom:16px">MINISTER — SOCIAL MENTIONS</div>
-          <div style="display:flex;align-items:baseline;gap:11px">
+        <div class="card" style="border-left:4px solid {sm_color};margin-bottom:10px">
+          <div style="font-size:9.5px;font-weight:700;color:#9e9b96;letter-spacing:1.5px;
+                      text-transform:uppercase;margin-bottom:10px">Minister — Social Mentions</div>
+          <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px">
             <span class="score-big" style="color:{sm_color}">{sm_disp:+.1f}</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;
-                         color:{sm_color};background:{sm_lbl_bg};padding:4px 8px">{sm_lbl}</span>
+            <span style="font-size:14px;font-weight:600;color:{sm_color}">{score_label(sm_sc)}</span>
           </div>
           {_SCALE_NOTE}
           {sentiment_bar_html(sm_sent.get('positive',0), sm_sent.get('neutral',0), sm_sent.get('negative',0))}
-          <div style="margin-top:16px;padding-top:12px;border-top:1px solid {HAIR_2};
-                      font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;
-                      color:{SLATE_MUTE};display:flex;justify-content:space-between">
-            <span>{sm_total} MENTIONS · {sm_tw_n} X / {sm_li_n} LI</span>
-            <span style="color:{ACCENT}">THIRD-PARTY</span>
+          <div class="meta-text" style="margin-top:5px">
+            {sm_total} mentions &nbsp;·&nbsp; 🐦 {sm_tw_n} X &nbsp;·&nbsp; 💼 {sm_li_n} LI
+            &nbsp;·&nbsp; <span style="color:#92400e;font-style:italic">Third-party only</span>
           </div>
         </div>
         """, unsafe_allow_html=True)
     else:
         st.markdown(f"""
-        <div class="card">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;
-                      color:{SLATE_MUTE};margin-bottom:16px">MINISTER — SOCIAL MENTIONS</div>
-          <div style="font-size:40px;font-weight:800;color:{HAIR};
-                      font-family:'Archivo',sans-serif;margin-bottom:4px">—</div>
+        <div class="card" style="border-left:4px solid #e0ddd7;margin-bottom:10px">
+          <div style="font-size:9.5px;font-weight:700;color:#9e9b96;letter-spacing:1.5px;
+                      text-transform:uppercase;margin-bottom:10px">Minister — Social Mentions</div>
+          <div style="font-size:28px;font-weight:700;color:#d0cdc8;font-family:Georgia,serif;
+                      margin-bottom:4px">—</div>
           {_SCALE_NOTE}
           <div class="meta-text" style="margin-top:8px">
-            Twitter/X &amp; LinkedIn mentions · <span style="color:{ACCENT}">THIRD-PARTY</span>
+            Twitter/X &amp; LinkedIn mentions &nbsp;·&nbsp;
+            <span style="color:#92400e;font-style:italic">Third-party only</span>
           </div>
           <div class="meta-text">Open 💬 Mentions tab or regenerate report</div>
         </div>
@@ -1171,31 +1039,24 @@ with _sb:
 # ── Card C: Ministry of Commerce & Industry (news) ────────────────────────────
 with _sc_col:
     sc2    = m2["score"]
-    color2 = POS if sc2 >= 0.05 else (NEG if sc2 <= -0.05 else SLATE)
+    color2 = POS if sc2 >= 0.05 else (NEG if sc2 <= -0.05 else NEU)
     disp2  = sc2 * 100
-    lbl2   = score_label(sc2).upper()
-    lbl2_bg = POS_BG if sc2 >= 0.05 else (NEG_BG if sc2 <= -0.05 else NEU_PILL)
     st.markdown(f"""
-    <div class="card">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;
-                  color:{SLATE_MUTE};margin-bottom:16px">MINISTRY OF COMMERCE &amp; INDUSTRY</div>
-      <div style="display:flex;align-items:baseline;gap:11px">
+    <div class="card" style="border-left:4px solid {color2};margin-bottom:10px">
+      <div style="font-size:9.5px;font-weight:700;color:#9e9b96;letter-spacing:1.5px;
+                  text-transform:uppercase;margin-bottom:10px">Ministry of Commerce &amp; Industry</div>
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px">
         <span class="score-big" style="color:{color2}">{disp2:+.1f}</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;
-                     color:{color2};background:{lbl2_bg};padding:4px 8px">{lbl2}</span>
+        <span style="font-size:14px;font-weight:600;color:{color2}">{score_label(sc2)}</span>
       </div>
       {_SCALE_NOTE}
       {sentiment_bar_html(m2['positive'], m2['neutral'], m2['negative'])}
-      <div style="margin-top:16px;padding-top:12px;border-top:1px solid {HAIR_2};
-                  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;
-                  color:{SLATE_MUTE};display:flex;justify-content:space-between">
-        <span>{m2['total']} NEWS ARTICLES</span>
-        <span style="color:{ACCENT}">NEWS-BASED</span>
+      <div class="meta-text" style="margin-top:5px">
+        {m2['total']} news articles &nbsp;·&nbsp;
+        <span style="color:#92400e;font-style:italic">News-based only</span>
       </div>
     </div>
     """, unsafe_allow_html=True)
-
-st.markdown("</div>", unsafe_allow_html=True)
 
 # ── Alert section — negative news + negative mentions ─────────────────────────
 all_news   = report["minister"]["news"] + report["ministry"]["news"]
@@ -1206,15 +1067,17 @@ neg_news = sorted(
     key=lambda x: x["sentiment_score"],
 )
 
+# Negative mentions: prefer report data; fall back to cached live fetch.
 _report_mentions = report["minister"].get("mentions", [])
+
 neg_mentions = sorted(
     [m for m in _report_mentions if m["sentiment_label"] == "negative"],
+    # Primary: highest engagement first; secondary: most negative first
     key=lambda m: (-_total_engagement(m), m.get("sentiment_score", 0)),
 )
 
 if neg_news or neg_mentions:
     st.markdown("<hr class='divider'>", unsafe_allow_html=True)
-    st.markdown(_section_hdr("02", "NEEDS ATTENTION", num_color=NEG), unsafe_allow_html=True)
 
     if neg_news and neg_mentions:
         _alert_col, _ment_col = st.columns([6, 5])
@@ -1226,13 +1089,14 @@ if neg_news or neg_mentions:
 
     if _alert_col and neg_news:
         with _alert_col:
-            st.markdown(f"""
-            <div style="background:{WHITE};border:1px solid {HAIR};border-top:3px solid {NEG};
-                        padding:20px 22px;margin-bottom:12px">
-              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;
-                          color:{NEG};margin-bottom:4px">NEWS ITEMS NEEDING ATTENTION</div>
-              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:{SLATE_MUTE};
-                          margin-bottom:16px">MOST NEGATIVE ARTICLES · MEDIA STRATEGY REVIEW</div>
+            st.markdown("""
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
+              <div style="background:#fde8e8;border-radius:10px;width:42px;height:42px;display:flex;
+                          align-items:center;justify-content:center;flex-shrink:0;font-size:20px">⚠️</div>
+              <div>
+                <div style="font-size:16px;font-weight:700;color:#9b1c1c;font-family:'Georgia',serif;letter-spacing:-0.01em">News Items Needing Attention</div>
+                <div style="font-size:12px;color:#7c7975;margin-top:2px">Most negative news articles — for media strategy review</div>
+              </div>
             </div>
             """, unsafe_allow_html=True)
             for item in neg_news[:5]:
@@ -1240,13 +1104,14 @@ if neg_news or neg_mentions:
 
     if _ment_col and neg_mentions:
         with _ment_col:
-            st.markdown(f"""
-            <div style="background:{WHITE};border:1px solid {HAIR};border-top:3px solid {NEG};
-                        padding:20px 22px;margin-bottom:12px">
-              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;
-                          color:{NEG};margin-bottom:4px">NEGATIVE MENTIONS</div>
-              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:{SLATE_MUTE};
-                          margin-bottom:16px">TWITTER/X &amp; LINKEDIN · SORTED BY ENGAGEMENT</div>
+            st.markdown("""
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
+              <div style="background:#fde8e8;border-radius:10px;width:42px;height:42px;display:flex;
+                          align-items:center;justify-content:center;flex-shrink:0;font-size:20px">⚠️</div>
+              <div>
+                <div style="font-size:16px;font-weight:700;color:#9b1c1c;font-family:'Georgia',serif;letter-spacing:-0.01em">Negative Mentions</div>
+                <div style="font-size:12px;color:#7c7975;margin-top:2px">Twitter/X &amp; LinkedIn — sorted by engagement</div>
+              </div>
             </div>
             """, unsafe_allow_html=True)
             for m in neg_mentions[:5]:
@@ -1258,53 +1123,41 @@ top_social = [p for p in sorted(all_social, key=_total_engagement, reverse=True)
 
 if top_social:
     st.markdown("<hr class='divider'>", unsafe_allow_html=True)
-    st.markdown(_section_hdr("03", "TOP POSTS BY ENGAGEMENT"), unsafe_allow_html=True)
+    st.markdown("<div class='section-label'>Top Posts by Engagement</div>",
+                unsafe_allow_html=True)
     _eng_cols = st.columns(3)
     for i, post in enumerate(top_social):
         with _eng_cols[i]:
-            st.markdown(_top_post_card_html(post, rank=i + 1), unsafe_allow_html=True)
+            st.markdown(_top_post_card_html(post, rank=i + 1),
+                        unsafe_allow_html=True)
 
 # ── Word Cloud ─────────────────────────────────────────────────────────────────
 st.markdown("<hr class='divider'>", unsafe_allow_html=True)
 st.markdown(
-    _section_hdr("04", "TOPICS IN FOCUS", caption="NEWS HEADLINES &amp; TOP ENGAGED POSTS"),
+    "<div class='section-label'>Topics in Focus — News Headlines &amp; Top Engaged Posts</div>",
     unsafe_allow_html=True,
 )
 _wc_bytes = _build_wordcloud_cached(report.get("generated_at", ""), report)
 if _wc_bytes:
-    st.markdown(
-        f"<div style='background:{WHITE};border:1px solid {HAIR};padding:20px'>",
-        unsafe_allow_html=True,
-    )
     st.image(_wc_bytes, use_container_width=True)
-    st.markdown("</div>", unsafe_allow_html=True)
 else:
     st.caption("Not enough text to generate a word cloud — run a fresh report.")
 
-# ── Follower counts — hairline grid ───────────────────────────────────────────
+# ── Follower counts — below word cloud ────────────────────────────────────────
 st.markdown("<hr class='divider'>", unsafe_allow_html=True)
-st.markdown(
-    _section_hdr("05", "OFFICIAL HANDLES", caption="FOLLOWER COUNT"),
-    unsafe_allow_html=True,
-)
-
-if followers:
-    cells_html = "".join(follower_grid_cell(f) for f in followers)
-    n_cols = len(followers)
-    st.markdown(
-        f"<div style='display:grid;grid-template-columns:repeat({n_cols},1fr);"
-        f"gap:1px;background:{HAIR};border:1px solid {HAIR};margin:0 -32px'>"
-        f"{cells_html}</div>",
-        unsafe_allow_html=True,
-    )
+st.markdown("<div class='section-label'>Official Handles — Follower Count</div>",
+            unsafe_allow_html=True)
+pills_html = "".join(follower_pill(f) for f in followers)
+st.markdown(f"<div style='display:flex;flex-wrap:wrap;gap:6px'>{pills_html}</div>",
+            unsafe_allow_html=True)
 
 # Trend toggle
-st.markdown("<div style='margin-top:12px'></div>", unsafe_allow_html=True)
+st.markdown("<div style='margin-top:10px'></div>", unsafe_allow_html=True)
 if "show_follower_trend" not in st.session_state:
     st.session_state.show_follower_trend = False
 if st.button(
-    "📈 SOCIAL MEDIA FOLLOWER TRENDS ↗" if not st.session_state.show_follower_trend
-    else "▲ HIDE FOLLOWER TRENDS",
+    "📈 Social Media Follower Trends" if not st.session_state.show_follower_trend
+    else "▲ Hide Follower Trends",
     key="btn_follower_trend",
 ):
     st.session_state.show_follower_trend = not st.session_state.show_follower_trend
@@ -1319,7 +1172,7 @@ if st.session_state.show_follower_trend:
             _fig = go.Figure()
             for _p in _live_platforms:
                 _df = _hist[_p].sort_values("ts")
-                _pc = PLATFORM_COLORS.get(_p, SLATE)
+                _pc = PLATFORM_COLORS.get(_p, "#6b7280")
                 _fig.add_trace(go.Scatter(
                     x=_df["ts"], y=_df["count"],
                     mode="lines+markers",
@@ -1336,22 +1189,22 @@ if st.session_state.show_follower_trend:
             _fig.update_layout(
                 height=280,
                 margin=dict(l=0, r=10, t=10, b=0),
-                plot_bgcolor=WHITE,
-                paper_bgcolor=PAGE,
+                plot_bgcolor="#ffffff",
+                paper_bgcolor="#eeebe5",
                 legend=dict(
                     orientation="h", yanchor="bottom", y=1.02,
-                    xanchor="left", x=0, font=dict(size=11, family="IBM Plex Mono"),
+                    xanchor="left", x=0, font=dict(size=11),
                 ),
                 xaxis=dict(
-                    showgrid=True, gridcolor=HAIR_2,
-                    tickformat="%d %b", tickfont=dict(size=10, family="IBM Plex Mono"),
+                    showgrid=True, gridcolor="#f0efec",
+                    tickformat="%d %b", tickfont=dict(size=10),
                 ),
                 yaxis=dict(
-                    showgrid=True, gridcolor=HAIR_2,
-                    tickfont=dict(size=10, family="IBM Plex Mono"), tickformat=",.0f",
+                    showgrid=True, gridcolor="#f0efec",
+                    tickfont=dict(size=10), tickformat=",.0f",
                 ),
                 hovermode="x unified",
-                font=dict(family="IBM Plex Mono"),
+                font=dict(family="-apple-system, BlinkMacSystemFont, sans-serif"),
             )
             st.plotly_chart(_fig, use_container_width=True,
                             config={"displayModeBar": False})
@@ -1362,10 +1215,8 @@ if st.session_state.show_follower_trend:
 
 # ── Main tabs ──────────────────────────────────────────────────────────────────
 st.markdown("<hr class='divider'>", unsafe_allow_html=True)
-st.markdown(_section_hdr("06", "COVERAGE FEED"), unsafe_allow_html=True)
-
 tab_news, tab_social, tab_mentions, tab_ministry = st.tabs(
-    ["NEWS FEED", "SOCIAL MEDIA", "MENTIONS", "MINISTRY NEWS"]
+    ["📰 News Feed", "📲 Social Media", "💬 Mentions", "🏛 Ministry News"]
 )
 
 # ── Tab 1: News feed ──────────────────────────────────────────────────────────
@@ -1389,17 +1240,7 @@ with tab_news:
 
     pos_n = sum(1 for i in grouped_sorted if i["sentiment_label"] == "positive")
     neg_n = sum(1 for i in grouped_sorted if i["sentiment_label"] == "negative")
-    st.markdown(
-        f"<div style='font-family:\"IBM Plex Mono\",monospace;font-size:11px;"
-        f"color:{SLATE_MUTE};margin-bottom:12px'>"
-        f"{len(grouped_sorted)} STORIES / {len(minister_news)} ARTICLES"
-        f"&nbsp;&nbsp;"
-        f"<span style='color:{POS}'>● {pos_n}</span>"
-        f"&nbsp;&nbsp;"
-        f"<span style='color:{NEG}'>● {neg_n}</span>"
-        f"</div>",
-        unsafe_allow_html=True,
-    )
+    st.caption(f"Showing {len(grouped_sorted)} stories ({len(minister_news)} total articles)  ·  🟢 {pos_n}  🔴 {neg_n}")
 
     if not grouped_sorted:
         st.info("No articles match the current filter.")
@@ -1408,9 +1249,10 @@ with tab_news:
 
 # ── Tab 2: Social media ────────────────────────────────────────────────────────
 with tab_social:
+    # Sort by total engagement (highest first) throughout this tab
     all_posts = sorted(all_social, key=_total_engagement, reverse=True)
 
-    sub1, sub2, sub3, sub4 = st.tabs(["ALL", "TWITTER/X", "INSTAGRAM", "FACEBOOK"])
+    sub1, sub2, sub3, sub4 = st.tabs(["All", "🐦 Twitter/X", "📸 Instagram", "👤 Facebook"])
 
     def _render_social_tab(posts, platform=None):
         items = [p for p in posts if not platform or p["platform"] == platform]
@@ -1428,6 +1270,7 @@ with tab_social:
 
 # ── Tab 3: Mentions ───────────────────────────────────────────────────────────
 with tab_mentions:
+    # Use mentions stored in the report if available; otherwise fetch live.
     _report_mentions = report["minister"].get("mentions", [])
     _report_mm       = report["minister"].get("mentions_sentiment", {})
 
@@ -1438,10 +1281,11 @@ with tab_mentions:
         _live_li_n   = sum(1 for m in all_mentions if m["platform"] == "LinkedIn")
         _fetched_live = False
     else:
+        # Report pre-dates the mentions feature — fetch live with caching.
         _btn_col, _ = st.columns([2, 5])
         with _btn_col:
             if st.button("🔄 Refresh Mentions", key="btn_refresh_mentions"):
-                _fetch_live_mentions.clear()
+                _fetch_live_mentions.clear()   # bust the 1-hour cache on demand
         with st.spinner("Fetching Twitter/X and LinkedIn mentions..."):
             all_mentions, _live_mm, _live_tw_n, _live_li_n = _fetch_live_mentions()
         _fetched_live = True
@@ -1460,32 +1304,23 @@ with tab_mentions:
         if _fetched_live:
             st.caption("Live fetch — not stored in this report. Run **Generate Report Now** to persist.")
 
+        # Sentiment summary card
         if _live_mm.get("total", 0):
             _sc3    = _live_mm["score"]
-            _color3 = POS if _sc3 >= 0.05 else (NEG if _sc3 <= -0.05 else SLATE)
-            _lbl3   = score_label(_sc3).upper()
-            _lbl3_bg = POS_BG if _sc3 >= 0.05 else (NEG_BG if _sc3 <= -0.05 else NEU_PILL)
+            _color3 = POS if _sc3 >= 0.05 else (NEG if _sc3 <= -0.05 else NEU)
             st.markdown(f"""
-            <div class="card" style="border-left:3px solid {_color3};margin-bottom:16px">
-              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;
-                          color:{SLATE_MUTE};margin-bottom:8px">PUBLIC MENTIONS SENTIMENT</div>
+            <div class="card" style="border-left:4px solid {_color3};margin-bottom:16px">
+              <div style="font-size:10px;font-weight:700;color:#a8a29e;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">Public Mentions Sentiment</div>
               <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:2px">
-                <span style="font-size:36px;font-weight:800;color:{_color3};
-                             font-family:'Archivo',sans-serif;letter-spacing:-.03em">
-                  {_sc3:+.3f}
-                </span>
-                <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;
-                             letter-spacing:.06em;color:{_color3};background:{_lbl3_bg};
-                             padding:4px 8px">{_lbl3}</span>
+                <span style="font-size:28px;font-weight:700;color:{_color3};font-family:Georgia,serif;letter-spacing:-0.03em">{_sc3:+.3f}</span>
+                <span style="font-size:15px;font-weight:600;color:{_color3}">{score_label(_sc3)}</span>
               </div>
               {sentiment_bar_html(_live_mm['positive'], _live_mm['neutral'], _live_mm['negative'])}
-              <div class="meta-text" style="margin-top:8px">
-                {_live_mm['total']} mentions · {_live_tw_n} Twitter/X · {_live_li_n} LinkedIn
-              </div>
+              <div class="meta-text">{_live_mm['total']} mentions &nbsp;·&nbsp; 🐦 {_live_tw_n} Twitter/X &nbsp;·&nbsp; 💼 {_live_li_n} LinkedIn</div>
             </div>
             """, unsafe_allow_html=True)
 
-        msub1, msub2, msub3 = st.tabs(["ALL", "TWITTER/X", "LINKEDIN"])
+        msub1, msub2, msub3 = st.tabs(["All", "🐦 Twitter/X", "💼 LinkedIn"])
 
         def _render_mentions(items, label="mentions"):
             if not items:
@@ -1512,14 +1347,11 @@ with tab_ministry:
     )
 
     st.markdown(f"""
-    <div class="card" style="margin-bottom:20px;border-left:3px solid {color2}">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;
-                  color:{SLATE_MUTE};margin-bottom:8px">MINISTRY OF COMMERCE &amp; INDUSTRY — SENTIMENT</div>
+    <div class="card" style="margin-bottom:20px;border-left:4px solid {color2}">
+      <div style="font-size:10px;font-weight:700;color:#a8a29e;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">Ministry of Commerce & Industry — Sentiment</div>
       <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:2px">
-        <span style="font-size:36px;font-weight:800;color:{color2};
-                     font-family:'Archivo',sans-serif;letter-spacing:-.03em">{m2['score']:+.3f}</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;
-                     color:{color2};background:{lbl2_bg};padding:4px 8px">{lbl2}</span>
+        <span style="font-size:30px;font-weight:700;color:{color2};font-family:'Georgia',serif;letter-spacing:-0.03em">{m2['score']:+.3f}</span>
+        <span style="font-size:15px;font-weight:600;color:{color2}">{score_label(m2['score'])}</span>
       </div>
       {sentiment_bar_html(m2['positive'], m2['neutral'], m2['negative'])}
     </div>
@@ -1646,28 +1478,63 @@ for reference and ranked by engagement (likes + comments + shares).
 They are **not assigned a sentiment score** and do not affect any of the three
 scores above.
 
+**Why not scored:** These posts reflect what the Minister chooses to say, not
+how the public reacts. Scoring them would bias the "Minister" metric toward his
+own preferred framing.
+
+**Why not scored on comment text:** Fetching comment text requires authenticated
+API access that this system does not currently have:
+Twitter API v2 (developer account) for replies;
+Instagram Graph API for comment text;
+Facebook Graph API (Page token) for comment text.
+
 ---
 
 ### Article Grouping
 
 News articles covering the same story are automatically clustered using
-**topic-focused Jaccard similarity**. The grouping threshold is 0.38 (38% word overlap).
-Within each group the **most negative article** is shown as the representative.
+**topic-focused Jaccard similarity**. Before comparison, subject-context words
+(*Piyush Goyal*, *minister*, *commerce*, etc.) and standard stop-words are
+stripped so that similarity reflects the actual story topic, not shared byline
+boilerplate. Two-character words (UK, EU, US) are included since they often
+carry the key topic signal. The grouping threshold is 0.38 (38 % word overlap).
+
+Within each group the **most negative article** is shown as the representative;
+the others appear under an expandable "+ N more sources" link.
 
 ---
 
 ### Deduplication
 
 Articles seen in any report in the **last 5 days** are automatically excluded from
-subsequent reports to prevent re-serving the same story.
+subsequent reports. This prevents high-frequency RSS feeds from inflating scores
+by re-serving the same story day after day. The history can be cleared from the
+sidebar Controls panel.
 
 ---
 
 ### Word Cloud
 
-Built from news headlines, summaries, and the text of the top-10 most-engaged
-social posts. NLTK POS tagging removes all verb forms; a custom stop-list filters
-subject boilerplate. Top-10 social posts are repeated proportionally to engagement (up to 5×).
+The word cloud is built from news headlines, summaries, and the text of the
+top-10 most-engaged social posts. Before generating the cloud:
+
+1. HTML tags, URLs, and non-Latin characters are stripped.
+2. **NLTK part-of-speech tagging** removes all verb forms (VB, VBD, VBG, VBN,
+   VBP, VBZ) so only nouns, adjectives, and proper names remain.
+3. A custom stop-list filters subject boilerplate (*Piyush Goyal*, *minister*,
+   *ministry*, etc.) and generic low-signal nouns and adjectives.
+
+Top-10 social posts are repeated in the corpus proportionally to their
+engagement level (up to 5×) so viral posts carry more weight in the cloud.
+
+---
+
+### Report Refresh Frequency
+
+The background scheduler generates a fresh report every **1 hour**,
+collecting the latest 24 hours of news and mentions on each run.
+The dashboard automatically loads the most recent saved report on page open.
+Click **Generate Report Now** in the sidebar to trigger an immediate refresh.
 
 ---
 
@@ -1677,8 +1544,7 @@ subject boilerplate. Top-10 social posts are repeated proportionally to engageme
 # ── Footer ─────────────────────────────────────────────────────────────────────
 st.markdown("<hr class='divider'>", unsafe_allow_html=True)
 st.markdown(f"""
-<div style="text-align:center;padding:8px 0;color:{SLATE_MUTE};
-            font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em">
+<div class="meta-text" style="text-align:center;padding:8px 0;color:#a8a29e">
   Sources: Google News · Economic Times · NDTV · Business Standard · Hindustan Times · LiveMint · Twitter/X · Instagram · Facebook
   &nbsp;·&nbsp; Sentiment: VADER with subject-awareness &nbsp;·&nbsp; Period: {period_str}
 </div>

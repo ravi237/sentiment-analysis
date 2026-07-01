@@ -2,7 +2,8 @@ import feedparser
 import hashlib
 from datetime import datetime, timezone, timedelta
 from dateutil import parser as dateparser
-import sys, os
+import sys
+import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from sentiment.analyzer import score
 

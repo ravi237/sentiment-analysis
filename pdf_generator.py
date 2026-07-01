@@ -7,8 +7,9 @@ Two variants:
   generate_pdf(report)               -> bytes  (alias for full report)
 """
 from fpdf import FPDF
-from datetime import datetime, timezone
-import io, re
+from datetime import timezone
+import io
+import re
 
 # ── Colour palette (R, G, B) ───────────────────────────────────────────────
 C_ACCENT  = (30,  58,  95)
@@ -34,7 +35,7 @@ CARD3_H   = 32                  # mm
 # ── Text helpers ───────────────────────────────────────────────────────────
 _UNICODE_MAP = str.maketrans({
     "—": "-", "–": "-",
-    "'": "'", "'": "'",
+    "‘": "'", "’": "'",
     "“": '"', "”": '"',
     "…": "...", "·": ".",
     "•": "*", "▲": "^", "▼": "v", "●": "*",
@@ -47,16 +48,22 @@ def _safe(text) -> str:
 
 
 def _score_label(s: float) -> str:
-    if s >= 0.3:   return "Strongly Positive"
-    if s >= 0.05:  return "Positive"
-    if s <= -0.3:  return "Strongly Negative"
-    if s <= -0.05: return "Negative"
+    if s >= 0.3:
+        return "Strongly Positive"
+    if s >= 0.05:
+        return "Positive"
+    if s <= -0.3:
+        return "Strongly Negative"
+    if s <= -0.05:
+        return "Negative"
     return "Neutral"
 
 
 def _sent_color(s: float):
-    if s >= 0.05:  return C_POS
-    if s <= -0.05: return C_NEG
+    if s >= 0.05:
+        return C_POS
+    if s <= -0.05:
+        return C_NEG
     return C_NEU
 
 
@@ -80,15 +87,20 @@ def _total_eng(post: dict) -> int:
 
 
 def _fmt_eng(n: int) -> str:
-    if n >= 1_000_000: return f"{n/1_000_000:.1f}M"
-    if n >= 1_000:     return f"{n/1_000:.1f}K"
+    if n >= 1_000_000:
+        return f"{n/1_000_000:.1f}M"
+    if n >= 1_000:
+        return f"{n/1_000:.1f}K"
     return str(n)
 
 
 def _fmt_count(n) -> str:
-    if n is None: return "-"
-    if n >= 1_000_000: return f"{n/1_000_000:.1f}M"
-    if n >= 1_000:     return f"{n/1_000:.1f}K"
+    if n is None:
+        return "-"
+    if n >= 1_000_000:
+        return f"{n/1_000_000:.1f}M"
+    if n >= 1_000:
+        return f"{n/1_000:.1f}K"
     return str(n)
 
 
@@ -794,3 +806,251 @@ def generate_full_report(report: dict) -> bytes:
 # backward-compatible alias
 def generate_pdf(report: dict) -> bytes:
     return generate_full_report(report)
+
+
+# ── Visit Coverage PDF ─────────────────────────────────────────────────────
+
+class _VisitPDF(FPDF):
+    def __init__(self, country: str, date_from: str, date_to: str):
+        super().__init__(orientation="P", unit="mm", format="A4")
+        self._country   = country
+        self._date_from = date_from
+        self._date_to   = date_to
+
+    def header(self):
+        self.set_draw_color(*C_ACCENT)
+        self.set_line_width(0.8)
+        self.line(MARGIN, 9, PAGE_W - MARGIN, 9)
+
+    def footer(self):
+        self.set_y(-13)
+        self.set_font("Helvetica", "I", 7)
+        self.set_text_color(*C_MUTED)
+        self.cell(
+            0, 5,
+            f"Piyush Goyal  |  {_safe(self._country)} Visit Coverage  |  Page {self.page_no()}",
+            align="C",
+        )
+
+    def _masthead(self, n_articles: int, pub_names: list[str]):
+        self.ln(4)
+        self.set_font("Times", "B", 22)
+        self.set_text_color(*C_TEXT)
+        self.cell(0, 9, "Piyush Goyal", new_x="LMARGIN", new_y="NEXT")
+
+        self.set_font("Times", "", 13)
+        self.set_text_color(*C_SUB)
+        self.cell(
+            0, 6,
+            _safe(f"{self._country} - International Press Coverage"),
+            new_x="LMARGIN", new_y="NEXT",
+        )
+
+        self.set_font("Helvetica", "", 7.5)
+        self.set_text_color(*C_MUTED)
+        self.cell(
+            0, 5,
+            f"Period: {_safe(self._date_from)}  to  {_safe(self._date_to)}   |   "
+            f"{n_articles} articles retrieved",
+            new_x="LMARGIN", new_y="NEXT",
+        )
+
+        # Scope note
+        self.ln(1)
+        self.set_font("Helvetica", "I", 7)
+        self.cell(
+            0, 4,
+            "Covers: Minister Piyush Goyal  |  India "
+            + _safe(self._country)
+            + " trade deal / FTA",
+            new_x="LMARGIN", new_y="NEXT",
+        )
+
+        # Publication pills
+        if pub_names:
+            self.ln(2)
+            self.set_font("Helvetica", "B", 6)
+            self.set_text_color(*C_MUTED)
+            self.cell(0, 4, "SOURCES MONITORED:", new_x="LMARGIN", new_y="NEXT")
+            self.set_font("Helvetica", "", 6.5)
+            self.set_text_color(*C_SUB)
+            self.multi_cell(
+                BODY_W, 4,
+                "  |  ".join(_safe(p) for p in pub_names),
+                new_x="LMARGIN", new_y="NEXT",
+            )
+
+        self.ln(3)
+        self.set_draw_color(*C_BORDER)
+        self.set_line_width(0.3)
+        self.line(MARGIN, self.get_y(), PAGE_W - MARGIN, self.get_y())
+        self.ln(5)
+
+    def _sentiment_summary(self, articles: list):
+        if not articles:
+            return
+        pos = sum(1 for a in articles if a["sentiment_label"] == "positive")
+        neg = sum(1 for a in articles if a["sentiment_label"] == "negative")
+        neu = sum(1 for a in articles if a["sentiment_label"] == "neutral")
+        total = len(articles)
+        avg   = sum(a["sentiment_score"] for a in articles) / total
+        color = _sent_color(avg)
+
+        self.set_font("Helvetica", "B", 8)
+        self.set_text_color(*C_MUTED)
+        self.cell(0, 4, "SENTIMENT OVERVIEW", new_x="LMARGIN", new_y="NEXT")
+        self.ln(1)
+
+        self.set_font("Times", "B", 18)
+        self.set_text_color(*color)
+        self.cell(28, 7, f"{avg*100:+.1f}")
+        self.set_font("Helvetica", "B", 9)
+        self.cell(0, 7, _score_label(avg), new_x="LMARGIN", new_y="NEXT")
+
+        # Stacked bar
+        bar_w = BODY_W
+        t = total or 1
+        bx, by, bh = MARGIN, self.get_y(), 3
+        for col, cnt in [(C_POS, pos), (C_NEU, neu), (C_NEG, neg)]:
+            w = cnt / t * bar_w
+            if w > 0:
+                self.set_fill_color(*col)
+                self.rect(bx, by, w, bh, style="F")
+            bx += w
+        self.ln(bh + 2)
+
+        self.set_font("Helvetica", "", 7)
+        self.set_text_color(*C_POS)
+        self.cell(55, 3.5, f"{pos} positive  ({pos/t*100:.0f}%)")
+        self.set_text_color(*C_NEU)
+        self.cell(55, 3.5, f"{neu} neutral  ({neu/t*100:.0f}%)")
+        self.set_text_color(*C_NEG)
+        self.cell(55, 3.5, f"{neg} negative  ({neg/t*100:.0f}%)")
+        self.ln(8)
+
+    def _pub_section(self, pub_name: str, articles: list):
+        """Render a single publication's articles with a sub-header."""
+        self.set_font("Helvetica", "B", 8.5)
+        self.set_text_color(*C_ACCENT)
+        self.cell(0, 5, _safe(pub_name), new_x="LMARGIN", new_y="NEXT")
+        self.set_draw_color(*C_BORDER)
+        self.set_line_width(0.2)
+        self.line(MARGIN, self.get_y(), PAGE_W - MARGIN, self.get_y())
+        self.ln(2)
+
+        for art in articles:
+            sc    = art.get("sentiment_score", 0.0)
+            color = _sent_color(sc)
+            title = _safe(art.get("title", ""))
+            if len(title) > 110:
+                title = title[:108] + "..."
+
+            self.set_x(MARGIN)
+            self.set_font("Helvetica", "B", 8)
+            self.set_text_color(*C_TEXT)
+            self.cell(BODY_W - 32, 4.5, title, new_x="RIGHT")
+            self.set_font("Helvetica", "B", 6.5)
+            self.set_text_color(*color)
+            self.cell(
+                32, 4.5,
+                f"{sc*100:+.1f}  {art.get('sentiment_label','').capitalize()}",
+                align="R", new_x="LMARGIN", new_y="NEXT",
+            )
+
+            self.set_x(MARGIN)
+            self.set_font("Helvetica", "I", 6.5)
+            self.set_text_color(*C_SUB)
+            self.cell(
+                0, 3.5,
+                _safe(art.get("published_display", "")),
+                new_x="LMARGIN", new_y="NEXT",
+            )
+
+            summary = _safe(art.get("summary", ""))
+            if summary:
+                # Strip HTML tags before rendering
+                summary = re.sub(r"<[^>]+>", " ", summary)
+                summary = re.sub(r"\s+", " ", summary).strip()[:300]
+                self.set_x(MARGIN)
+                self.set_font("Helvetica", "", 7)
+                self.set_text_color(*C_TEXT)
+                self.multi_cell(
+                    BODY_W, 3.5, summary,
+                    new_x="LMARGIN", new_y="NEXT",
+                )
+
+            self.ln(2)
+
+        self.ln(2)
+
+
+def generate_visit_coverage_pdf(
+    country: str,
+    date_from: str,
+    date_to: str,
+    articles: list,
+) -> bytes:
+    """
+    Generate a PDF of international press coverage for a ministerial visit.
+
+    Parameters
+    ----------
+    country   : Display name of the country visited (e.g. "United Kingdom")
+    date_from : Display string for start of coverage window
+    date_to   : Display string for end of coverage window
+    articles  : List of article dicts from visit_coverage_collector.fetch_visit_coverage()
+    """
+    from collectors.visit_coverage_collector import get_publications
+
+    pub_map: dict[str, list] = {}
+    for art in articles:
+        pub_map.setdefault(art["source"], []).append(art)
+
+    pub_names = [name for name, _ in get_publications(country)]
+
+    pdf = _VisitPDF(country, date_from, date_to)
+    pdf.set_margins(MARGIN, MARGIN, MARGIN)
+    pdf.set_auto_page_break(auto=True, margin=18)
+    pdf.add_page()
+
+    pdf._masthead(len(articles), pub_names)
+
+    if not articles:
+        pdf.set_font("Helvetica", "I", 9)
+        pdf.set_text_color(*C_MUTED)
+        pdf.cell(
+            0, 8,
+            "No articles found for the selected country and date range. "
+            "Try broadening the date window or check your internet connection.",
+            new_x="LMARGIN", new_y="NEXT",
+        )
+        return bytes(pdf.output())
+
+    pdf._sentiment_summary(articles)
+
+    # Group by publication in priority order
+    seen_pubs: set[str] = set()
+    ordered: list[tuple[str, list]] = []
+    for name, _ in get_publications(country):
+        for src_name, arts in pub_map.items():
+            if src_name not in seen_pubs and (
+                name.lower() in src_name.lower()
+                or src_name.lower() in name.lower()
+            ):
+                seen_pubs.add(src_name)
+                ordered.append((src_name, arts))
+                break
+
+    # Append any remaining sources not matched to a named publication
+    for src_name, arts in pub_map.items():
+        if src_name not in seen_pubs:
+            ordered.append((src_name, arts))
+
+    for pub_name, pub_articles in ordered:
+        # Sort each pub's articles newest first
+        pub_articles_sorted = sorted(
+            pub_articles, key=lambda a: a["published"], reverse=True
+        )
+        pdf._pub_section(pub_name, pub_articles_sorted)
+
+    return bytes(pdf.output())

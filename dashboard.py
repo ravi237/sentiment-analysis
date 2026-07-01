@@ -1,8 +1,9 @@
 import streamlit as st
-import pandas as pd
 import plotly.graph_objects as go
-import json, os, html as _html
-from datetime import datetime, timedelta, timezone
+import json
+import os
+import html as _html
+from datetime import datetime, timezone
 from dateutil import parser as dateparser
 import pytz
 
@@ -39,7 +40,7 @@ def _fetch_live_mentions(hours: int = 48):
             "positive": 0, "negative": 0, "neutral": 0, "total": 0,
         }
         return items, sent, len(tw), len(li)
-    except Exception as exc:
+    except Exception:
         return [], {}, 0, 0
 
 def _e(text) -> str:
@@ -407,10 +408,14 @@ def sentiment_bar_html(pos: int, neu: int, neg: int) -> str:
 
 
 def score_label(s: float) -> str:
-    if s >= 0.3:   return "Strongly Positive"
-    if s >= 0.05:  return "Positive"
-    if s <= -0.3:  return "Strongly Negative"
-    if s <= -0.05: return "Negative"
+    if s >= 0.3:
+        return "Strongly Positive"
+    if s >= 0.05:
+        return "Positive"
+    if s <= -0.3:
+        return "Strongly Negative"
+    if s <= -0.05:
+        return "Negative"
     return "Neutral"
 
 
@@ -440,7 +445,6 @@ def render_news_card(item: dict, show_summary: bool = False):
     """Render a news card using native Streamlit components. No user text goes into HTML."""
     label = item["sentiment_label"]
     sc    = item["sentiment_score"]
-    color = SENT_COLOR[label]
 
     c1, c2 = st.columns([11, 2])
     with c1:
@@ -496,7 +500,6 @@ def render_mention_card(item: dict):
     label    = item.get("sentiment_label", "neutral")
     sc       = item.get("sentiment_score", 0.0)
     platform = item.get("platform", "")
-    pc       = PLATFORM_COLORS.get(platform, "#6b7280")
     url      = item.get("url", "")
     total_eng = _total_engagement(item)
 
@@ -1307,6 +1310,145 @@ if top_social:
             st.markdown(_top_post_card_html(post, rank=i + 1),
                         unsafe_allow_html=True)
 
+# ── Visit Coverage helpers (defined here so the section call below works) ──────
+@st.cache_data(ttl=3600, show_spinner=False)
+def _fetch_visit_coverage_cached(country: str, start_iso: str, end_iso: str):
+    from collectors.visit_coverage_collector import fetch_visit_coverage
+    from datetime import datetime, timezone
+    start = datetime.fromisoformat(start_iso).replace(tzinfo=timezone.utc)
+    end   = datetime.fromisoformat(end_iso).replace(tzinfo=timezone.utc)
+    return fetch_visit_coverage(country, start, end)
+
+
+def _render_visit_coverage_tab():
+    from collectors.visit_coverage_collector import list_countries, get_publications
+    from pdf_generator import generate_visit_coverage_pdf
+
+    st.markdown(
+        "<div class='section-label'>🌍 Visit Coverage / International Press Coverage</div>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        "<p class='meta-text'>Select a country and date range to retrieve news about "
+        "Minister Piyush Goyal and India's trade deal with that country, "
+        "sourced from the top 10 publications of the selected country.</p>",
+        unsafe_allow_html=True,
+    )
+
+    # ── Controls ──────────────────────────────────────────────────────────────
+    col_country, col_from, col_to, col_btn = st.columns([3, 2, 2, 2])
+    countries = list_countries()
+    with col_country:
+        country = st.selectbox(
+            "Country",
+            countries,
+            index=countries.index("United Kingdom") if "United Kingdom" in countries else 0,
+            key="vc_country",
+        )
+    with col_from:
+        date_from = st.date_input("From date", key="vc_from",
+                                  format="DD/MM/YYYY",
+                                  value=datetime.now(IST).date().__class__.fromisocalendar(
+                                      datetime.now(IST).year,
+                                      max(1, datetime.now(IST).isocalendar()[1] - 1),
+                                      1,
+                                  ))
+    with col_to:
+        date_to = st.date_input("To date", key="vc_to",
+                                format="DD/MM/YYYY",
+                                value=datetime.now(IST).date())
+    with col_btn:
+        st.markdown("<div style='height:28px'></div>", unsafe_allow_html=True)
+        fetch_clicked = st.button(
+            "🔍 Fetch Articles",
+            key="vc_fetch",
+            use_container_width=True,
+            type="primary",
+        )
+
+    # ── Publication list (informational) ──────────────────────────────────────
+    pubs = get_publications(country)
+    pub_names = [name for name, _ in pubs]
+    with st.expander(f"📰 Monitoring {len(pub_names)} publications from {country}", expanded=False):
+        cols = st.columns(2)
+        for i, name in enumerate(pub_names):
+            cols[i % 2].markdown(f"- {name}")
+
+    # ── Fetch + display ────────────────────────────────────────────────────────
+    if fetch_clicked:
+        if date_from > date_to:
+            st.error("'From date' must be before 'To date'.")
+            return
+
+        start_iso = date_from.isoformat() + "T00:00:00"
+        end_iso   = date_to.isoformat()   + "T23:59:59"
+
+        with st.spinner(f"Fetching articles from top publications in {country}…"):
+            articles = _fetch_visit_coverage_cached(country, start_iso, end_iso)
+
+        st.session_state["vc_articles"]        = articles
+        st.session_state["vc_result_country"]  = country
+        st.session_state["vc_from_lbl"]        = date_from.strftime("%d %b %Y")
+        st.session_state["vc_to_lbl"]          = date_to.strftime("%d %b %Y")
+
+    # ── Display cached results ─────────────────────────────────────────────────
+    articles   = st.session_state.get("vc_articles")
+    vc_country = st.session_state.get("vc_result_country", country)
+
+    if articles is None:
+        st.info("Select a country and date range, then click **Fetch Articles**.")
+        return
+
+    from_lbl = st.session_state.get("vc_from_lbl", "")
+    to_lbl   = st.session_state.get("vc_to_lbl", "")
+
+    if not articles:
+        st.warning(
+            f"No articles found in top {vc_country} publications for "
+            f"{from_lbl} – {to_lbl}. "
+            "Try a wider date range — RSS feeds typically cover the last 2–4 weeks."
+        )
+    else:
+        pos_n = sum(1 for a in articles if a["sentiment_label"] == "positive")
+        neg_n = sum(1 for a in articles if a["sentiment_label"] == "negative")
+        neu_n = sum(1 for a in articles if a["sentiment_label"] == "neutral")
+        avg_sc = sum(a["sentiment_score"] for a in articles) / len(articles)
+        avg_color = POS if avg_sc >= 0.05 else (NEG if avg_sc <= -0.05 else NEU)
+
+        st.markdown(
+            f"<div class='card' style='margin-bottom:16px;border-left:4px solid {avg_color}'>"
+            f"<div style='font-size:9.5px;font-weight:700;color:#5e5b58;letter-spacing:1.5px;"
+            f"text-transform:uppercase;margin-bottom:8px'>"
+            f"{vc_country} — {from_lbl} to {to_lbl}</div>"
+            f"<div style='display:flex;align-items:baseline;gap:10px;margin-bottom:4px'>"
+            f"<span style='font-size:30px;font-weight:700;color:{avg_color};"
+            f"font-family:Georgia,serif'>{avg_sc*100:+.1f}</span>"
+            f"<span style='font-size:14px;font-weight:600;color:{avg_color}'>"
+            f"{score_label(avg_sc)}</span></div>"
+            f"<div class='meta-text'>{len(articles)} articles &nbsp;·&nbsp; "
+            f"🟢 {pos_n} positive &nbsp;·&nbsp; 🔴 {neg_n} negative "
+            f"&nbsp;·&nbsp; ⚪ {neu_n} neutral</div></div>",
+            unsafe_allow_html=True,
+        )
+
+        date_from_lbl = st.session_state.get("vc_from_lbl", "")
+        date_to_lbl   = st.session_state.get("vc_to_lbl", "")
+        safe_country  = vc_country.replace(" ", "_").replace("/", "-")
+        try:
+            pdf_bytes = generate_visit_coverage_pdf(
+                vc_country, date_from_lbl, date_to_lbl, articles
+            )
+            st.download_button(
+                label=f"⬇ Download PDF — {vc_country} Coverage ({len(articles)} articles)",
+                data=pdf_bytes,
+                file_name=f"visit_coverage_{safe_country}_{date_from_lbl.replace(' ', '_')}.pdf",
+                mime="application/pdf",
+                type="primary",
+            )
+        except Exception as _pdf_err:
+            st.error(f"PDF generation failed: {_pdf_err}")
+
+
 # ── Word Cloud ─────────────────────────────────────────────────────────────────
 st.markdown("<hr class='divider'>", unsafe_allow_html=True)
 st.markdown(
@@ -1319,7 +1461,11 @@ if _wc_freq:
 else:
     st.caption("Not enough text to generate a word cloud — run a fresh report.")
 
-# ── Follower counts — below word cloud ────────────────────────────────────────
+# ── Visit Coverage ────────────────────────────────────────────────────────────
+st.markdown("<hr class='divider'>", unsafe_allow_html=True)
+_render_visit_coverage_tab()
+
+# ── Follower counts — below visit coverage ─────────────────────────────────────
 st.markdown("<hr class='divider'>", unsafe_allow_html=True)
 st.markdown("<div class='section-label'>Official Handles — Follower Count</div>",
             unsafe_allow_html=True)
@@ -1389,6 +1535,8 @@ if st.session_state.show_follower_trend:
     except Exception as _e:
         st.caption(f"Trend chart unavailable: {_e}")
 
+
+
 # ── Main tabs ──────────────────────────────────────────────────────────────────
 st.markdown("<hr class='divider'>", unsafe_allow_html=True)
 tab_news, tab_social, tab_mentions, tab_ministry = st.tabs(
@@ -1439,10 +1587,14 @@ with tab_social:
         for p in items:
             render_social_card(p)
 
-    with sub1: _render_social_tab(all_posts)
-    with sub2: _render_social_tab(all_posts, "Twitter/X")
-    with sub3: _render_social_tab(all_posts, "Instagram")
-    with sub4: _render_social_tab(all_posts, "Facebook")
+    with sub1:
+        _render_social_tab(all_posts)
+    with sub2:
+        _render_social_tab(all_posts, "Twitter/X")
+    with sub3:
+        _render_social_tab(all_posts, "Instagram")
+    with sub4:
+        _render_social_tab(all_posts, "Facebook")
 
 # ── Tab 3: Mentions ───────────────────────────────────────────────────────────
 with tab_mentions:
@@ -1511,9 +1663,12 @@ with tab_mentions:
             for m in sorted(items, key=lambda x: x["sentiment_score"]):
                 render_mention_card(m)
 
-        with msub1: _render_mentions(all_mentions, "mentions")
-        with msub2: _render_mentions(tw_ments, "Twitter/X mentions")
-        with msub3: _render_mentions(li_ments, "LinkedIn mentions")
+        with msub1:
+            _render_mentions(all_mentions, "mentions")
+        with msub2:
+            _render_mentions(tw_ments, "Twitter/X mentions")
+        with msub3:
+            _render_mentions(li_ments, "LinkedIn mentions")
 
 # ── Tab 4: Ministry news ───────────────────────────────────────────────────────
 with tab_ministry:
@@ -1537,6 +1692,7 @@ with tab_ministry:
         st.info("No ministry news in the selected period.")
     for item in grouped_min:
         render_news_card(item, show_summary)
+
 
 # ── Methodology ────────────────────────────────────────────────────────────────
 st.markdown("<hr class='divider'>", unsafe_allow_html=True)

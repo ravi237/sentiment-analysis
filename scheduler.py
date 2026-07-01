@@ -9,7 +9,8 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 from datetime import datetime
 import pytz
-import os, sys
+import os
+import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 

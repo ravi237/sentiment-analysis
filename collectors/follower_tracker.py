@@ -77,7 +77,6 @@ def _trend_deltas(readings: list, current: int, now_dt: datetime) -> dict:
             out[key] = None
             continue
         # Reject if the closest reading is too far from the anchor
-        ref_ts = None
         best_diff = None
         for r in readings:
             try:
@@ -87,7 +86,6 @@ def _trend_deltas(readings: list, current: int, now_dt: datetime) -> dict:
                 diff = abs((ts - anchor).total_seconds())
                 if best_diff is None or diff < best_diff:
                     best_diff = diff
-                    ref_ts = ts
             except Exception:
                 pass
         max_gap = days * 1.5 * 86400   # 1.5× the window in seconds
@@ -103,7 +101,6 @@ def collect_all_counts() -> list:
     from collectors.twitter_collector import get_follower_count as tw_count
     from collectors.instagram_collector import get_follower_count as ig_count
     from collectors.facebook_collector import get_follower_count as fb_count
-    from datetime import timedelta
 
     now_dt = datetime.now(timezone.utc)
     now    = now_dt.isoformat()

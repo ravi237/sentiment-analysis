@@ -6,7 +6,8 @@ official Instagram app uses. Works on public profiles without login.
 import requests
 import hashlib
 from datetime import datetime, timezone, timedelta
-import sys, os
+import sys
+import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from sentiment.analyzer import score_with_engagement
 

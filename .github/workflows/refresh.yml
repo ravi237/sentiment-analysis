@@ -38,14 +38,17 @@ jobs:
           "
 
       - name: Generate report
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           python3 -c "
           from report_generator import generate_report
           r = generate_report(hours=24)
-          print(f'Done: {r[\"stats\"][\"total_news\"]} news, '
-                f'{r[\"stats\"][\"total_tweets\"]} tweets, '
-                f'{r[\"stats\"].get(\"total_tw_mentions\",0)} X mentions, '
-                f'{r[\"stats\"].get(\"total_li_mentions\",0)} LI mentions')
+          s = r['stats']
+          print(f'Done: {s[\"total_news\"]} news, '
+                f'{s[\"total_tweets\"]} tweets, '
+                f'{s.get(\"total_tw_mentions\",0)} X mentions, '
+                f'{s.get(\"total_li_mentions\",0)} LI mentions')
           "
 
       - name: Commit updated data back to repo

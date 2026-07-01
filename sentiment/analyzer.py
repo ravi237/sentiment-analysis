@@ -1,3 +1,4 @@
+import os
 import re
 import json
 import logging
@@ -102,9 +103,13 @@ def _get_llm_client():
     if _llm_client_attempted:
         return _llm_client
     _llm_client_attempted = True
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    if not api_key:
+        logger.debug("ANTHROPIC_API_KEY not set; LLM scoring disabled, using VADER")
+        return None
     try:
         import anthropic
-        _llm_client = anthropic.Anthropic()
+        _llm_client = anthropic.Anthropic(api_key=api_key)
     except Exception as e:
         logger.warning("Could not initialise Anthropic client: %s", e)
     return _llm_client
@@ -134,7 +139,7 @@ def _score_with_llm(text: str) -> Optional[dict]:
         return None
     try:
         response = client.messages.create(
-            model="claude-haiku-4-5",
+            model="claude-haiku-4-5-20251001",
             max_tokens=128,
             system=_SYSTEM_PROMPT,
             messages=[{"role": "user", "content": text[:2000]}],

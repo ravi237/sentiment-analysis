@@ -22,35 +22,30 @@ def generate_report(hours: int = 24) -> dict:
     ts = datetime.now(timezone.utc)
     print(f"[report] Generating report for last {hours}h at {ts.isoformat()}")
 
+    def _safe(label, fn, default):
+        try:
+            result = fn()
+            print(f"[report] {label}: {len(result)} items")
+            return result
+        except Exception as exc:
+            print(f"[report] WARNING — {label} failed ({exc}); continuing with empty data")
+            return default
+
     # ── Collect ────────────────────────────────────────────────────────────────
-    print("[report] Fetching news...")
-    news = fetch_news(hours)
-    print(f"[report] News: {len(news)} articles in last {hours}h")
+    news    = _safe("News",      lambda: fetch_news(hours),      [])
+    tweets  = _safe("Tweets",    lambda: fetch_tweets(hours),    [])
+    ig      = _safe("Instagram", lambda: ig_posts(hours),        [])
+    fb      = _safe("Facebook",  lambda: fb_posts(hours),        [])
+    followers = _safe("Followers", collect_all_counts,           [])
 
-    print("[report] Fetching tweets...")
-    tweets = fetch_tweets(hours)
-
-    print("[report] Fetching Instagram posts...")
-    ig = ig_posts(hours)
-
-    print("[report] Fetching Facebook posts...")
-    fb = fb_posts(hours)
-
-    print("[report] Collecting follower counts...")
-    followers = collect_all_counts()
-
-    print("[report] Fetching Twitter/X mentions...")
     from collectors.mentions_collector import (fetch_twitter_mentions,
                                                fetch_linkedin_mentions)
-    # Mentions are published less frequently than news; use a wider window
-    # (48 h) so infrequent LinkedIn posts are not missed.
-    mention_hours = max(hours, 48)
-    tw_mentions_raw = fetch_twitter_mentions(mention_hours)
-    print("[report] Fetching LinkedIn mentions...")
-    li_mentions_raw = fetch_linkedin_mentions(mention_hours)
+    mention_hours   = max(hours, 48)
+    tw_mentions_raw = _safe("Twitter/X mentions",
+                            lambda: fetch_twitter_mentions(mention_hours), [])
+    li_mentions_raw = _safe("LinkedIn mentions",
+                            lambda: fetch_linkedin_mentions(mention_hours), [])
     all_mentions = tw_mentions_raw + li_mentions_raw
-    print(f"[report] Mentions: {len(tw_mentions_raw)} Twitter/X, "
-          f"{len(li_mentions_raw)} LinkedIn")
 
     # ── Sentiment aggregations ─────────────────────────────────────────────────
     minister_news = [n for n in news if n["category"] == "minister"]

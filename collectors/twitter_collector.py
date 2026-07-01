@@ -111,25 +111,34 @@ def fetch_tweets(hours: int = 24) -> list:
 
 
 def get_follower_count() -> dict:
-    """Extract follower count from the syndication page."""
-    url = SYNDICATION_URL.format(handle="PiyushGoyal")
-    try:
-        resp = requests.get(url, headers=HEADERS, timeout=15)
-        if resp.status_code != 200:
-            return {"platform": "Twitter/X", "handle": "@PiyushGoyal", "followers": None}
-        soup = BeautifulSoup(resp.text, "lxml")
-        script = soup.find("script", {"id": "__NEXT_DATA__"})
-        if not script:
-            return {"platform": "Twitter/X", "handle": "@PiyushGoyal", "followers": None}
-        data = json.loads(script.string)
-        user = data["props"]["pageProps"].get("profile", {})
-        count = (
-            user.get("followers_count")
-            or data["props"]["pageProps"].get("timeline", {})
-               .get("user", {}).get("followers_count")
-        )
-        if count:
-            return {"platform": "Twitter/X", "handle": "@PiyushGoyal", "followers": int(count), "source": "syndication"}
-    except Exception as e:
-        print(f"[twitter] Follower count error: {e}")
+    """
+    Fetch follower count via Twitter API v2 (if TWITTER_BEARER_TOKEN is set),
+    otherwise returns None so the fallback value is used.
+    """
+    bearer = os.environ.get("TWITTER_BEARER_TOKEN", "").strip()
+    if bearer:
+        try:
+            resp = requests.get(
+                "https://api.twitter.com/2/users/by/username/PiyushGoyal",
+                params={"user.fields": "public_metrics"},
+                headers={"Authorization": f"Bearer {bearer}"},
+                timeout=10,
+            )
+            if resp.status_code == 200:
+                data = resp.json()
+                count = data.get("data", {}).get("public_metrics", {}).get("followers_count")
+                if count is not None:
+                    print(f"[twitter] @PiyushGoyal: {count:,} followers (API v2)")
+                    return {
+                        "platform": "Twitter/X",
+                        "handle": "@PiyushGoyal",
+                        "followers": int(count),
+                        "source": "api_v2",
+                    }
+            else:
+                print(f"[twitter] API v2 HTTP {resp.status_code}: {resp.text[:120]}")
+        except Exception as e:
+            print(f"[twitter] API v2 error: {e}")
+
+    print("[twitter] No bearer token set; skipping live follower count")
     return {"platform": "Twitter/X", "handle": "@PiyushGoyal", "followers": None, "source": "unavailable"}

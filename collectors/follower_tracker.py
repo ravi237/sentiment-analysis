@@ -12,17 +12,17 @@ PLATFORM_URLS = {
     "Twitter/X (Office)": "https://x.com/PiyushGoyalOffc",
     "Instagram":    "https://www.instagram.com/piyushgoyalofficial/",
     "Facebook":     "https://www.facebook.com/PiyushGoyalOfficial/",
-    "YouTube":      "https://www.youtube.com/@PiyushGoyal",
+    "YouTube":      "https://www.youtube.com/@PiyushGoyalOfficial",
     "LinkedIn":     "https://www.linkedin.com/in/piyushgoyalofficial/",
 }
 
-# Known approximate counts as fallback when scraping fails
+# Fallback counts used when live scraping fails or is unavailable
 FALLBACK_COUNTS = {
     "Twitter/X":    12_100_000,
     "Twitter/X (Office)": 850_000,
     "Instagram":    2_000_000,
     "Facebook":     10_000_000,
-    "YouTube":      180_000,
+    "YouTube":      30_900_000,   # @PiyushGoyalOfficial — verified via ytInitialData
     "LinkedIn":     95_000,
 }
 
@@ -101,16 +101,19 @@ def collect_all_counts() -> list:
     from collectors.twitter_collector import get_follower_count as tw_count
     from collectors.instagram_collector import get_follower_count as ig_count
     from collectors.facebook_collector import get_follower_count as fb_count
+    from collectors.youtube_collector import get_subscriber_count as yt_count
 
     now_dt = datetime.now(timezone.utc)
     now    = now_dt.isoformat()
     history = _load_history()
     results = []
 
+    # Live scrapers — Twitter/X requires TWITTER_BEARER_TOKEN env var
     fetchers = {
         "Twitter/X": tw_count,
-        "Instagram": ig_count,
-        "Facebook": fb_count,
+        "Instagram":  ig_count,
+        "Facebook":   fb_count,
+        "YouTube":    yt_count,
     }
 
     for platform, fetcher in fetchers.items():
@@ -149,15 +152,16 @@ def collect_all_counts() -> list:
         }
         results.append(entry)
 
-        # Persist history
-        if platform not in history:
-            history[platform] = {"history": []}
-        history[platform]["latest"] = count
-        history[platform]["history"].append({"count": count, "ts": now})
-        history[platform]["history"] = history[platform]["history"][-90:]  # 3 months
+        # Persist history for live-tracked platforms only
+        if is_live:
+            if platform not in history:
+                history[platform] = {"history": []}
+            history[platform]["latest"] = count
+            history[platform]["history"].append({"count": count, "ts": now})
+            history[platform]["history"] = history[platform]["history"][-90:]  # 3 months
 
-    # Manually-tracked platforms (no live scraper)
-    for platform in ["Twitter/X (Office)", "YouTube", "LinkedIn"]:
+    # Twitter/X (Office) and LinkedIn — no reliable live scraper
+    for platform in ["Twitter/X (Office)", "LinkedIn"]:
         count = FALLBACK_COUNTS.get(platform)
         results.append({
             "platform": platform,
